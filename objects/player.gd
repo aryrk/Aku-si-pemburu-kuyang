@@ -32,6 +32,12 @@ var container_offset = Vector3(1.2, -1.1, -2.75)
 
 var tween:Tween
 
+var max_ammo: int = 10
+var current_ammo: int = max_ammo
+var reload_time: float = 2.0
+var is_reloading: bool = false
+
+
 signal health_updated
 
 @onready var camera = $Head/Camera
@@ -51,6 +57,7 @@ func _ready():
 	
 	weapon = weapons[weapon_index] # Weapon must never be nil
 	initiate_change_weapon(weapon_index)
+	current_ammo = max_ammo
 
 func _physics_process(delta):
 	
@@ -113,6 +120,7 @@ func _input(event):
 		rotation_target.y -= event.relative.x / mouse_sensitivity
 		rotation_target.x -= event.relative.y / mouse_sensitivity
 
+
 func handle_controls(_delta):
 	
 	# Mouse capture
@@ -126,6 +134,11 @@ func handle_controls(_delta):
 		mouse_captured = false
 		
 		input_mouse = Vector2.ZERO
+	
+	if Input.is_action_just_pressed("shoot"):
+		action_shoot()
+	elif Input.is_action_just_pressed("reload"):
+		action_reload()
 	
 	# Movement
 	
@@ -142,7 +155,6 @@ func handle_controls(_delta):
 	
 	# Shooting
 	
-	action_shoot()
 	
 	# Jumping
 	
@@ -187,9 +199,13 @@ func action_jump():
 func action_shoot():
 	
 	if Input.is_action_pressed("shoot"):
-	
+		if is_reloading: 
+			return
+		if current_ammo <= 0:
+			return
 		if !blaster_cooldown.is_stopped(): return # Cooldown for shooting
 		
+		current_ammo -= 1
 		Audio.play(weapon.sound_shoot)
 		
 		container.position.z += 0.25 # Knockback of weapon visual
@@ -236,8 +252,17 @@ func action_shoot():
 			impact_instance.position = raycast.get_collision_point() + (raycast.get_collision_normal() / 10)
 			impact_instance.look_at(camera.global_transform.origin, Vector3.UP, true) 
 
-# Toggle between available weapons (listed in 'weapons')
 
+func action_reload():
+	if is_reloading: 
+		return # Prevent starting a reload if already reloading
+	is_reloading = true
+	await get_tree().create_timer(reload_time).timeout
+	current_ammo = max_ammo # Reset ammo count
+	is_reloading = false # Finish reloading
+
+
+# Toggle between available weapons (listed in 'weapons')
 func action_weapon_toggle():
 	
 	if Input.is_action_just_pressed("weapon_toggle"):
