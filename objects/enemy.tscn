@@ -19,7 +19,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("SphereShape3D_iix87")
 
 [node name="RayCast" type="RayCast3D" parent="."]
-target_position = Vector3(0, 0, 5)
+target_position = Vector3(0, 0, 1)
 
 [node name="MuzzleA" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.45, 0.3, 0.4)
@@ -37,5 +37,9 @@ autostart = true
 
 [node name="kuyang" parent="." instance=ExtResource("4_f5000")]
 transform = Transform3D(0.305045, 0, 0, 0, 0.305045, 0, 0, 0, 0.305045, -0.00631237, -0.511109, -0.0988748)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+volume_db = 1.0
+max_distance = 20.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

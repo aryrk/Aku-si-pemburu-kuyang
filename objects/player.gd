@@ -59,6 +59,9 @@ func _ready():
 	initiate_change_weapon(weapon_index)
 	current_ammo = max_ammo
 
+	Audio.play("sounds/ambience.mp3")
+
+
 func _physics_process(delta):
 	
 	# Handle functions
@@ -135,9 +138,8 @@ func handle_controls(_delta):
 		
 		input_mouse = Vector2.ZERO
 	
-	if Input.is_action_just_pressed("shoot"):
-		action_shoot()
-	elif Input.is_action_just_pressed("reload"):
+	action_shoot()
+	if Input.is_action_just_pressed("reload"):
 		action_reload()
 	
 	# Movement
@@ -205,7 +207,7 @@ func action_shoot():
 			return
 		if !blaster_cooldown.is_stopped(): return # Cooldown for shooting
 		
-		current_ammo -= 1
+		# current_ammo -= 1
 		Audio.play(weapon.sound_shoot)
 		
 		container.position.z += 0.25 # Knockback of weapon visual
