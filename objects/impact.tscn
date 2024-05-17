@@ -49,6 +49,7 @@ animation = &"shot"
 script = ExtResource("2_k826h")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.831373, 0.568627, 1)
 light_energy = 0.1
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
