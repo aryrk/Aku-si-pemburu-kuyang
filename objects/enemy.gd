@@ -5,6 +5,7 @@ extends Node3D
 @onready var raycast = $RayCast
 @onready var muzzle_a = $MuzzleA
 @onready var muzzle_b = $MuzzleB
+@onready var transform_point = $"."
 
 var health := 100
 var time := 0.0
@@ -61,6 +62,7 @@ func _process(delta):
 		# Rotate to face the wandering direction
 		if wander_direction.length() > 0:
 			self.look_at(position + wander_direction, Vector3.UP)
+			transform_point.rotation_degrees.y += 180
 
 	# Update the position of the enemy
 	position = target_position
