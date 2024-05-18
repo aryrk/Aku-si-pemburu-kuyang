@@ -1,4 +1,6 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://jvmpkdwaeaq"]
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://jvmpkdwaeaq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4pbtr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lg8b7"]
 sky_horizon_color = Color(0.67451, 0.682353, 0.698039, 1)
@@ -28,6 +30,9 @@ glow_levels/5 = 0.0
 glow_normalized = true
 glow_intensity = 2.0
 glow_bloom = 1.0
-fog_light_color = Color(0.145098, 0.160784, 0.184314, 1)
+glow_map = SubResource("NoiseTexture2D_4pbtr")
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 0.19
+fog_density = 0.1211
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.517647, 0.517647, 0.517647, 1)
