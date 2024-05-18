@@ -38,7 +38,7 @@ func _process(delta):
 # Take damage from player
 
 func damage(amount):
-	Audio.play("sounds/enemy_hurt.ogg")
+	Audio.play("sounds/roar.mp3")
 
 	health -= amount
 

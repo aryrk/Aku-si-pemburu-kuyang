@@ -21,6 +21,9 @@ var rotation_target: Vector3
 var input_mouse: Vector2
 
 var health:int = 100
+var is_healing: bool = false 
+var heal_counter = 0
+var maxHealth: int = 100  
 var gravity := 0.0
 
 var previously_floored := false
@@ -34,7 +37,7 @@ var tween:Tween
 
 var max_ammo: int = 10
 var current_ammo: int = max_ammo
-var reload_time: float = 2.0
+var reload_time: float = 0
 var is_reloading: bool = false
 
 
@@ -138,10 +141,17 @@ func handle_controls(_delta):
 		
 		input_mouse = Vector2.ZERO
 	
-	action_shoot()
-
-	if Input.is_action_just_pressed("reload"):
+	if Input.is_action_just_pressed("shoot"):
+		action_shoot()
+	elif Input.is_action_just_pressed("reload"):
 		action_reload()
+	# Movement
+	if Input.is_action_just_pressed("heal") and heal_counter < 3:
+		is_healing = true
+		action_heal()
+		heal_counter += 1
+	else:
+		is_healing = false
 	
 	# Movement
 	
@@ -208,8 +218,8 @@ func action_shoot():
 			return
 		if !blaster_cooldown.is_stopped(): return # Cooldown for shooting
 		
-		# current_ammo -= 1
-		Audio.play(weapon.sound_shoot)
+		current_ammo -= 1
+		Audio.play("sounds/gs.mp3")
 		
 		container.position.z += 0.25 # Knockback of weapon visual
 		camera.rotation.x += 0.025 # Knockback of camera
@@ -260,6 +270,7 @@ func action_reload():
 	if is_reloading: 
 		return # Prevent starting a reload if already reloading
 	is_reloading = true
+	Audio.play("sounds/recoil.mp3")
 	await get_tree().create_timer(reload_time).timeout
 	current_ammo = max_ammo # Reset ammo count
 	is_reloading = false # Finish reloading
@@ -322,3 +333,10 @@ func damage(amount):
 	
 	if health < 0:
 		get_tree().reload_current_scene() # Reset when out of health
+		
+func action_heal():
+	var heal_amount = 20    # Adjust the amount as needed
+	health = min(health + heal_amount, maxHealth)
+	health_updated.emit(health)
+	Audio.play("sounds/heal.mp3")
+
