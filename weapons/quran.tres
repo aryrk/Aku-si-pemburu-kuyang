@@ -18,3 +18,6 @@ shot_count = 50
 knockback = 0
 sound_shoot = "sounds/metal-whoos.mp3"
 crosshair = ExtResource("1_wft8a")
+uses_mana = true
+mana_cost = 30
+mana_gain = 0

@@ -20,3 +20,8 @@ class_name Weapon
 
 @export_subgroup("Crosshair")
 @export var crosshair: Texture2D  # Image of crosshair on-screen
+
+@export_subgroup("Mana")
+@export var uses_mana: bool = false
+@export var mana_cost: int = 0
+@export var mana_gain: int = 0

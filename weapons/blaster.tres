@@ -18,3 +18,6 @@ shot_count = 1
 knockback = 0
 sound_shoot = "sounds/revolver.mp3"
 crosshair = ExtResource("1_2onsr")
+uses_mana = false
+mana_cost = 0
+mana_gain = 10

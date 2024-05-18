@@ -1,20 +1,41 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=13 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_elriq"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="3_s8mkj"]
-[ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://fonts/lilita_one_regular.ttf" id="3_w27de"]
 [ext_resource type="PackedScene" uid="uid://bbj1htdp75rwe" path="res://objects/forest.tscn" id="6_fjnt1"]
 [ext_resource type="PackedScene" uid="uid://dlauce5ctudt5" path="res://objects/kunti.tscn" id="8_3odig"]
 [ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://objects/enemy.tscn" id="8_7ty2f"]
 [ext_resource type="PackedScene" uid="uid://b3w08m1pqwag7" path="res://objects/home.tscn" id="8_q7mfa"]
 [ext_resource type="ArrayOccluder3D" uid="uid://mkjgp8vvt5ob" path="res://scenes/main.occ" id="9_tpccx"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_fpmwk"]
-font = ExtResource("3_w27de")
-font_size = 36
-outline_size = 12
-outline_color = Color(0, 0, 0, 0.470588)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmp4n"]
+bg_color = Color(1, 1, 1, 0.333333)
+corner_radius_top_left = 1024
+corner_radius_bottom_right = 1024
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8lad"]
+bg_color = Color(0, 0.72549, 0.160784, 1)
+border_width_left = 35
+border_color = Color(0.8, 0.8, 0.8, 0.596078)
+corner_radius_top_left = 1024
+corner_radius_bottom_right = 1024
+shadow_color = Color(0, 0, 0, 0.243137)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb5yw"]
+bg_color = Color(1, 1, 1, 0.333333)
+corner_radius_top_right = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gevrr"]
+bg_color = Color(0, 0.647059, 0.909804, 1)
+border_width_left = 60
+border_color = Color(0.8, 0.8, 0.8, 0.596078)
+corner_radius_top_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.243137)
+shadow_size = 4
 
 [node name="Main" type="Node3D"]
 
@@ -43,16 +64,45 @@ grow_vertical = 2
 scale = Vector2(0.35, 0.35)
 pivot_offset = Vector2(64, 64)
 
-[node name="Health" type="Label" parent="HUD"]
-offset_left = 48.0
-offset_top = 627.0
-offset_right = 138.0
+[node name="health" type="ProgressBar" parent="HUD"]
+offset_left = 19.0
+offset_top = 682.0
+offset_right = 251.0
+offset_bottom = 699.0
+theme_override_styles/background = SubResource("StyleBoxFlat_pmp4n")
+theme_override_styles/fill = SubResource("StyleBoxFlat_a8lad")
+value = 100.0
+rounded = true
+show_percentage = false
+
+[node name="mana" type="ProgressBar" parent="HUD"]
+offset_left = 18.0
+offset_top = 655.0
+offset_right = 250.0
 offset_bottom = 672.0
-size_flags_horizontal = 0
-size_flags_vertical = 8
-text = "100%"
-label_settings = SubResource("LabelSettings_fpmwk")
-vertical_alignment = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_lb5yw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gevrr")
+value = 100.0
+rounded = true
+show_percentage = false
+
+[node name="Label" type="Label" parent="HUD"]
+offset_left = 32.0
+offset_top = 679.0
+offset_right = 72.0
+offset_bottom = 705.0
+theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
+theme_override_font_sizes/font_size = 15
+text = "HP"
+
+[node name="Label2" type="Label" parent="HUD"]
+offset_left = 30.0
+offset_top = 651.0
+offset_right = 76.0
+offset_bottom = 677.0
+theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
+theme_override_font_sizes/font_size = 15
+text = "MANA"
 
 [node name="Enemies" type="Node" parent="."]
 

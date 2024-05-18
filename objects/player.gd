@@ -21,6 +21,7 @@ var rotation_target: Vector3
 var input_mouse: Vector2
 
 var health: int = 100
+var mana: int = 100
 var is_healing: bool = false
 var heal_counter = 0
 var maxHealth: int = 100
@@ -204,6 +205,10 @@ func action_jump():
 
 # Shooting
 
+func use_mana(cost):
+	mana = max(0, mana - cost)
+	health_updated.emit(health, mana)
+
 func action_shoot():
 	
 	if Input.is_action_pressed("shoot"):
@@ -211,7 +216,9 @@ func action_shoot():
 		# 	return
 		# if current_ammo <= 0:
 		# 	return
-		if !blaster_cooldown.is_stopped(): return # Cooldown for shooting
+		if !blaster_cooldown.is_stopped() or (weapon.uses_mana and mana < weapon.mana_cost): return # Cooldown for shooting
+		if weapon.uses_mana:
+			use_mana(weapon.mana_cost)
 		
 		# current_ammo -= 1
 		Audio.play(weapon.sound_shoot)
@@ -247,6 +254,9 @@ func action_shoot():
 			
 			if collider.has_method("damage"):
 				collider.damage(weapon.damage)
+			
+				if !weapon.uses_mana:
+					use_mana(-weapon.mana_gain)
 			
 			# Creating an impact animation
 			
@@ -322,13 +332,16 @@ func change_weapon():
 func damage(amount):
 	
 	health -= amount
-	health_updated.emit(health) # Update health on HUD
+	health_updated.emit(health, mana) # Update health on HUD
 	
 	if health < 0:
 		get_tree().reload_current_scene() # Reset when out of health
 		
 func action_heal():
+	if mana==0 or health==maxHealth:
+		return
 	var heal_amount = 20 # Adjust the amount as needed
+	use_mana(mana/2)
 	health = min(health + heal_amount, maxHealth)
-	health_updated.emit(health)
+	health_updated.emit(health, mana)
 	Audio.play("sounds/heal.mp3")
