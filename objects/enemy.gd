@@ -19,9 +19,9 @@ var timer_moan
 var wander_timer = 0.0
 var wander_interval = 3.0
 var wander_direction = Vector3()
+var chasing_player = false
 
 # When ready, save the initial position
-
 func _ready():
 	target_position = position
 	audio_stream = $AudioStreamPlayer3D
@@ -37,7 +37,7 @@ func _process(delta):
 	target_position.y += (cos(time * 5) * 1) * delta # Sine movement (up and down)
 	time += delta
 
-	if distance_to_player <= 15.0:
+	if distance_to_player <= 15.0 or chasing_player:
 		# Look at player
 		self.look_at(player.position + Vector3(0, 0.5, 0), Vector3.UP, true)
 		
@@ -70,22 +70,21 @@ func _process(delta):
 # Take damage from player
 func damage(amount):
 	Audio.play("sounds/ghast/hurt.mp3")
-
 	health -= amount
 
 	if health <= 0 and !destroyed:
 		destroy()
+	
+	# Start chasing the player when damaged
+	chasing_player = true
 
 # Destroy the enemy when out of health
-
 func destroy():
 	Audio.play("sounds/ghast/dead.mp3")
-
 	destroyed = true
 	queue_free()
 
 # Shoot when timer hits 0
-
 func moan():
 	if rnd.randi_range(0, 1) == 0 and !audio_stream.playing:
 		audio_stream.pitch_scale = randf_range(0.8, 1.2)
@@ -94,29 +93,21 @@ func moan():
 		timer_moan.wait_time = randf_range(3, 10)
 
 func _on_timer_timeout():
-
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
-
 		if collider.has_method("damage"):
 			collider.damage(10)
 
 	# raycast.force_raycast_update()
-
 	# if raycast.is_colliding():
-	# 	var collider = raycast.get_collider()
-
-	# 	if collider.has_method("damage"): # Raycast collides with player
-	# 		# Play muzzle flash animation(s)
-
-	# 		muzzle_a.frame = 0
-	# 		muzzle_a.play("default")
-	# 		muzzle_a.rotation_degrees.z = randf_range( - 45, 45)
-
-	# 		muzzle_b.frame = 0
-	# 		muzzle_b.play("default")
-	# 		muzzle_b.rotation_degrees.z = randf_range( - 45, 45)
-
-	# 		Audio.play("sounds/enemy_attack.ogg")
-
-	# 		collider.damage(5) # Apply damage to player
+	#     var collider = raycast.get_collider()
+	#     if collider.has_method("damage"): # Raycast collides with player
+	#         # Play muzzle flash animation(s)
+	#         muzzle_a.frame = 0
+	#         muzzle_a.play("default")
+	#         muzzle_a.rotation_degrees.z = randf_range( - 45, 45)
+	#         muzzle_b.frame = 0
+	#         muzzle_b.play("default")
+	#         muzzle_b.rotation_degrees.z = randf_range( - 45, 45)
+	#         Audio.play("sounds/enemy_attack.ogg")
+	#         collider.damage(5) # Apply damage to player
