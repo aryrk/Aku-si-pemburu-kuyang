@@ -138,18 +138,18 @@ player = NodePath("../../Player")
 
 [node name="Level" type="Node" parent="."]
 
-[node name="Decoration" type="Node" parent="."]
-
-[node name="forest" parent="." instance=ExtResource("6_fjnt1")]
+[node name="forest" parent="Level" instance=ExtResource("6_fjnt1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.394228, 9.53674e-07, 13.4598)
 
-[node name="forest2" parent="." instance=ExtResource("6_fjnt1")]
+[node name="forest2" parent="Level" instance=ExtResource("6_fjnt1")]
 transform = Transform3D(-0.0132117, 0, -0.999913, 0, 1, 0, 0.999913, 0, -0.0132117, -105.219, -0.018, 15.351)
 
-[node name="kunt" parent="." instance=ExtResource("8_3odig")]
+[node name="Decoration" type="Node" parent="."]
+
+[node name="kunt" parent="Decoration" instance=ExtResource("8_3odig")]
 transform = Transform3D(1.64975, 0, 0, 0, 1.64975, 0, 0, 0, 1.64975, -67.6605, -3.0589, 54.8263)
 
-[node name="home" parent="." instance=ExtResource("8_q7mfa")]
+[node name="home" parent="Decoration" instance=ExtResource("8_q7mfa")]
 transform = Transform3D(0.275325, 0, 0, 0, 0.275325, 0, 0, 0, 0.275325, -67.4214, -3.20352, 50.8433)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
