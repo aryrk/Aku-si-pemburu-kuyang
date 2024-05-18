@@ -23,30 +23,32 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	material.emission_energy = emision_energy
-	action_shoot()
-	start_murotal(delta)
-	stop_emision()
+	action_shoot(delta)
+# 	start_murotal(delta)
+# 	stop_emision()
 
-func action_shoot():
-	if Input.is_action_pressed("shoot"):
-		emision_energy = 16
-		timer.start()
+# func action_shoot():
+# 	if Input.is_action_pressed("shoot"):
+# 		emision_energy = 16
+# 		timer.start()
 
-func stop_emision():
-	if timer.is_stopped():
-		emision_energy = 0
+# func stop_emision():
+# 	if timer.is_stopped():
+# 		emision_energy = 0
 
-func start_murotal(delta):
-	print(hold_duration)
-	# if action is hold down, start murotal
+func action_shoot(delta):
 	if Input.is_action_pressed("shoot"):
 		hold_duration += delta
+		emision_energy = 1
 			
 	if Input.is_action_just_released("shoot"):
 		hold_duration = 0
+		emision_energy = 0
 		audio_player.stream_paused = true
 
 	if hold_duration > 0.5:
+		if emision_energy < 16:
+			emision_energy+=0.3
 		audio_player.stream_paused = false
 		if not audio_player.playing:
 			audio_player.play()
