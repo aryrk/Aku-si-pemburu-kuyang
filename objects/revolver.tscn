@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3ae1m68e2m0t"]
+
+[ext_resource type="PackedScene" uid="uid://c72y6s4bu5tn" path="res://blend/revolver.blend" id="2_oqfa2"]
+
+[node name="revolver" type="Node3D"]
+
+[node name="revolver" parent="." instance=ExtResource("2_oqfa2")]
+transform = Transform3D(-1.70056e-08, 0, -0.389042, 0, 0.389042, 0, 0.389042, 0, -1.70056e-08, -0.00428253, -0.167955, 0.344051)

@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Weapon" load_steps=4 format=3 uid="uid://c56y8pqoyk15f"]
 
 [ext_resource type="Texture2D" uid="uid://2jld33y6h5pq" path="res://sprites/crosshair.png" id="1_2onsr"]
-[ext_resource type="PackedScene" uid="uid://b2p7bbkuxf7m" path="res://models/blaster.glb" id="1_x0glg"]
+[ext_resource type="PackedScene" uid="uid://b3ae1m68e2m0t" path="res://objects/revolver.tscn" id="2_8s42m"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="2_107w7"]
 
 [resource]
 script = ExtResource("2_107w7")
-model = ExtResource("1_x0glg")
+model = ExtResource("2_8s42m")
 position = Vector3(0, 0, 0)
 rotation = Vector3(0, 180, 0)
 muzzle_position = Vector3(0.1, -0.4, 1.5)
@@ -20,4 +20,4 @@ sound_shoot = "sounds/revolver.mp3"
 crosshair = ExtResource("1_2onsr")
 uses_mana = false
 mana_cost = 0
-mana_gain = 10
+mana_gain = 0
