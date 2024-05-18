@@ -15,6 +15,10 @@ var rnd = RandomNumberGenerator.new()
 var audio_stream
 var timer_moan
 
+var wander_timer = 0.0
+var wander_interval = 3.0
+var wander_direction = Vector3()
+
 # When ready, save the initial position
 
 func _ready():
@@ -24,25 +28,44 @@ func _ready():
 	timer_moan.wait_time = randf_range(3, 10)
 
 func _process(delta):
-	self.look_at(player.position + Vector3(0, 0.5, 0), Vector3.UP, true) # Look at player
-
-	# functions to make the movement more smooth
+	# Calculate the distance to the player
+	var distance_to_player = position.distance_to(player.position)
+	
+	# Functions to make the movement more smooth
 	target_position.x += (sin(time * 5) * 1) * delta # Cosine movement (left and right)
-
 	target_position.y += (cos(time * 5) * 1) * delta # Sine movement (up and down)
-
 	time += delta
 
+	if distance_to_player <= 15.0:
+		# Look at player
+		self.look_at(player.position + Vector3(0, 0.5, 0), Vector3.UP, true)
+		
+		# Calculate direction towards the player
+		var direction = (player.position - position).normalized()
+		
+		# Move towards the player
+		var move_speed = 2.0
+		target_position += direction * move_speed * delta
+	else:
+		# Wandering behavior
+		wander_timer -= delta
+		if wander_timer <= 0:
+			# Choose a new random direction to wander in
+			wander_direction = Vector3(rnd.randf_range(-1, 1), 0, rnd.randf_range(-1, 1)).normalized()
+			wander_timer = wander_interval
+			
+		# Move in the wandering direction
+		var wander_speed = 1.0 
+		target_position += wander_direction * wander_speed * delta
+		
+		# Rotate to face the wandering direction
+		if wander_direction.length() > 0:
+			self.look_at(position + wander_direction, Vector3.UP)
+
+	# Update the position of the enemy
 	position = target_position
-	# Calculate direction towards the player
-	var direction = (player.position - position).normalized()
-	
-	# Move towards the player
-	var move_speed = 2.0
-	target_position += direction * move_speed * delta
 
 # Take damage from player
-
 func damage(amount):
 	Audio.play("sounds/ghast/hurt.mp3")
 
