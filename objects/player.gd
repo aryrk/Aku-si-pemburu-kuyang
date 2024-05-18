@@ -35,10 +35,10 @@ var container_offset = Vector3(1.2, -1.1, -2.75)
 
 var tween: Tween
 
-var max_ammo: int = 10
-var current_ammo: int = max_ammo
-var reload_time: float = 0
-var is_reloading: bool = false
+# var max_ammo: int = 10
+# var current_ammo: int = max_ammo
+# var reload_time: float = 0
+# var is_reloading: bool = false
 
 signal health_updated
 
@@ -59,7 +59,7 @@ func _ready():
 	
 	weapon = weapons[weapon_index] # Weapon must never be nil
 	initiate_change_weapon(weapon_index)
-	current_ammo = max_ammo
+	# current_ammo = max_ammo
 
 	Audio.play("sounds/ambience.mp3")
 
@@ -139,8 +139,8 @@ func handle_controls(_delta):
 		input_mouse = Vector2.ZERO
 	
 	action_shoot()
-	if Input.is_action_just_pressed("reload"):
-		action_reload()
+	# if Input.is_action_just_pressed("reload"):
+	# 	action_reload()
 	# Movement
 	if Input.is_action_just_pressed("heal") and heal_counter < 3:
 		is_healing = true
@@ -207,13 +207,13 @@ func action_jump():
 func action_shoot():
 	
 	if Input.is_action_pressed("shoot"):
-		if is_reloading:
-			return
-		if current_ammo <= 0:
-			return
+		# if is_reloading:
+		# 	return
+		# if current_ammo <= 0:
+		# 	return
 		if !blaster_cooldown.is_stopped(): return # Cooldown for shooting
 		
-		current_ammo -= 1
+		# current_ammo -= 1
 		Audio.play(weapon.sound_shoot)
 		
 		container.position.z += 0.25 # Knockback of weapon visual
@@ -260,14 +260,14 @@ func action_shoot():
 			impact_instance.position = raycast.get_collision_point() + (raycast.get_collision_normal() / 10)
 			impact_instance.look_at(camera.global_transform.origin, Vector3.UP, true)
 
-func action_reload():
-	if is_reloading:
-		return # Prevent starting a reload if already reloading
-	is_reloading = true
-	Audio.play("sounds/recoil.mp3")
-	await get_tree().create_timer(reload_time).timeout
-	current_ammo = max_ammo # Reset ammo count
-	is_reloading = false # Finish reloading
+# func action_reload():
+# 	if is_reloading:
+# 		return # Prevent starting a reload if already reloading
+# 	is_reloading = true
+# 	Audio.play("sounds/recoil.mp3")
+# 	await get_tree().create_timer(reload_time).timeout
+# 	current_ammo = max_ammo # Reset ammo count
+# 	is_reloading = false # Finish reloading
 
 # Toggle between available weapons (listed in 'weapons')
 func action_weapon_toggle():
