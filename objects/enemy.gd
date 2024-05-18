@@ -21,7 +21,7 @@ func _ready():
 	target_position = position
 	audio_stream = $AudioStreamPlayer3D
 	timer_moan = $Timer_Moan
-	timer_moan.wait_time = randf_range(3,10)
+	timer_moan.wait_time = randf_range(3, 10)
 
 func _process(delta):
 	self.look_at(player.position + Vector3(0, 0.5, 0), Vector3.UP, true) # Look at player
@@ -38,7 +38,7 @@ func _process(delta):
 # Take damage from player
 
 func damage(amount):
-	Audio.play("sounds/roar.mp3")
+	Audio.play("sounds/ghast/hurt.mp3")
 
 	health -= amount
 
@@ -60,7 +60,7 @@ func moan():
 		audio_stream.pitch_scale = randf_range(0.8, 1.2)
 		audio_stream.stream = load("sounds/ghast/moan" + str(rnd.randi_range(1, 5)) + ".mp3")
 		audio_stream.play()
-		timer_moan.wait_time = randf_range(3,10)
+		timer_moan.wait_time = randf_range(3, 10)
 
 func _on_timer_timeout():
 

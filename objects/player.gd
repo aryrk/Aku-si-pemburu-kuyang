@@ -20,10 +20,10 @@ var rotation_target: Vector3
 
 var input_mouse: Vector2
 
-var health:int = 100
-var is_healing: bool = false 
+var health: int = 100
+var is_healing: bool = false
 var heal_counter = 0
-var maxHealth: int = 100  
+var maxHealth: int = 100
 var gravity := 0.0
 
 var previously_floored := false
@@ -33,13 +33,12 @@ var jump_double := true
 
 var container_offset = Vector3(1.2, -1.1, -2.75)
 
-var tween:Tween
+var tween: Tween
 
 var max_ammo: int = 10
 var current_ammo: int = max_ammo
 var reload_time: float = 0
 var is_reloading: bool = false
-
 
 signal health_updated
 
@@ -50,7 +49,7 @@ signal health_updated
 @onready var sound_footsteps = $SoundFootsteps
 @onready var blaster_cooldown = $Cooldown
 
-@export var crosshair:TextureRect
+@export var crosshair: TextureRect
 
 # Functions
 
@@ -63,7 +62,6 @@ func _ready():
 	current_ammo = max_ammo
 
 	Audio.play("sounds/ambience.mp3")
-
 
 func _physics_process(delta):
 	
@@ -86,7 +84,7 @@ func _physics_process(delta):
 	
 	# Rotation
 	
-	camera.rotation.z = lerp_angle(camera.rotation.z, -input_mouse.x * 25 * delta, delta * 5)	
+	camera.rotation.z = lerp_angle(camera.rotation.z, -input_mouse.x * 25 * delta, delta * 5)
 	
 	camera.rotation.x = lerp_angle(camera.rotation.x, rotation_target.x, delta * 25)
 	rotation.y = lerp_angle(rotation.y, rotation_target.y, delta * 25)
@@ -113,7 +111,7 @@ func _physics_process(delta):
 	
 	# Falling/respawning
 	
-	if position.y < -10:
+	if position.y < - 10:
 		get_tree().reload_current_scene()
 
 # Mouse movement
@@ -125,7 +123,6 @@ func _input(event):
 		
 		rotation_target.y -= event.relative.x / mouse_sensitivity
 		rotation_target.x -= event.relative.y / mouse_sensitivity
-
 
 func handle_controls(_delta):
 	
@@ -163,11 +160,10 @@ func handle_controls(_delta):
 	
 	var rotation_input := Input.get_vector("camera_right", "camera_left", "camera_down", "camera_up")
 	
-	rotation_target -= Vector3(-rotation_input.y, -rotation_input.x, 0).limit_length(1.0) * gamepad_sensitivity
-	rotation_target.x = clamp(rotation_target.x, deg_to_rad(-90), deg_to_rad(90))
+	rotation_target -= Vector3( - rotation_input.y, -rotation_input.x, 0).limit_length(1.0) * gamepad_sensitivity
+	rotation_target.x = clamp(rotation_target.x, deg_to_rad( - 90), deg_to_rad(90))
 	
 	# Shooting
-	
 	
 	# Jumping
 	
@@ -181,7 +177,7 @@ func handle_controls(_delta):
 			gravity = -jump_strength
 			jump_double = false
 			
-		if(jump_single): action_jump()
+		if (jump_single): action_jump()
 		
 	# Weapon switching
 	
@@ -212,14 +208,14 @@ func action_jump():
 func action_shoot():
 	
 	if Input.is_action_pressed("shoot"):
-		if is_reloading: 
+		if is_reloading:
 			return
 		if current_ammo <= 0:
 			return
 		if !blaster_cooldown.is_stopped(): return # Cooldown for shooting
 		
 		current_ammo -= 1
-		Audio.play("sounds/gs.mp3")
+		Audio.play(weapon.sound_shoot)
 		
 		container.position.z += 0.25 # Knockback of weapon visual
 		camera.rotation.x += 0.025 # Knockback of camera
@@ -229,7 +225,7 @@ func action_shoot():
 		
 		muzzle.play("default")
 		
-		muzzle.rotation_degrees.z = randf_range(-45, 45)
+		muzzle.rotation_degrees.z = randf_range( - 45, 45)
 		muzzle.scale = Vector3.ONE * randf_range(0.40, 0.75)
 		muzzle.position = container.position - weapon.muzzle_position
 		
@@ -239,8 +235,8 @@ func action_shoot():
 		
 		for n in weapon.shot_count:
 		
-			raycast.target_position.x = randf_range(-weapon.spread, weapon.spread)
-			raycast.target_position.y = randf_range(-weapon.spread, weapon.spread)
+			raycast.target_position.x = randf_range( - weapon.spread, weapon.spread)
+			raycast.target_position.y = randf_range( - weapon.spread, weapon.spread)
 			
 			raycast.force_raycast_update()
 			
@@ -255,7 +251,7 @@ func action_shoot():
 			
 			# Creating an impact animation
 			
-			var impact = preload("res://objects/impact.tscn")
+			var impact = preload ("res://objects/impact.tscn")
 			var impact_instance = impact.instantiate()
 			
 			impact_instance.play("shot")
@@ -263,18 +259,16 @@ func action_shoot():
 			get_tree().root.add_child(impact_instance)
 			
 			impact_instance.position = raycast.get_collision_point() + (raycast.get_collision_normal() / 10)
-			impact_instance.look_at(camera.global_transform.origin, Vector3.UP, true) 
-
+			impact_instance.look_at(camera.global_transform.origin, Vector3.UP, true)
 
 func action_reload():
-	if is_reloading: 
+	if is_reloading:
 		return # Prevent starting a reload if already reloading
 	is_reloading = true
 	Audio.play("sounds/recoil.mp3")
 	await get_tree().create_timer(reload_time).timeout
 	current_ammo = max_ammo # Reset ammo count
 	is_reloading = false # Finish reloading
-
 
 # Toggle between available weapons (listed in 'weapons')
 func action_weapon_toggle():
@@ -335,8 +329,7 @@ func damage(amount):
 		get_tree().reload_current_scene() # Reset when out of health
 		
 func action_heal():
-	var heal_amount = 20    # Adjust the amount as needed
+	var heal_amount = 20 # Adjust the amount as needed
 	health = min(health + heal_amount, maxHealth)
 	health_updated.emit(health)
 	Audio.play("sounds/heal.mp3")
-
