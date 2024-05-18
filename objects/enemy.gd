@@ -34,6 +34,12 @@ func _process(delta):
 	time += delta
 
 	position = target_position
+	# Calculate direction towards the player
+	var direction = (player.position - position).normalized()
+	
+	# Move towards the player
+	var move_speed = 2.0
+	target_position += direction * move_speed * delta
 
 # Take damage from player
 
