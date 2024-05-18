@@ -4,6 +4,7 @@ var material
 var emision_energy = 0
 var timer := Timer.new()
 var audio_player
+var hold_duration = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,7 +24,7 @@ func _ready():
 func _process(delta):
 	material.emission_energy = emision_energy
 	action_shoot()
-	start_murotal()
+	start_murotal(delta)
 	stop_emision()
 
 func action_shoot():
@@ -35,12 +36,17 @@ func stop_emision():
 	if timer.is_stopped():
 		emision_energy = 0
 
-func start_murotal():
+func start_murotal(delta):
+	print(hold_duration)
 	# if action is hold down, start murotal
 	if Input.is_action_pressed("shoot"):
+		hold_duration += delta
+			
+	if Input.is_action_just_released("shoot"):
+		hold_duration = 0
+		audio_player.stream_paused = true
+
+	if hold_duration > 0.5:
 		audio_player.stream_paused = false
 		if not audio_player.playing:
 			audio_player.play()
-			
-	if Input.is_action_just_released("shoot"):
-		audio_player.stream_paused = true
