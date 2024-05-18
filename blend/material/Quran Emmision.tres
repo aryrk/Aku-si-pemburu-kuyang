@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cwdgct8ettum6"]
+
+[ext_resource type="Texture2D" uid="uid://8nhd1vm52ifv" path="res://blend/textures/Al-baqarah.png" id="1_0vvrc"]
+[ext_resource type="Texture2D" uid="uid://csb5tbhb1nei1" path="res://blend/textures/Al-baqarah-emmision.png" id="2_qdn2w"]
+
+[resource]
+resource_name = "Material.001"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_0vvrc")
+roughness = 0.0
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("2_qdn2w")

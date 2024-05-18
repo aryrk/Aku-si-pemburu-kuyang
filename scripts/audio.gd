@@ -30,7 +30,6 @@ func play(sound_path):  # Path (or multiple, separated by commas)
 	queue.append("res://" + sounds[randi() % sounds.size()].strip_edges())
 
 
-
 func _process(_delta):
 	if not queue.is_empty() and not available.is_empty():
 		available[0].stream = load(queue.pop_front())

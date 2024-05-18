@@ -42,4 +42,9 @@ transform = Transform3D(0.305045, 0, 0, 0, 0.305045, 0, 0, 0, 0.305045, -0.00631
 volume_db = 1.0
 max_distance = 20.0
 
+[node name="Timer_Moan" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer_Moan" to="." method="moan"]

@@ -139,6 +139,7 @@ func handle_controls(_delta):
 		input_mouse = Vector2.ZERO
 	
 	action_shoot()
+
 	if Input.is_action_just_pressed("reload"):
 		action_reload()
 	
