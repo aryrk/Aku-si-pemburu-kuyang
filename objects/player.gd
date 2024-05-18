@@ -138,9 +138,8 @@ func handle_controls(_delta):
 		
 		input_mouse = Vector2.ZERO
 	
-	if Input.is_action_just_pressed("shoot"):
-		action_shoot()
-	elif Input.is_action_just_pressed("reload"):
+	action_shoot()
+	if Input.is_action_just_pressed("reload"):
 		action_reload()
 	# Movement
 	if Input.is_action_just_pressed("heal") and heal_counter < 3:
