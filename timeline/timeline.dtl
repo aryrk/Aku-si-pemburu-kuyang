@@ -1,0 +1,17 @@
+[music path="res://assets/sounds/ambience.mp3" fade="0.0" volume="0.0"]
+[background arg="res://timeline/charImages/pexels-rpnickson-2885320 (1).jpg" fade="0.0"]
+join rina (RK) 0
+rina (RK): Pa Ustadz! 
+join ustadz (UK) 4 [ z_index="14"]
+ustadz (UK): Ada Apa Rina? Kok lari lari gitu
+rina (RH): Di hutan sebelum gapura saya liat sesuatu pak! 
+ustadz (UC): Liat apa Rina? Kok kayak kaget banget gitu?
+rina (RF): Saya liat manusia tapi kepalanya aja, kebawahnya organ semua pak!
+ustadz (UK): Hah? Yang bener kalo ngobrol tuh bu!
+rina (RH): Beneran pak!
+ustadz (UK): Kuyang maksud kamu, Rin?
+rina (RF): Iya pak! Beneran!
+ustadz (UC): Kuyang udah lama gak keliatan Rin! Terakhir ada kuyang pas saya kecil.
+rina (RF): Bener lho pak! Coba Pak Ustadz cek sendiri di hutan sana!
+ustadz (UK): Yaudah saya cek dulu rin!
+rina (RH): Hati hati pak ustadz.

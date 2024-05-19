@@ -25,14 +25,21 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"rina": "res://timeline/charImages/rina.dch",
+"ustadz": "res://timeline/ustadz.dch"
+}
+directories/dtl_directory={
+"timeline": "res://timeline/timeline.dtl"
+}
+layout/style_list=["res://timeline/style.tres"]
+layout/default_style="res://timeline/style.tres"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=4
+window/size/mode=1
 window/size/resizable=false
 window/size/borderless=true
 window/stretch/mode="canvas_items"
