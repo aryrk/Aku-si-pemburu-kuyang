@@ -15,7 +15,7 @@ config/tags=PackedStringArray("starterkit")
 run/main_scene="res://scenes/mainMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/image="res://splash-screen-aksp.png"
+boot_splash/image="res://aksp-splash-screen.png"
 config/icon="res://icon.png"
 
 [autoload]

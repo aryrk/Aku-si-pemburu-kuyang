@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmkgrvsy52d4u"
-path="res://.godot/imported/splash-screen-aksp.png-1c6234399a06c047d86c478df00bcd85.ctex"
+uid="uid://cb43mgm726nf2"
+path="res://.godot/imported/aksp-splash-screen.png-4c849020ace6e8a7fa71f5987e52da96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://splash-screen-aksp.png"
-dest_files=["res://.godot/imported/splash-screen-aksp.png-1c6234399a06c047d86c478df00bcd85.ctex"]
+source_file="res://aksp-splash-screen.png"
+dest_files=["res://.godot/imported/aksp-splash-screen.png-4c849020ace6e8a7fa71f5987e52da96.ctex"]
 
 [params]
 
