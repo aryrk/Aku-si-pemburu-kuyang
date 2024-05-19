@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjgvo85fhvg0v"]
+[gd_scene load_steps=17 format=3 uid="uid://bjgvo85fhvg0v"]
 
 [ext_resource type="Script" path="res://scripts/scene/mainMenu.gd" id="1_845g1"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_nxj6y"]
@@ -17,6 +17,27 @@ auto_exposure_speed = 0.01
 dof_blur_far_enabled = true
 dof_blur_far_distance = 11.44
 dof_blur_amount = 0.06
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcyx7"]
+bg_color = Color(0.752941, 0, 0.203922, 0)
+corner_radius_top_left = 1005
+expand_margin_left = 65.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agdpr"]
+bg_color = Color(0.750013, 0, 0.22298, 1)
+corner_radius_top_left = 1024
+expand_margin_left = 65.0
+shadow_color = Color(0, 0, 0, 0.333333)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tsnr4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e25np"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2ulf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="mainMenu" type="Node3D"]
 script = ExtResource("1_845g1")
@@ -43,7 +64,98 @@ spot_angle = 44.22
 
 [node name="2D element" type="Node" parent="."]
 
-[node name="Label" type="Label" parent="2D element"]
+[node name="Splash Screen" type="Node2D" parent="2D element"]
+
+[node name="Info" type="Label" parent="2D element/Splash Screen"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1009.0
+offset_top = 674.0
+offset_right = 1259.0
+offset_bottom = 706.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.8, 0, 0.207843, 1)
+theme_override_fonts/font = ExtResource("3_ystml")
+text = "tekan tombol apapun untuk memulai"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Menu" type="Node2D" parent="2D element"]
+visible = false
+
+[node name="Story Mode" type="Button" parent="2D element/Menu"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 672.0
+offset_top = 364.0
+offset_right = 1395.0
+offset_bottom = 408.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_p07d6")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_lcyx7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_agdpr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_tsnr4")
+text = "Story Mode"
+alignment = 0
+
+[node name="Endless" type="Button" parent="2D element/Menu"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 688.0
+offset_top = 440.0
+offset_right = 1291.0
+offset_bottom = 484.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_p07d6")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_lcyx7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_agdpr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_e25np")
+text = "Endless
+"
+alignment = 0
+
+[node name="Quit" type="Button" parent="2D element/Menu"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1132.0
+offset_top = 653.0
+offset_right = 1517.0
+offset_bottom = 693.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_ystml")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_lcyx7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_agdpr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i2ulf")
+text = "Quit"
+alignment = 0
+
+[node name="Judul" type="Label" parent="2D element"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -60,25 +172,6 @@ text = "AKU SI PEMBURU KUYANG"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
-
-[node name="Label2" type="Label" parent="2D element"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -271.0
-offset_top = -46.0
-offset_right = -21.0
-offset_bottom = -14.0
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_vertical = 8
-theme_override_colors/font_color = Color(0.8, 0, 0.207843, 1)
-theme_override_fonts/font = ExtResource("3_ystml")
-text = "tekan tombol apapun untuk memulai"
-horizontal_alignment = 2
-vertical_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_5rvvp")
@@ -130,6 +223,126 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.90659, 5.0607, 1.28207)
 player = NodePath("../../Camera3D")
 following_player = false
 
+[node name="enemy-flying9" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.7202, 9.42067, 24.9079)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying10" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.6852, 5.19929, 39.1681)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying11" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.9741, 5.0607, 26.8013)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying12" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.827, 5.0607, 22.5805)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying13" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5812, 9.42067, 24.9079)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying14" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5462, 5.19929, 39.1681)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying15" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8351, 5.0607, 26.8013)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying16" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.688, 5.0607, 22.5805)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying17" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3095, 9.42067, 24.9079)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying18" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3445, 5.19929, 39.1681)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying19" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0556, 5.0607, 26.8013)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying20" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2027, 5.0607, 22.5805)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying21" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.4485, 9.42067, 24.9079)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying22" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.4835, 5.19929, 39.1681)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying23" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1946, 5.0607, 26.8013)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying24" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.3417, 5.0607, 22.5805)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying25" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7375, 0.320818, -23.927)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying26" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2975, -3.90056, -9.66674)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying27" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99139, -4.03915, -22.0336)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying28" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1557, -4.03915, -26.2544)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying29" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4015, 0.320818, -23.927)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying30" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4365, -3.90056, -9.66674)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying31" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1476, -4.03915, -22.0336)
+player = NodePath("../../Camera3D")
+following_player = false
+
+[node name="enemy-flying32" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2947, -4.03915, -26.2544)
+player = NodePath("../../Camera3D")
+following_player = false
+
 [node name="Decoration" type="Node" parent="."]
 
 [node name="home" parent="Decoration" instance=ExtResource("6_7funt")]
@@ -137,3 +350,6 @@ transform = Transform3D(0.14851, 0, -0.192997, 0, 0.243522, 0, 0.192997, 0, 0.14
 
 [node name="kunt" parent="Decoration" instance=ExtResource("9_sba2l")]
 transform = Transform3D(-0.799548, 0, 0.600602, 0, 1, 0, -0.600602, 0, -0.799548, 30.0716, 2.57897, 7.51016)
+
+[connection signal="pressed" from="2D element/Menu/Story Mode" to="." method="story_mode"]
+[connection signal="pressed" from="2D element/Menu/Quit" to="." method="quit_game"]
