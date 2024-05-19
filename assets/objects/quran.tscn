@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy8k681xvlepa"]
+
+[ext_resource type="Script" path="res://scripts/effects/quran.gd" id="1_r0si8"]
+[ext_resource type="PackedScene" uid="uid://gfsfev27c73j" path="res://assets/blend/weapons.blend" id="2_ppmxm"]
+
+[node name="quran" type="Node3D"]
+script = ExtResource("1_r0si8")
+
+[node name="weapons" parent="." instance=ExtResource("2_ppmxm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 8.04217e-08, 0.392112, -0.919917, 3.42796e-08, -0.919917, -0.392112, 2.56549, 0.441437, -0.312082)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
+pitch_scale = 0.9

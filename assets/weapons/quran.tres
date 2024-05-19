@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=4 format=3 uid="uid://cu2gtxlcmbb34"]
+
+[ext_resource type="Texture2D" uid="uid://ce3lgq7foiusl" path="res://assets/sprites/crosshair-repeater.png" id="1_wft8a"]
+[ext_resource type="PackedScene" uid="uid://cy8k681xvlepa" path="res://objects/quran.tscn" id="2_4bcsr"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="3_30abr"]
+
+[resource]
+script = ExtResource("3_30abr")
+model = ExtResource("2_4bcsr")
+position = Vector3(0, 0, 0)
+rotation = Vector3(0, 180, 0)
+muzzle_position = Vector3(0.1, -0.4, 1.5)
+cooldown = 1.0
+max_distance = 30
+damage = 100.0
+spread = 10.0
+shot_count = 50
+knockback = 0
+sound_shoot = "assets/sounds/metal-whoos.mp3"
+crosshair = ExtResource("1_wft8a")
+uses_mana = true
+mana_cost = 30
+mana_gain = 0
