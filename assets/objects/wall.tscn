@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://blmsq6ba8113a"]
+
+[ext_resource type="PackedScene" uid="uid://dd3f8b48cjwem" path="res://assets/blend/forest/treeWall.blend" id="1_a76fq"]
+
+[node name="wall" type="Node3D"]
+
+[node name="treeWall" parent="." instance=ExtResource("1_a76fq")]
+transform = Transform3D(5.56168, 0, 0, 0, 5.56168, 0, 0, 0, 5.56168, 0.205756, 0, 4.23703)
