@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var player: Node3D
+@export var following_player: bool = true
 
 @onready var raycast = $RayCast
 @onready var transform_point = $"."
@@ -35,7 +36,7 @@ func _process(delta):
 	target_position.y += (cos(time * 5) * 1) * delta # Sine movement (up and down)
 	time += delta
 
-	if distance_to_player <= 15.0 or chasing_player:
+	if (distance_to_player <= 15.0 or chasing_player) and following_player:
 		# Look at player
 		self.look_at(player.position + Vector3(0, 0.5, 0), Vector3.UP, true)
 		
