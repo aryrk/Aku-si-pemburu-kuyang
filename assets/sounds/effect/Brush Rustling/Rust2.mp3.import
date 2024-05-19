@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsbvimq72rctt"
+path="res://.godot/imported/Rust2.mp3-40d3dd5e5a6c3e3dca90740e85f9c1dc.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/effect/Brush Rustling/Rust2.mp3"
+dest_files=["res://.godot/imported/Rust2.mp3-40d3dd5e5a6c3e3dca90740e85f9c1dc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
