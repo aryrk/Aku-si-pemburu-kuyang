@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bjgvo85fhvg0v"]
+[gd_scene load_steps=20 format=3 uid="uid://bjgvo85fhvg0v"]
 
 [ext_resource type="Script" path="res://scripts/scene/mainMenu.gd" id="1_845g1"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_nxj6y"]
@@ -30,10 +30,19 @@ expand_margin_left = 65.0
 shadow_color = Color(0, 0, 0, 0.333333)
 shadow_size = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxe0w"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tsnr4"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rvfm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e25np"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pe5cr"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2ulf"]
@@ -106,6 +115,7 @@ theme_override_fonts/font = ExtResource("3_p07d6")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_lcyx7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_agdpr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dxe0w")
 theme_override_styles/focus = SubResource("StyleBoxFlat_tsnr4")
 text = "Story Mode"
 alignment = 0
@@ -128,6 +138,7 @@ theme_override_fonts/font = ExtResource("3_p07d6")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_lcyx7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_agdpr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1rvfm")
 theme_override_styles/focus = SubResource("StyleBoxFlat_e25np")
 text = "Endless
 "
@@ -151,6 +162,7 @@ theme_override_fonts/font = ExtResource("3_ystml")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_lcyx7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_agdpr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pe5cr")
 theme_override_styles/focus = SubResource("StyleBoxFlat_i2ulf")
 text = "Quit"
 alignment = 0
