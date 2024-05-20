@@ -210,6 +210,8 @@ func action_jump():
 
 func use_mana(cost):
 	mana = max(0, mana - cost)
+	if mana > 100:
+		mana = 100
 	health_updated.emit(health, mana)
 
 func action_shoot():
