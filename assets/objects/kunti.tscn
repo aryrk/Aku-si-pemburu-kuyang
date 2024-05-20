@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlauce5ctudt5"]
+[gd_scene load_steps=6 format=3 uid="uid://dlauce5ctudt5"]
 
 [ext_resource type="PackedScene" uid="uid://cumk37tnxcp0a" path="res://assets/blend/kunti.blend" id="1_a1s1f"]
+[ext_resource type="Script" path="res://scripts/object_scripts/kunti.gd" id="1_xvfuo"]
 [ext_resource type="AudioStream" uid="uid://du1p7q66sgnc3" path="res://assets/sounds/cry.mp3" id="2_8sxo4"]
+[ext_resource type="Texture2D" uid="uid://5bxebgesqrhy" path="res://assets/sprites/kuyang jumpscare.png" id="4_iw0s5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ut66l"]
 
 [node name="kunt" type="Node3D"]
+script = ExtResource("1_xvfuo")
 
 [node name="kunti" parent="." instance=ExtResource("1_a1s1f")]
 transform = Transform3D(0.318231, 0, 0, 0, 0.318231, 0, 0, 0, 0.318231, 0.35523, 1.19209e-07, -0.37453)
@@ -14,3 +19,20 @@ volume_db = 5.0
 max_db = 6.0
 autoplay = true
 max_distance = 500.0
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.17717, 0, 0, 0, 1.17717, 0, 0, 0, 1.17717, 0.394216, 0.274453, -0.0882216)
+shape = SubResource("BoxShape3D_ut66l")
+
+[node name="Jumpscare" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(644, 360)
+scale = Vector2(0.685, 0.685)
+texture = ExtResource("4_iw0s5")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="remove_jumpscare"]
