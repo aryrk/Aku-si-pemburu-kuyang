@@ -1,8 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3w08m1pqwag7"]
+[gd_scene load_steps=5 format=3 uid="uid://b3w08m1pqwag7"]
 
 [ext_resource type="PackedScene" uid="uid://c41cxgwcwyqml" path="res://assets/blend/home.blend" id="1_dsbti"]
+[ext_resource type="Script" path="res://scripts/object_scripts/home.gd" id="1_rugak"]
+[ext_resource type="AudioStream" uid="uid://bhux68442gitw" path="res://assets/sounds/whisper.mp3" id="3_w6wxb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dt7up"]
+size = Vector3(11.39, 10.665, 20.08)
 
 [node name="home" type="Node3D"]
+script = ExtResource("1_rugak")
 
 [node name="home" parent="." instance=ExtResource("1_dsbti")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.160349, 0, 1.90427)
+
+[node name="Area3D" type="Area3D" parent="home"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="home/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.43361, -0.842126)
+shape = SubResource("BoxShape3D_dt7up")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="home"]
+stream = ExtResource("3_w6wxb")
+
+[connection signal="body_entered" from="home/Area3D" to="." method="_on_area_3d_body_entered"]

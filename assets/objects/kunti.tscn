@@ -23,7 +23,7 @@ max_distance = 500.0
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1.17717, 0, 0, 0, 1.17717, 0, 0, 0, 1.17717, 0.394216, 0.274453, -0.0882216)
+transform = Transform3D(1.17717, 0, 0, 0, 1.17717, 0, 0, 0, 0.792226, 0.394216, 0.274453, -0.0338528)
 shape = SubResource("BoxShape3D_ut66l")
 
 [node name="Jumpscare" type="Sprite2D" parent="."]
