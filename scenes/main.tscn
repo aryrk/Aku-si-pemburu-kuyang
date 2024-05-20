@@ -1,8 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=19 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://assets/objects/player.tscn" id="2_elriq"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="3_s8mkj"]
+[ext_resource type="Texture2D" uid="uid://b7agokrdv1vma" path="res://assets/sprites/sapu.png" id="4_mbwt6"]
+[ext_resource type="Texture2D" uid="uid://c3043r43npmxj" path="res://assets/sprites/revolver.png" id="5_g3f3m"]
 [ext_resource type="PackedScene" uid="uid://bbj1htdp75rwe" path="res://assets/objects/forest.tscn" id="6_fjnt1"]
 [ext_resource type="PackedScene" uid="uid://dlauce5ctudt5" path="res://assets/objects/kunti.tscn" id="8_3odig"]
 [ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://assets/objects/enemy.tscn" id="8_7ty2f"]
@@ -38,6 +40,12 @@ corner_radius_top_right = 1024
 corner_radius_bottom_left = 1024
 shadow_color = Color(0, 0, 0, 0.243137)
 shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4dhy"]
+bg_color = Color(0.215686, 0.215686, 0.215686, 0.560784)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fql0j"]
+bg_color = Color(3.32102e-06, 0.581735, 0.0692278, 0.329412)
 
 [node name="Main" type="Node3D"]
 
@@ -115,6 +123,49 @@ color = Color(1, 0.188235, 0.196078, 0.270588)
 
 [node name="DamageTimer" type="Timer" parent="HUD"]
 wait_time = 0.3
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -107.0
+offset_right = -13.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_u4dhy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fql0j")
+max_value = 10.0
+value = 1.0
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/ProgressBar"]
+position = Vector2(36.9999, 34)
+scale = Vector2(0.085, 0.085)
+texture = ExtResource("4_mbwt6")
+
+[node name="ProgressBar2" type="ProgressBar" parent="HUD"]
+offset_left = 656.0
+offset_top = 613.0
+offset_right = 736.0
+offset_bottom = 684.0
+theme_override_styles/background = SubResource("StyleBoxFlat_u4dhy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fql0j")
+max_value = 10.0
+value = 1.0
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="HUD/ProgressBar2"]
+position = Vector2(51, 39)
+scale = Vector2(0.109167, 0.0989815)
+texture = ExtResource("5_g3f3m")
 
 [node name="Enemies" type="Node" parent="."]
 
