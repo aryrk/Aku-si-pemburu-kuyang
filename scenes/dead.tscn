@@ -1,0 +1,272 @@
+[gd_scene load_steps=20 format=3 uid="uid://divl3olv7mdq5"]
+
+[ext_resource type="Script" path="res://scripts/scene/deadMenu.gd" id="1_dhfpa"]
+[ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_if0yu"]
+[ext_resource type="PackedScene" uid="uid://bbj1htdp75rwe" path="res://assets/objects/forest.tscn" id="2_hiwlf"]
+[ext_resource type="PackedScene" uid="uid://bpwi6u40rkab4" path="res://assets/blend/dead human.blend" id="3_o3mk4"]
+[ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://assets/objects/enemy.tscn" id="4_x2xqb"]
+[ext_resource type="Script" path="res://scripts/animation/dead scene camera rig.gd" id="5_ak2eo"]
+[ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="6_1ay3x"]
+[ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://assets/fonts/lilita_one_regular.ttf" id="8_q7khf"]
+
+[sub_resource type="Animation" id="Animation_rrk0i"]
+resource_name = "camera"
+length = 50.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 35.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.97, 1.415, 1.995), Vector3(-4.095, 20.655, 1.995)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 35.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [75.0, 23.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 35.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.0472, -1.5708, 0), Vector3(-1.31598, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tyxgj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.97, 1.415, 1.995)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.0472, -1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gagj3"]
+_data = {
+"RESET": SubResource("Animation_tyxgj"),
+"camera": SubResource("Animation_rrk0i")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnqgp"]
+bg_color = Color(0.752941, 0, 0.203922, 0)
+corner_radius_top_left = 1005
+expand_margin_left = 65.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts2ch"]
+bg_color = Color(0.750013, 0, 0.22298, 1)
+corner_radius_top_left = 1024
+expand_margin_left = 65.0
+shadow_color = Color(0, 0, 0, 0.333333)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqcw0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_851k1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fbld"]
+bg_color = Color(0.752941, 0, 0.203922, 0)
+corner_radius_top_left = 1005
+expand_margin_left = 65.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vts6"]
+bg_color = Color(0.750013, 0, 0.22298, 1)
+corner_radius_top_left = 1024
+expand_margin_left = 65.0
+shadow_color = Color(0, 0, 0, 0.333333)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ge5jp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4ssk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Dead" type="Node3D"]
+script = ExtResource("1_dhfpa")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_if0yu")
+
+[node name="forest" parent="." instance=ExtResource("2_hiwlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0071, 2.98258, -29.6587)
+
+[node name="dead human" parent="." instance=ExtResource("3_o3mk4")]
+transform = Transform3D(-0.218808, 0, -1.63185, 0, 1.64645, 0, 1.63185, 0, -0.218808, 1.60454, 0.224732, 2.01068)
+
+[node name="Kuyang" type="Node" parent="."]
+
+[node name="enemy-flying" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("4_x2xqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.36107, 1.43963, 2.05206)
+player = NodePath("../../dead human")
+
+[node name="enemy-flying2" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("4_x2xqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8646, 1.43963, 2.05206)
+player = NodePath("../../dead human")
+
+[node name="enemy-flying3" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("4_x2xqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32747, 1.43963, -2.69248)
+player = NodePath("../../dead human")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.980894, -0.000305579, -0.194542, 0.194542, 0.00154075, 0.980893, -6.82805e-11, -0.999999, 0.00157076, 0.671163, 3.26521, 1.47885)
+light_color = Color(1, 0.790401, 0.810401, 1)
+light_energy = 3.101
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(0.980894, -0.000305579, -0.194542, 0.194542, 0.00154075, 0.980893, -6.82805e-11, -0.999999, 0.00157076, -7.32884, 20.2652, 1.47885)
+light_color = Color(1, 0.790401, 0.810401, 1)
+light_energy = 4.394
+spot_range = 21.884
+
+[node name="Cam Rig" type="Node3D" parent="."]
+script = ExtResource("5_ak2eo")
+
+[node name="Camera3D" type="Camera3D" parent="Cam Rig"]
+transform = Transform3D(-4.37114e-08, 0.866025, -0.5, 0, 0.5, 0.866025, 1, 3.78552e-08, -2.18557e-08, 0.97, 1.415, 1.995)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cam Rig"]
+root_node = NodePath("../Camera3D")
+libraries = {
+"": SubResource("AnimationLibrary_gagj3")
+}
+
+[node name="HUD" type="Node2D" parent="Cam Rig"]
+
+[node name="Label" type="Label" parent="Cam Rig/HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 387.0
+offset_top = 75.0
+offset_right = 883.0
+offset_bottom = 282.0
+grow_horizontal = 2
+rotation = -0.13439
+theme_override_colors/font_color = Color(0.802326, 0, 0.17397, 1)
+theme_override_fonts/font = ExtResource("6_1ay3x")
+theme_override_font_sizes/font_size = 120
+text = "mati gue"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Restart" type="Button" parent="Cam Rig/HUD"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 987.0
+offset_top = 312.0
+offset_right = 1710.0
+offset_bottom = 356.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("6_1ay3x")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_cnqgp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ts2ch")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gqcw0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_851k1")
+text = "Restart
+"
+alignment = 0
+
+[node name="Go to main menu" type="Button" parent="Cam Rig/HUD"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 987.0
+offset_top = 413.0
+offset_right = 1710.0
+offset_bottom = 457.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("6_1ay3x")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_cnqgp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ts2ch")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gqcw0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_851k1")
+text = "Main menu"
+alignment = 0
+
+[node name="Quit" type="Button" parent="Cam Rig/HUD"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1132.0
+offset_top = 653.0
+offset_right = 1517.0
+offset_bottom = 693.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("8_q7khf")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fbld")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6vts6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ge5jp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_p4ssk")
+text = "Quit"
+alignment = 0
+
+[connection signal="pressed" from="Cam Rig/HUD/Restart" to="." method="restart_game"]
+[connection signal="pressed" from="Cam Rig/HUD/Go to main menu" to="." method="main_menu"]

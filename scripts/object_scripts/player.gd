@@ -36,6 +36,9 @@ var container_offset = Vector3(1.2, -1.1, -2.75)
 
 var tween: Tween
 
+const DEAD_MENU = "res://scenes/dead.tscn"
+
+
 # var max_ammo: int = 10
 # var current_ammo: int = max_ammo
 # var reload_time: float = 0
@@ -335,7 +338,11 @@ func damage(amount):
 	health_updated.emit(health, mana) # Update health on HUD
 	
 	if health < 0:
-		get_tree().reload_current_scene() # Reset when out of health
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		mouse_captured = false
+		
+		input_mouse = Vector2.ZERO
+		get_tree().change_scene_to_file(DEAD_MENU)
 		
 func action_heal():
 	if mana == 0 or health == maxHealth:

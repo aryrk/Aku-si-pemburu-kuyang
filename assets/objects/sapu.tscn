@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7fk7aitfjr3v"]
 
-[ext_resource type="Script" path="res://scripts/effects/Sapu.gd" id="1_6kmjw"]
+[ext_resource type="Script" path="res://scripts/effects/Sapu.gd" id="1_beayr"]
 [ext_resource type="PackedScene" uid="uid://cqkwg0jjxo55c" path="res://assets/blend/sapu.blend" id="2_68ihv"]
 
 [node name="Sapu Lidi" type="Node3D"]
-script = ExtResource("1_6kmjw")
+script = ExtResource("1_beayr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -15.0
