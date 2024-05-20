@@ -270,3 +270,4 @@ alignment = 0
 
 [connection signal="pressed" from="Cam Rig/HUD/Restart" to="." method="restart_game"]
 [connection signal="pressed" from="Cam Rig/HUD/Go to main menu" to="." method="main_menu"]
+[connection signal="pressed" from="Cam Rig/HUD/Quit" to="." method="quit_game"]
