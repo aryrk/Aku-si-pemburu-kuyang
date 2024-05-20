@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://divl3olv7mdq5"]
+[gd_scene load_steps=23 format=3 uid="uid://divl3olv7mdq5"]
 
 [ext_resource type="Script" path="res://scripts/scene/deadMenu.gd" id="1_dhfpa"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_if0yu"]
@@ -8,6 +8,48 @@
 [ext_resource type="Script" path="res://scripts/animation/dead scene camera rig.gd" id="5_ak2eo"]
 [ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="6_1ay3x"]
 [ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://assets/fonts/lilita_one_regular.ttf" id="8_q7khf"]
+[ext_resource type="PackedScene" uid="uid://cqkwg0jjxo55c" path="res://assets/blend/sapu.blend" id="9_3nikd"]
+[ext_resource type="PackedScene" uid="uid://c72y6s4bu5tn" path="res://assets/blend/revolver.blend" id="10_pguur"]
+[ext_resource type="PackedScene" uid="uid://dpi6m1jchuj4p" path="res://assets/objects/torch.tscn" id="11_5fipp"]
+
+[sub_resource type="Animation" id="Animation_tyxgj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.97, 1.415, 1.995)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.0472, -1.5708, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_rrk0i"]
 resource_name = "camera"
@@ -47,45 +89,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-1.0472, -1.5708, 0), Vector3(-1.31598, -1.5708, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_tyxgj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.97, 1.415, 1.995)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:fov")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [75.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.0472, -1.5708, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gagj3"]
@@ -171,7 +174,7 @@ spot_range = 21.884
 script = ExtResource("5_ak2eo")
 
 [node name="Camera3D" type="Camera3D" parent="Cam Rig"]
-transform = Transform3D(-4.37114e-08, 0.866025, -0.5, 0, 0.5, 0.866025, 1, 3.78552e-08, -2.18557e-08, 0.97, 1.415, 1.995)
+transform = Transform3D(-3.61999e-06, 0.866026, -0.499998, 0, 0.499998, 0.866026, 1, 3.13501e-06, -1.80999e-06, 0.97, 1.415, 1.995)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cam Rig"]
 root_node = NodePath("../Camera3D")
@@ -267,6 +270,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ge5jp")
 theme_override_styles/focus = SubResource("StyleBoxFlat_p4ssk")
 text = "Quit"
 alignment = 0
+
+[node name="sapu" parent="." instance=ExtResource("9_3nikd")]
+transform = Transform3D(-0.042174, 1.29242, 0.823484, -1.53224, -0.0499996, 0, 0.0268574, -0.823046, 1.29311, 2.03377, 0.0363977, 0.512566)
+
+[node name="revolver" parent="." instance=ExtResource("10_pguur")]
+transform = Transform3D(-0.00320521, 0.098551, 0.0152142, 0.0173245, -0.0144403, 0.0971874, 0.098202, 0.0057641, -0.0166489, 1.91406, 0.0462483, 3.39743)
+
+[node name="torch" parent="." instance=ExtResource("11_5fipp")]
+transform = Transform3D(-0.211693, -0.0259003, -0.338401, 0.033525, 0.395287, -0.0512264, 0.337731, -0.0554729, -0.207028, 1.12053, -0.130307, 2.18326)
 
 [connection signal="pressed" from="Cam Rig/HUD/Restart" to="." method="restart_game"]
 [connection signal="pressed" from="Cam Rig/HUD/Go to main menu" to="." method="main_menu"]

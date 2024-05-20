@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpi6m1jchuj4p"]
+
+[ext_resource type="PackedScene" uid="uid://do76xyhwavh82" path="res://assets/blend/torch.blend" id="2_qigkm"]
+
+[node name="torch" type="Node3D"]
+
+[node name="torch" parent="." instance=ExtResource("2_qigkm")]
+transform = Transform3D(-0.0730911, 0, -0.608893, 0.153494, 0.593459, -0.0184253, 0.589229, -0.154595, -0.0707306, 2.10024, 0.33482, -0.153989)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="torch"]
+transform = Transform3D(0.00220483, -0.00375542, -0.999991, 0.235886, 0.971776, -0.00312936, 0.971778, -0.235877, 0.00302845, 0.893301, 0.00537336, 0.00493002)
+light_color = Color(0.807053, 0.602922, 0.216451, 1)
+light_energy = 7.949
+spot_range = 19.177
+spot_angle = 52.27
