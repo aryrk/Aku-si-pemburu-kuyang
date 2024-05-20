@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlauce5ctudt5"]
+[gd_scene load_steps=5 format=3 uid="uid://dlauce5ctudt5"]
 
 [ext_resource type="PackedScene" uid="uid://cumk37tnxcp0a" path="res://assets/blend/kunti.blend" id="1_a1s1f"]
 [ext_resource type="AudioStream" uid="uid://du1p7q66sgnc3" path="res://assets/sounds/cry.mp3" id="2_8sxo4"]
+[ext_resource type="Script" path="res://scripts/object_scripts/kunti.gd" id="2_44t10"]
+[ext_resource type="Texture2D" uid="uid://bdvsp82t1en0h" path="res://icon-aspk.png" id="4_6ayx8"]
 
 [node name="kunt" type="Node3D"]
+script = ExtResource("2_44t10")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 10)
 
 [node name="kunti" parent="." instance=ExtResource("1_a1s1f")]
 transform = Transform3D(0.318231, 0, 0, 0, 0.318231, 0, 0, 0, 0.318231, 0.35523, 1.19209e-07, -0.37453)
@@ -14,3 +20,18 @@ volume_db = 5.0
 max_db = 6.0
 autoplay = true
 max_distance = 500.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Jumpscare" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(641, 346)
+texture = ExtResource("4_6ayx8")
+
+[node name="JumspcareTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

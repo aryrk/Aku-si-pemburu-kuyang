@@ -106,6 +106,16 @@ theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
 theme_override_font_sizes/font_size = 15
 text = "MANA"
 
+[node name="RedTint" type="ColorRect" parent="HUD"]
+visible = false
+z_index = -1
+offset_right = 1279.0
+offset_bottom = 726.0
+color = Color(1, 0.188235, 0.196078, 0.270588)
+
+[node name="DamageTimer" type="Timer" parent="HUD"]
+wait_time = 0.3
+
 [node name="Enemies" type="Node" parent="."]
 
 [node name="enemy-flying" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
@@ -396,3 +406,4 @@ transform = Transform3D(28.3851, 0, 0, 0, 28.3851, 0, 0, 0, 28.3851, 276.116, -2
 transform = Transform3D(28.3851, 0, 0, 0, 28.3851, 0, 0, 0, 28.3851, -379.734, -2.791, -18.231)
 
 [connection signal="health_updated" from="Player" to="HUD" method="_on_health_updated"]
+[connection signal="timeout" from="HUD/DamageTimer" to="HUD" method="remove_red_tint"]
