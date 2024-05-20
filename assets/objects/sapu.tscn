@@ -1,7 +1,68 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7fk7aitfjr3v"]
+[gd_scene load_steps=6 format=3 uid="uid://c7fk7aitfjr3v"]
 
 [ext_resource type="Script" path="res://scripts/effects/Sapu.gd" id="1_beayr"]
 [ext_resource type="PackedScene" uid="uid://cqkwg0jjxo55c" path="res://assets/blend/sapu.blend" id="2_68ihv"]
+
+[sub_resource type="Animation" id="Animation_oldl7"]
+resource_name = "sapu"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sapu:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.281663, -0.0203467, -0.0730816), Vector3(1.09258, -0.020944, -0.0733038), Vector3(0.280998, -0.020944, -0.0733038)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sapu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.237864, 0, -0.170404)]
+}
+
+[sub_resource type="Animation" id="Animation_d4dpf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sapu:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.281663, -0.0203467, -0.0730816)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sapu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.237864, 0, -0.170404)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ujql"]
+_data = {
+"RESET": SubResource("Animation_d4dpf"),
+"sapu": SubResource("Animation_oldl7")
+}
 
 [node name="Sapu Lidi" type="Node3D"]
 script = ExtResource("1_beayr")
@@ -10,10 +71,15 @@ script = ExtResource("1_beayr")
 volume_db = -15.0
 pitch_scale = 0.9
 
-[node name="sapu" parent="." instance=ExtResource("2_68ihv")]
-transform = Transform3D(2.52965, 0.170822, -0.0495605, -0.177866, 2.42946, -0.704859, 0, 0.706599, 2.43546, 0.237864, 0, -0.170404)
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
+
+[node name="sapu" parent="." instance=ExtResource("2_68ihv")]
+transform = Transform3D(2.52965, 0.170821, -0.0495604, -0.177866, 2.42946, -0.704859, -9.44695e-09, 0.706599, 2.43546, 0.237864, 0, -0.170404)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1ujql")
+}
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
