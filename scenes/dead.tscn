@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://divl3olv7mdq5"]
+[gd_scene load_steps=24 format=3 uid="uid://divl3olv7mdq5"]
 
 [ext_resource type="Script" path="res://scripts/scene/deadMenu.gd" id="1_dhfpa"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_if0yu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://assets/objects/enemy.tscn" id="4_x2xqb"]
 [ext_resource type="Script" path="res://scripts/animation/dead scene camera rig.gd" id="5_ak2eo"]
 [ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="6_1ay3x"]
+[ext_resource type="ArrayOccluder3D" uid="uid://dx73nuapgnqbi" path="res://scenes/deadScene.occ" id="7_3ox78"]
 [ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://assets/fonts/lilita_one_regular.ttf" id="8_q7khf"]
 [ext_resource type="PackedScene" uid="uid://cqkwg0jjxo55c" path="res://assets/blend/sapu.blend" id="9_3nikd"]
 [ext_resource type="PackedScene" uid="uid://c72y6s4bu5tn" path="res://assets/blend/revolver.blend" id="10_pguur"]
@@ -64,7 +65,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 35.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.97, 1.415, 1.995), Vector3(-4.095, 20.655, 1.995)]
+"values": [Vector3(0.97, 1.415, 1.995), Vector3(-3.39, 20.655, 1.995)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -145,29 +146,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0071, 2.98258, -29.6587)
 [node name="dead human" parent="." instance=ExtResource("3_o3mk4")]
 transform = Transform3D(-0.218808, 0, -1.63185, 0, 1.64645, 0, 1.63185, 0, -0.218808, 1.60454, 0.224732, 2.01068)
 
-[node name="Kuyang" type="Node" parent="."]
+[node name="Light" type="Node3D" parent="."]
 
-[node name="enemy-flying" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("4_x2xqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.36107, 1.43963, 2.05206)
-player = NodePath("../../dead human")
-
-[node name="enemy-flying2" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("4_x2xqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8646, 1.43963, 2.05206)
-player = NodePath("../../dead human")
-
-[node name="enemy-flying3" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("4_x2xqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32747, 1.43963, -2.69248)
-player = NodePath("../../dead human")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
+[node name="SpotLight3D" type="SpotLight3D" parent="Light"]
 transform = Transform3D(0.980894, -0.000305579, -0.194542, 0.194542, 0.00154075, 0.980893, -6.82805e-11, -0.999999, 0.00157076, 0.671163, 3.26521, 1.47885)
 light_color = Color(1, 0.790401, 0.810401, 1)
 light_energy = 3.101
+shadow_enabled = true
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+[node name="SpotLight3D2" type="SpotLight3D" parent="Light"]
 transform = Transform3D(0.980894, -0.000305579, -0.194542, 0.194542, 0.00154075, 0.980893, -6.82805e-11, -0.999999, 0.00157076, -7.32884, 20.2652, 1.47885)
 light_color = Color(1, 0.790401, 0.810401, 1)
 light_energy = 4.394
+shadow_enabled = true
 spot_range = 21.884
 
 [node name="Cam Rig" type="Node3D" parent="."]
@@ -271,13 +262,32 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_p4ssk")
 text = "Quit"
 alignment = 0
 
-[node name="sapu" parent="." instance=ExtResource("9_3nikd")]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("7_3ox78")
+
+[node name="Kuyang" type="Node" parent="."]
+
+[node name="enemy-flying" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("4_x2xqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.36107, 1.43963, 2.05206)
+player = NodePath("../../dead human")
+
+[node name="enemy-flying2" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("4_x2xqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8646, 1.43963, 2.05206)
+player = NodePath("../../dead human")
+
+[node name="enemy-flying3" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("4_x2xqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32747, 1.43963, -2.69248)
+player = NodePath("../../dead human")
+
+[node name="Decoraion" type="Node3D" parent="."]
+
+[node name="sapu" parent="Decoraion" instance=ExtResource("9_3nikd")]
 transform = Transform3D(-0.042174, 1.29242, 0.823484, -1.53224, -0.0499996, 0, 0.0268574, -0.823046, 1.29311, 2.03377, 0.0363977, 0.512566)
 
-[node name="revolver" parent="." instance=ExtResource("10_pguur")]
+[node name="revolver" parent="Decoraion" instance=ExtResource("10_pguur")]
 transform = Transform3D(-0.00320521, 0.098551, 0.0152142, 0.0173245, -0.0144403, 0.0971874, 0.098202, 0.0057641, -0.0166489, 1.91406, 0.0462483, 3.39743)
 
-[node name="torch" parent="." instance=ExtResource("11_5fipp")]
+[node name="torch" parent="Decoraion" instance=ExtResource("11_5fipp")]
 transform = Transform3D(-0.211693, -0.0259003, -0.338401, 0.033525, 0.395287, -0.0512264, 0.337731, -0.0554729, -0.207028, 1.12053, -0.130307, 2.18326)
 
 [connection signal="pressed" from="Cam Rig/HUD/Restart" to="." method="restart_game"]
