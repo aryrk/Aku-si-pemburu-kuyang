@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/object_scripts/player.gd" id="1_druum"]
 [ext_resource type="Resource" uid="uid://c56y8pqoyk15f" path="res://assets/weapons/blaster.tres" id="2_f77es"]
-[ext_resource type="Resource" uid="uid://cu2gtxlcmbb34" path="res://assets/weapons/quran.tres" id="3_ohe5u"]
+[ext_resource type="Resource" uid="uid://cu2gtxlcmbb34" path="res://assets/weapons/sapu.tres" id="3_ohe5u"]
 [ext_resource type="SpriteFrames" uid="uid://dbv3sy5qjatnl" path="res://assets/sprites/burst_animation.tres" id="4_eyl5h"]
 [ext_resource type="Texture2D" uid="uid://8ggihh27mlrr" path="res://assets/sprites/blob_shadow.png" id="5_17vvb"]
 [ext_resource type="AudioStream" uid="uid://cydjn1ct3hps2" path="res://assets/sounds/walking.ogg" id="6_er85k"]

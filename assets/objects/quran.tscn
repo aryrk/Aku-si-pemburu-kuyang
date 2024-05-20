@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cy8k681xvlepa"]
 
-[ext_resource type="Script" path="res://scripts/effects/quran.gd" id="1_r0si8"]
+[ext_resource type="Script" path="res://scripts/effects/Sapu.gd" id="1_r0si8"]
 [ext_resource type="PackedScene" uid="uid://gfsfev27c73j" path="res://assets/blend/weapons.blend" id="2_ppmxm"]
 
 [node name="quran" type="Node3D"]

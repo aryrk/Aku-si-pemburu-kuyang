@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cou80y5f6oh3m"]
+
+[ext_resource type="PackedScene" uid="uid://cqkwg0jjxo55c" path="res://assets/blend/sapu.blend" id="1_iasb2"]
+[ext_resource type="Material" uid="uid://br0sxuannrrgi" path="res://assets/blend/material/Sapu Emmision.tres" id="2_16tnf"]
+
+[node name="sapu" instance=ExtResource("1_iasb2")]
+
+[node name="Cylinder_075" parent="." index="0"]
+material_override = ExtResource("2_16tnf")

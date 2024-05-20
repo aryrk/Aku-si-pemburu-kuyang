@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://br0sxuannrrgi"]
+
+[ext_resource type="Texture2D" uid="uid://dcm04evrp3spd" path="res://assets/blend/textures/emision.png" id="1_8opgd"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+roughness = 0.5
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("1_8opgd")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7fk7aitfjr3v"]
+
+[ext_resource type="Script" path="res://scripts/effects/Sapu.gd" id="1_6kmjw"]
+[ext_resource type="PackedScene" uid="uid://cqkwg0jjxo55c" path="res://assets/blend/sapu.blend" id="2_68ihv"]
+
+[node name="Sapu Lidi" type="Node3D"]
+script = ExtResource("1_6kmjw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
+pitch_scale = 0.9
+
+[node name="sapu" parent="." instance=ExtResource("2_68ihv")]
+transform = Transform3D(2.52965, 0.170822, -0.0495605, -0.177866, 2.42946, -0.704859, 0, 0.706599, 2.43546, 0.237864, 0, -0.170404)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
