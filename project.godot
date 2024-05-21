@@ -21,8 +21,8 @@ config/icon="res://icon-aspk.png"
 [autoload]
 
 Audio="*res://scripts/audio.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 SceneSwitcher="*res://scripts/scene_switcher.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
