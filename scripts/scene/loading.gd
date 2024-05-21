@@ -28,7 +28,7 @@ func _process(delta):
 func _on_timer_timeout():
 	if progres.value < 100:
 		progres.value+=1
-		timer.wait_time=randf_range(0.02,0.1)
+		timer.wait_time=randf_range(0.02,0.05)
 		timer.start()
 	else:
 		get_tree().change_scene_to_file(next_scene)
