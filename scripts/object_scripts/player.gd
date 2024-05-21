@@ -65,8 +65,6 @@ func _ready():
 	initiate_change_weapon(weapon_index)
 	# current_ammo = max_ammo
 
-	Audio.play("assets/sounds/ambience.mp3")
-
 func _physics_process(delta):
 	
 	# Handle functions

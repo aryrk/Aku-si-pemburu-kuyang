@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl2ed4gkybggf"]
+[gd_scene load_steps=11 format=3 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" path="res://scripts/object_scripts/player.gd" id="1_druum"]
 [ext_resource type="Resource" uid="uid://c56y8pqoyk15f" path="res://assets/weapons/blaster.tres" id="2_f77es"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cydjn1ct3hps2" path="res://assets/sounds/walking.ogg" id="6_er85k"]
 [ext_resource type="Script" path="res://scripts/effects/Top_AmbienceSoundEffect.gd" id="7_4ik00"]
 [ext_resource type="Script" path="res://scripts/effects/Bottom_AmbienceSoundEffect.gd" id="7_ho0q8"]
+[ext_resource type="AudioStream" uid="uid://dwufnmaeqohsl" path="res://assets/sounds/ambience.mp3" id="9_5xeak"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
 radius = 0.3
@@ -102,6 +103,11 @@ script = ExtResource("7_4ik00")
 [node name="SoundTimer" type="Timer" parent="TopSpeaker"]
 wait_time = 45.0
 autostart = true
+
+[node name="Ambience Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_5xeak")
+volume_db = 3.0
+autoplay = true
 
 [connection signal="timeout" from="BackSpeaker/SoundTimer" to="BackSpeaker" method="_on_sound_timer_timeout"]
 [connection signal="timeout" from="TopSpeaker/SoundTimer" to="TopSpeaker" method="_on_sound_timer_timeout"]

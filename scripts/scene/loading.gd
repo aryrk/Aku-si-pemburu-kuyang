@@ -6,6 +6,8 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Audio.stop_all_sounds()
+	Audio.play("assets/sounds/dramatic drum.mp3")
 	var random_num = randi_range(1,3)
 	
 	match random_num:

@@ -14,7 +14,7 @@ func _process(delta):
 func _on_sound_timer_timeout():
 	if is_playing():
 		return
-	var audio_stream: AudioStream = load("assets/sounds/effect/Owl/owl" + str(randi_range(1, 3)) + ".mp3")
+	var audio_stream: AudioStream = load("assets/sounds/effect/Owl/owl" + str(randi_range(1, 2)) + ".mp3")
 	set_stream(audio_stream)
 	play()
 	randomize_player_timeout()
