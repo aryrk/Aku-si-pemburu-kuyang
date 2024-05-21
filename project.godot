@@ -22,6 +22,7 @@ config/icon="res://icon-aspk.png"
 
 Audio="*res://scripts/audio.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+SceneSwitcher="*res://scripts/scene_switcher.gd"
 
 [dialogic]
 
@@ -39,9 +40,6 @@ layout/default_style="res://timeline/style.tres"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=3
-window/size/resizable=false
-window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

@@ -1,6 +1,4 @@
 extends Node3D
-const MAIN = "res://scenes/mainMenu.tscn"
-const GAME = "res://scenes/main.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,8 +10,8 @@ func _process(delta):
 	pass
 
 func restart_game():
-	get_tree().change_scene_to_file(GAME)
+	SceneSwitcher.change_scene("res://scenes/loading.tscn",{"next_scene":"res://scenes/main.tscn"})
 func main_menu():
-	get_tree().change_scene_to_file(MAIN)
+	get_tree().change_scene_to_file("res://scenes/mainMenu.tscn")
 func quit_game():
 	get_tree().quit()

@@ -1,0 +1,346 @@
+[gd_scene load_steps=13 format=3 uid="uid://c5rp8gb1h4yvk"]
+
+[ext_resource type="PackedScene" uid="uid://c7fk7aitfjr3v" path="res://assets/objects/sapu.tscn" id="1_2rqm0"]
+[ext_resource type="Script" path="res://scripts/scene/loading.gd" id="1_xqqm6"]
+[ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="2_36n2q"]
+[ext_resource type="PackedScene" uid="uid://b3ae1m68e2m0t" path="res://assets/objects/revolver.tscn" id="3_1lfwk"]
+[ext_resource type="PackedScene" uid="uid://44hbug2elpac" path="res://assets/blend/kuyang.blend" id="3_hk10l"]
+
+[sub_resource type="Environment" id="Environment_8840h"]
+background_mode = 1
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_intensity = 8.0
+glow_bloom = 1.0
+glow_hdr_threshold = 2.31
+glow_hdr_scale = 2.72
+glow_hdr_luminance_cap = 49.73
+glow_map_strength = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.0923971, 0.0923971, 0.0923971, 1)
+
+[sub_resource type="Animation" id="Animation_8tpys"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.74846e-07, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.293326, 0, 0.130078)]
+}
+
+[sub_resource type="Animation" id="Animation_ssgpt"]
+resource_name = "rotation"
+length = 50.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 50),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.74846e-07, 0), Vector3(0, 6.28319, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 31.1, 50),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.513, 0, 0.13), Vector3(-0.243, 0, 0.13), Vector3(-0.753, 0, 0.13)]
+}
+
+[sub_resource type="Animation" id="Animation_13qer"]
+resource_name = "gun_animation"
+length = 50.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-2, 50),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 6.28319, 0), Vector3(0, 0.951204, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v7ug2"]
+resource_name = "kuyang"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tsufk"]
+_data = {
+"RESET": SubResource("Animation_8tpys"),
+"gun_animation": SubResource("Animation_13qer"),
+"kuyang": SubResource("Animation_v7ug2"),
+"rotation": SubResource("Animation_ssgpt")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fehne"]
+bg_color = Color(0.579295, 0.0962616, 0.109244, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Loading" type="Node3D"]
+script = ExtResource("1_xqqm6")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8840h")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0919882, 0.99576, 0, -0.99576, -0.0919882, 0, 5.84084, 0)
+light_energy = 0.0
+shadow_enabled = true
+spot_range = 36.229
+spot_angle = 29.57
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(0.63781, 0, -0.770194, 0, 1, 0, 0.770194, 0, 0.63781, -0.753, 0.724952, 0.13)
+shadow_enabled = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.65718)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.345, 0.82, 2.34)
+
+[node name="Sapu Lidi" type="Node3D" parent="."]
+visible = false
+
+[node name="Sapu Lidi" parent="Sapu Lidi" instance=ExtResource("1_2rqm0")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -0.293326, 0, 0.130078)
+script = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sapu Lidi"]
+root_node = NodePath("../Sapu Lidi")
+libraries = {
+"": SubResource("AnimationLibrary_tsufk")
+}
+autoplay = "rotation"
+
+[node name="HUD" type="Node2D" parent="Sapu Lidi"]
+visible = false
+
+[node name="Heading" type="Label" parent="Sapu Lidi/HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 380.0
+offset_top = 78.0
+offset_right = 1279.0
+offset_bottom = 251.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0, 0.196078, 1)
+theme_override_fonts/font = ExtResource("2_36n2q")
+theme_override_font_sizes/font_size = 100
+text = "SAPU LIDI"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="SubHeading" type="Label" parent="Sapu Lidi/HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 383.0
+offset_top = 258.0
+offset_right = 1280.0
+offset_bottom = 372.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_36n2q")
+theme_override_font_sizes/font_size = 60
+text = "Senjata paling mematikan"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Sapu Lidi/HUD"]
+offset_left = 506.0
+offset_top = 436.0
+offset_right = 1163.0
+offset_bottom = 621.0
+text = "Sapu lidi adalah alat pembersih halaman, pekarangan, atau jalan raya, sapu lidi banyak di gunakan oleh perumahan, perkantoran atau petugas kebersihan, yang terbuat dari lidi pelepah pohon, lidi yang digunakan bisa berasal dari pelapah kelapa atau aren. Sapu lidi merupakan peralatan rumah tangga khas Indonesia."
+scroll_active = false
+
+[node name="Kuyang" type="Node3D" parent="."]
+visible = false
+
+[node name="kuyang" parent="Kuyang" instance=ExtResource("3_hk10l")]
+transform = Transform3D(0.305845, 0, -5.34758e-08, 0, 0.305845, 0, 5.34758e-08, 0, 0.305845, -0.293326, 0, 0.130078)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Kuyang"]
+root_node = NodePath("../kuyang")
+libraries = {
+"": SubResource("AnimationLibrary_tsufk")
+}
+autoplay = "gun_animation"
+
+[node name="HUD" type="Node2D" parent="Kuyang"]
+visible = false
+
+[node name="Heading" type="Label" parent="Kuyang/HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 380.0
+offset_top = 78.0
+offset_right = 1279.0
+offset_bottom = 251.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0, 0.196078, 1)
+theme_override_fonts/font = ExtResource("2_36n2q")
+theme_override_font_sizes/font_size = 100
+text = "KUYANG"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="SubHeading" type="Label" parent="Kuyang/HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 383.0
+offset_top = 258.0
+offset_right = 1280.0
+offset_bottom = 372.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_36n2q")
+theme_override_font_sizes/font_size = 60
+text = "legenda pulau kalimantan"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Kuyang/HUD"]
+offset_left = 506.0
+offset_top = 436.0
+offset_right = 1163.0
+offset_bottom = 621.0
+text = "Kuyang, Krasue, atau Palasik adalah cerita rakyat, makhluk ini dikenal masyarakat di Kalimantan. Kuyang diceritakan sebagai manusia (wanita) yang menuntut ajaran ilmu hitam untuk mencapai kehidupan abadi.
+
+Penampakan kuyang cukup kontroversial, namun masyarakat Kalimantan masih mempercayai adanya kuyang"
+scroll_active = false
+
+[node name="Pistol" type="Node3D" parent="."]
+visible = false
+
+[node name="revolver" parent="Pistol" instance=ExtResource("3_1lfwk")]
+transform = Transform3D(0.836536, 0, -1.46265e-07, 0, 0.836536, 0, 1.46265e-07, 0, 0.836536, -0.293326, 0, 0.130078)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pistol"]
+root_node = NodePath("../revolver")
+libraries = {
+"": SubResource("AnimationLibrary_tsufk")
+}
+autoplay = "gun_animation"
+
+[node name="HUD" type="Node2D" parent="Pistol"]
+visible = false
+
+[node name="Heading" type="Label" parent="Pistol/HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 380.0
+offset_top = 78.0
+offset_right = 1279.0
+offset_bottom = 251.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0, 0.196078, 1)
+theme_override_fonts/font = ExtResource("2_36n2q")
+theme_override_font_sizes/font_size = 100
+text = "SENAPAN KISAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="SubHeading" type="Label" parent="Pistol/HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 383.0
+offset_top = 258.0
+offset_right = 1280.0
+offset_bottom = 372.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_36n2q")
+theme_override_font_sizes/font_size = 60
+text = "Efektif untuk jarak jauh"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Pistol/HUD"]
+offset_left = 506.0
+offset_top = 436.0
+offset_right = 1163.0
+offset_bottom = 621.0
+text = "sejenis senjata api di mana peluru dimasukkan ke tabung berputar. Cara pengisian senapan kisar dibagi menjadi 2 menurut rancangan dan bentuk revolver. Yang pertama adalah pengisian satu per satu seperti senapan kisar jenis lama seperti Colt's, dan yang kedua adalah langsung, ketika silinder pengangkut peluru keluar."
+scroll_active = false
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -45.0
+offset_right = -16.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_fehne")
+
+[node name="Judul" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1413.0
+offset_top = 127.0
+offset_right = -610.0
+offset_bottom = 270.0
+grow_horizontal = 0
+rotation = -0.0820305
+theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
+theme_override_fonts/font = ExtResource("2_36n2q")
+theme_override_font_sizes/font_size = 40
+text = "AKU SI PEMBURU KUYANG"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
