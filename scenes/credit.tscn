@@ -1,8 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://vg2h1our3f6m"]
+[gd_scene load_steps=13 format=3 uid="uid://vg2h1our3f6m"]
 
+[ext_resource type="Script" path="res://scripts/scene/credit.gd" id="1_5p6rm"]
 [ext_resource type="Environment" uid="uid://cdlvrv0x313vt" path="res://scenes/day-environment.tres" id="1_ue568"]
 [ext_resource type="PackedScene" uid="uid://bbj1htdp75rwe" path="res://assets/objects/forest.tscn" id="2_j7sqd"]
-[ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://assets/fonts/lilita_one_regular.ttf" id="3_koevr"]
 [ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="4_mjb26"]
 [ext_resource type="AudioStream" uid="uid://b35syx4sag0jn" path="res://assets/sounds/Gravity Falls Soundtrack - Gideon Rises - End Credits.mp3" id="5_cchen"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ckabc7b53uhf3" path="res://scenes/mainMenu.occ" id="6_e46wu"]
@@ -20,10 +20,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(4.3182, 4.35689, 8.51731, 8.64111),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(4.21985, 4.25854, 8.51731, 8.64111, 14.9168, 15.1463, 19.1787, 19.4738),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(21.099, 5.332, 26.206), Vector3(38.201, -2.19, -42.338), Vector3(38.201, -2.19, -42.338), Vector3(35.981, 1.135, -30.518)]
+"values": [Vector3(21.099, 5.332, 26.206), Vector3(38.201, -2.19, -42.338), Vector3(38.201, -2.19, -42.338), Vector3(35.981, 1.135, -30.518), Vector3(35.981, 1.135, -30.518), Vector3(32.275, 4.815, 19.33), Vector3(32.275, 4.815, 19.33), Vector3(23.51, 1.015, 21.09)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -32,22 +32,22 @@ tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 4.3182, 4.35689, 8.51731, 8.64111, 14.9202),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 4.21985, 4.25854, 8.51731, 8.64111, 14.6907, 14.9168, 15.0807, 19.1132, 19.4738),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.0977385, 0, 0), Vector3(0.0977385, 0, 0), Vector3(0.350811, 2.80125, 0), Vector3(0.350811, 2.80125, 0), Vector3(-0.216421, 1.25664, 0), Vector3(-0.216421, 1.15192, 0)]
+"values": [Vector3(0.0977385, 0, 0), Vector3(0.0977385, 0, 0), Vector3(0.350811, 2.80125, 0), Vector3(0.350811, 2.80125, 0), Vector3(-0.216421, 1.25664, 0), Vector3(-0.216421, 1.15192, 0), Vector3(-0.216421, 1.15192, 0), Vector3(0.185005, 0.410152, 0), Vector3(0.185005, 0.410152, 0), Vector3(0.656244, 0.855211, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../ColorRect:color")
+tracks/2/path = NodePath("../2D element/ColorRect:color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3.69455, 4.1101, 4.53101, 4.90241, 8.00108, 8.41663, 8.83754, 9.20894, 14.884, 15.2995, 15.7205, 16.0919),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3.5962, 4.01175, 4.43266, 4.80405, 8.00108, 8.41663, 8.83754, 9.20894, 14.3595, 14.775, 15.1959, 15.5673, 18.6947, 19.1102, 19.5311, 19.9025, 26.0853, 26.1402),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -60,6 +60,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../2D element/TextEdit:scroll_vertical")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 30.1942),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 92.0]
 }
 
 [sub_resource type="Animation" id="Animation_j6cm6"]
@@ -91,7 +103,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../ColorRect:color")
+tracks/2/path = NodePath("../2D element/ColorRect:color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -112,6 +124,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../2D element/TextEdit:scroll_vertical")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tp5fa"]
 _data = {
@@ -119,37 +143,8 @@ _data = {
 "camera": SubResource("Animation_dfbal")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptd6h"]
-bg_color = Color(0.752941, 0, 0.203922, 0)
-corner_radius_top_left = 1005
-expand_margin_left = 65.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqt62"]
-bg_color = Color(0.750013, 0, 0.22298, 1)
-corner_radius_top_left = 1024
-expand_margin_left = 65.0
-shadow_color = Color(0, 0, 0, 0.333333)
-shadow_size = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oqjr"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jaay"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6tten"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwe7u"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7t5eo"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owo3s"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
 [node name="Credit" type="Node3D"]
+script = ExtResource("1_5p6rm")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_ue568")
@@ -184,156 +179,14 @@ autoplay = "camera"
 
 [node name="2D element" type="Node" parent="."]
 
-[node name="Splash Screen" type="Node2D" parent="2D element"]
-
-[node name="Info" type="Label" parent="2D element/Splash Screen"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1009.0
-offset_top = 674.0
-offset_right = 1259.0
-offset_bottom = 706.0
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_vertical = 8
-theme_override_colors/font_color = Color(0.8, 0, 0.207843, 1)
-theme_override_fonts/font = ExtResource("3_koevr")
-text = "tekan tombol apapun untuk memulai"
-horizontal_alignment = 2
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Menu" type="Node2D" parent="2D element"]
-visible = false
-
-[node name="Story Mode" type="Button" parent="2D element/Menu"]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 594.0
-offset_top = 329.0
-offset_right = 1317.0
-offset_bottom = 373.0
-grow_horizontal = 0
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("4_mjb26")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_ptd6h")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qqt62")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3oqjr")
-theme_override_styles/focus = SubResource("StyleBoxFlat_5jaay")
-text = "Story Mode"
-alignment = 0
-
-[node name="Endless" type="Button" parent="2D element/Menu"]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 610.0
-offset_top = 405.0
-offset_right = 1291.0
-offset_bottom = 449.0
-grow_horizontal = 0
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("4_mjb26")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_ptd6h")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qqt62")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_6tten")
-theme_override_styles/focus = SubResource("StyleBoxFlat_jwe7u")
-text = "Endless
-"
-alignment = 0
-
-[node name="EXTRAS" type="Button" parent="2D element/Menu"]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 610.0
-offset_top = 478.0
-offset_right = 1292.0
-offset_bottom = 522.0
-grow_horizontal = 0
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("4_mjb26")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_ptd6h")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qqt62")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_6tten")
-theme_override_styles/focus = SubResource("StyleBoxFlat_jwe7u")
-text = "Extras
-"
-alignment = 0
-
-[node name="Credit" type="Button" parent="2D element/Menu"]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 610.0
-offset_top = 546.0
-offset_right = 1294.0
-offset_bottom = 590.0
-grow_horizontal = 0
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("4_mjb26")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_ptd6h")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qqt62")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_6tten")
-theme_override_styles/focus = SubResource("StyleBoxFlat_jwe7u")
-text = "Credit"
-alignment = 0
-
-[node name="Quit" type="Button" parent="2D element/Menu"]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 1132.0
-offset_top = 653.0
-offset_right = 1517.0
-offset_bottom = 693.0
-grow_horizontal = 0
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("4_mjb26")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_ptd6h")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qqt62")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7t5eo")
-theme_override_styles/focus = SubResource("StyleBoxFlat_owo3s")
-text = "Quit"
-alignment = 0
-
 [node name="Judul" type="Label" parent="2D element"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -892.0
-offset_top = 142.0
-offset_right = -89.0
-offset_bottom = 285.0
+offset_left = -852.0
+offset_top = 73.0
+offset_right = -49.0
+offset_bottom = 216.0
 grow_horizontal = 0
 rotation = -0.0820305
 theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
@@ -344,6 +197,148 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="2D element"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextEdit" type="TextEdit" parent="2D element"]
+offset_left = 759.0
+offset_top = 206.0
+offset_right = 1121.0
+offset_bottom = 721.0
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0, 0, 0, 0)
+theme_override_colors/caret_color = Color(0, 0, 0, 0)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/word_highlighted_color = Color(0, 0, 0, 0)
+theme_override_colors/search_result_color = Color(0, 0, 0, 0)
+theme_override_colors/search_result_border_color = Color(0, 0, 0, 0)
+text = "Judul Film  
+\"Kisah Tanpa Akhir\"
+
+Produksi Oleh  
+Politeknik Negeri Bandung
+
+Disutradarai Oleh  
+Aryo Rakatama
+
+Produser Eksekutif  
+Budi Santoso
+
+Penulis Naskah  
+Dewi Lestari  
+Andi Wijaya
+
+Pemeran Utama  
+Ayu Dewi sebagai Maya  
+Rizky Febian sebagai Arif  
+Siti Badriah sebagai Sari  
+Reza Rahadian sebagai Bimo
+
+Pemeran Pendukung  
+Tasya Kamila sebagai Dinda  
+Iqbaal Ramadhan sebagai Dito  
+Angga Yunanda sebagai Rama
+
+Sinematografi  
+Rahmat Hidayat
+
+Desain Produksi  
+Siti Nurhaliza
+
+Penyunting Film  
+Dani Firmansyah
+
+Desain Kostum  
+Nina Zatulini
+
+Efek Visual  
+Rian Ekky Pradipta
+
+Musik Oleh  
+Erwin Gutawa
+
+Desain Suara  
+Teguh Priyanto
+
+Kru Kamera  
+Hendra Wijaya  
+Mira Andini  
+Yogi Pratama
+
+Asisten Sutradara  
+Putri Ayu  
+Dian Sastro
+
+Manajer Lokasi  
+Asep Sunandar
+
+Konsultan Naskah  
+Retno Wulan
+
+Pemeran Pengganti (Stunt)  
+Rudi Setiawan  
+Wati Sulastri
+
+Makeup Artis  
+Ayu Ting Ting  
+Luna Maya
+
+Kordinator Produksi  
+Yusuf Maulana
+
+Penyelaras Adegan  
+Bayu Kencana
+
+Direktur Fotografi  
+Maya Sari
+
+Teknisi Suara  
+Fajar Nugroho
+
+Tim Pemasaran  
+Zainal Abidin  
+Fitriani Ahmad
+
+Tim Publisitas  
+Nurul Hidayah  
+Andri Saputra
+
+Asisten Produksi  
+Intan Permatasari  
+Dwi Putra
+
+Animasi dan Grafik  
+Sigit Prabowo  
+Aldo Setiawan
+
+Konsultan Efek Khusus  
+Indra Kusuma
+
+Penghargaan Khusus  
+Kepada seluruh keluarga dan teman yang telah mendukung kami selama proses produksi
+
+Terima Kasih Spesial  
+Kepada semua pihak yang telah membantu dan memberikan dukungan yang tak ternilai
+
+Hak Cipta © 2024 Politeknik Negeri Bandung Semua Hak Dilindungi
+"
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+scroll_smooth = true
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("6_e46wu")
@@ -358,10 +353,10 @@ autoplay = true
 [node name="home" parent="Decoration" instance=ExtResource("7_h7kjd")]
 transform = Transform3D(0.14851, 0, -0.192997, 0, 0.243522, 0, 0.192997, 0, 0.14851, 28.0223, -1.55874, 8.84609)
 
-[node name="Pine Tree" parent="." instance=ExtResource("8_mecce")]
+[node name="Pine Tree" parent="Decoration" instance=ExtResource("8_mecce")]
 transform = Transform3D(0.196097, -0.05623, 0, 0.05623, 0.196097, 0, 0, 0, 0.204, 29.589, -1.928, 16.291)
 
-[node name="Skeleton3D" parent="Pine Tree/treeArm_001" index="1"]
+[node name="Skeleton3D" parent="Decoration/Pine Tree/treeArm_001" index="1"]
 bones/2/rotation = Quaternion(0.00175067, -0.00251368, -0.00428767, 0.999986)
 bones/3/rotation = Quaternion(-0.00709239, 0.00399361, 0.00223119, 0.999964)
 bones/4/rotation = Quaternion(0.0081426, -0.00648971, -0.00835437, 0.999911)
@@ -1318,13 +1313,13 @@ bones/935/rotation = Quaternion(0.735439, 0.482767, 0.463926, 0.104109)
 bones/936/rotation = Quaternion(0.764768, 0.455809, 0.45228, 0.0530158)
 bones/937/rotation = Quaternion(0.770901, 0.446935, 0.449252, -0.0642975)
 
-[node name="AnimationPlayer" parent="Pine Tree" index="1"]
+[node name="AnimationPlayer" parent="Decoration/Pine Tree" index="1"]
 autoplay = "Action"
 
-[node name="Pine Tree2" parent="." instance=ExtResource("8_mecce")]
+[node name="Pine Tree2" parent="Decoration" instance=ExtResource("8_mecce")]
 transform = Transform3D(0.204, 0, 0, 0, 0.204, 0, 0, 0, 0.204, 38.9003, -2.81946, -29.4787)
 
-[node name="Skeleton3D" parent="Pine Tree2/treeArm_001" index="1"]
+[node name="Skeleton3D" parent="Decoration/Pine Tree2/treeArm_001" index="1"]
 bones/2/rotation = Quaternion(0.00175067, -0.00251368, -0.00428767, 0.999986)
 bones/3/rotation = Quaternion(-0.00709239, 0.00399361, 0.00223119, 0.999964)
 bones/4/rotation = Quaternion(0.0081426, -0.00648971, -0.00835437, 0.999911)
@@ -2281,13 +2276,13 @@ bones/935/rotation = Quaternion(0.735439, 0.482767, 0.463926, 0.104109)
 bones/936/rotation = Quaternion(0.764768, 0.455809, 0.45228, 0.0530158)
 bones/937/rotation = Quaternion(0.770901, 0.446935, 0.449252, -0.0642975)
 
-[node name="AnimationPlayer" parent="Pine Tree2" index="1"]
+[node name="AnimationPlayer" parent="Decoration/Pine Tree2" index="1"]
 autoplay = "Action"
 
-[node name="Pohon Angker" parent="." instance=ExtResource("9_s77va")]
+[node name="Pohon Angker" parent="Decoration" instance=ExtResource("9_s77va")]
 transform = Transform3D(0.669669, -0.118081, 0, 0.118081, 0.669669, 0, 0, 0, 0.68, 17.064, 1.633, 17.652)
 
-[node name="Skeleton3D" parent="Pohon Angker/treeArm" index="1"]
+[node name="Skeleton3D" parent="Decoration/Pohon Angker/treeArm" index="1"]
 bones/2/rotation = Quaternion(0.0807277, 0.0135431, 0.0296239, 0.996204)
 bones/3/rotation = Quaternion(-0.00362283, 0.00274581, 0.00344246, 0.999984)
 bones/4/rotation = Quaternion(0.00248439, -0.000849152, 0.00132768, 0.999996)
@@ -5138,25 +5133,23 @@ bones/2848/rotation = Quaternion(0.702932, 0.405327, 0.379654, 0.444364)
 bones/2849/rotation = Quaternion(0.574681, 0.460235, 0.464096, 0.492484)
 bones/2850/rotation = Quaternion(0.416491, 0.459767, 0.461738, 0.633993)
 
-[node name="AnimationPlayer" parent="Pohon Angker" index="1"]
+[node name="AnimationPlayer" parent="Decoration/Pohon Angker" index="1"]
 autoplay = "Action_001"
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Decoration"]
 light_color = Color(0.82491, 0.784899, 7.70092e-07, 1)
 shadow_enabled = true
 
-[node name="home" parent="." instance=ExtResource("7_h7kjd")]
+[node name="home2" parent="Decoration" instance=ExtResource("7_h7kjd")]
 transform = Transform3D(0.339108, 0, 0.182293, 0, 0.385, 0, -0.182293, 0, 0.339108, 32.5753, -2.64351, -32.8049)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="forest"]
-[editable path="Pine Tree"]
-[editable path="Pine Tree2"]
-[editable path="Pohon Angker"]
+[editable path="Decoration/Pine Tree"]
+[editable path="Decoration/Pine Tree2"]
+[editable path="Decoration/Pohon Angker"]
