@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export_subgroup("Properties")
-@export var movement_speed = 5
+@export var player_movement_speed = 5
 @export var jump_strength = 8
 
 @export_subgroup("Weapons")
@@ -155,7 +155,7 @@ func handle_controls(_delta):
 	
 	var input := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	
-	movement_velocity = Vector3(input.x, 0, input.y).normalized() * movement_speed
+	movement_velocity = Vector3(input.x, 0, input.y).normalized() * player_movement_speed
 	
 	# Rotation
 	

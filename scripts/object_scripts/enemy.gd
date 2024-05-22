@@ -16,7 +16,7 @@ var audio_stream
 var timer_moan
 
 var wander_timer = 0.0
-var wander_interval = 3.0
+var wander_interval = randf_range(2.0, 6.0)
 var wander_direction = Vector3()
 var chasing_player = false
 
@@ -48,7 +48,7 @@ func _process(delta):
 			var direction = (player.position - position).normalized()
 			
 			# Move towards the player
-			var move_speed = 2.0
+			var move_speed = 4.0
 			target_position += direction * move_speed * delta
 	else:
 		# Wandering behavior
@@ -69,8 +69,6 @@ func _process(delta):
 
 	# Update the position of the enemy
 	position = target_position
-
-
 
 # Take damage from player
 func damage(amount):
