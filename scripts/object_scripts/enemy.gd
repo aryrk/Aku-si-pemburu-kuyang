@@ -36,8 +36,9 @@ func _process(delta):
 	target_position.y += (cos(time * 5) * 1) * delta # Sine movement (up and down)
 	time += delta
 
-	# Maintain y-axis position to be at least the player's y-axis position
-	target_position.y = max(target_position.y, player.position.y)
+	# Maintain y-axis position to be at least the player's y-axis position, but only if within 3 meters
+	if distance_to_player < 3.0:
+		target_position.y = max(target_position.y, player.position.y)
 
 	if (distance_to_player <= 15.0 or chasing_player) and following_player:
 		if distance_to_player > 0.5:  # Check if the distance is more than 0.5 meters
