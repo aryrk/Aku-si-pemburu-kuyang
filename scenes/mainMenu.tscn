@@ -63,7 +63,7 @@ transform = Transform3D(0.945519, 0, -0.325568, 0, 1, 0, 0.325568, 0, 0.945519, 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.995227, -0.0975829, 0, 0.0975829, 0.995227, 21.099, 5.332, 26.206)
 fov = 45.0
-far = 3995.8
+far = 56.66
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
 transform = Transform3D(0.960314, 0.182143, 0.211237, -0.242749, 0.918768, 0.311348, -0.137368, -0.35027, 0.926521, 0.171324, 0.162238, -0.193737)
