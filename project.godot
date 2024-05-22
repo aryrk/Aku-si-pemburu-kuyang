@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Aku-Si-Pemburu-Kuyang"
 config/tags=PackedStringArray("starterkit")
-run/main_scene="res://scenes/mainMenu.tscn"
+run/main_scene="res://scenes/Splash Screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://aksp-splash-screen.png"
@@ -40,8 +40,6 @@ layout/default_style="res://timeline/style.tres"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=3
-window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

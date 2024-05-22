@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://oqf4posvf1g1"]
+
+[ext_resource type="Texture2D" uid="uid://b46jnhuplfobh" path="res://assets/sprites/MASTER-LOGO-POLBAN.png" id="1_5e4qd"]
+[ext_resource type="Script" path="res://scripts/scene/Splash Screen.gd" id="1_epnmg"]
+[ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="2_2n40l"]
+[ext_resource type="Texture2D" uid="uid://gxi12hp7ju1u" path="res://assets/sprites/blood/blood-splatter.png" id="2_bbcku"]
+
+[node name="SplashScreen" type="Node3D"]
+script = ExtResource("1_epnmg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -6
+offset_right = 1292.0
+offset_bottom = 735.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1" type="Sprite2D" parent="Control"]
+visible = false
+scale = Vector2(0.064, 0.062)
+texture = ExtResource("1_5e4qd")
+
+[node name="2" type="Label" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -11.5
+offset_right = 39.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
+theme_override_fonts/font = ExtResource("2_2n40l")
+theme_override_font_sizes/font_size = 80
+text = "HEAPLOW team"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="Label" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.5
+offset_top = -71.5
+offset_right = 401.5
+offset_bottom = 71.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
+theme_override_fonts/font = ExtResource("2_2n40l")
+theme_override_font_sizes/font_size = 81
+text = "AKU SI PEMBURU KUYANG"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Blood 1" type="Sprite2D" parent="."]
+position = Vector2(70, 683)
+scale = Vector2(0.735, 0.735)
+texture = ExtResource("2_bbcku")
+
+[node name="Blood 2" type="Sprite2D" parent="."]
+position = Vector2(1083, 12)
+rotation = -3.23759
+scale = Vector2(0.735, 0.735)
+texture = ExtResource("2_bbcku")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 10.0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
