@@ -27,3 +27,7 @@ func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
 			switch_menu()
+
+
+func _on_credit_pressed():
+	SceneSwitcher.change_scene("res://scenes/credit.tscn")

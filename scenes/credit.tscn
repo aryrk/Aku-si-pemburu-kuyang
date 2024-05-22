@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://vg2h1our3f6m"]
+[gd_scene load_steps=17 format=3 uid="uid://vg2h1our3f6m"]
 
 [ext_resource type="Script" path="res://scripts/scene/credit.gd" id="1_5p6rm"]
 [ext_resource type="Environment" uid="uid://cdlvrv0x313vt" path="res://scenes/day-environment.tres" id="1_ue568"]
 [ext_resource type="PackedScene" uid="uid://bbj1htdp75rwe" path="res://assets/objects/forest.tscn" id="2_j7sqd"]
 [ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="4_mjb26"]
+[ext_resource type="FontFile" uid="uid://x3ttexngrqfu" path="res://assets/fonts/Futura/FUTURA55REGULAR.TTF" id="4_v17it"]
 [ext_resource type="AudioStream" uid="uid://b35syx4sag0jn" path="res://assets/sounds/Gravity Falls Soundtrack - Gideon Rises - End Credits.mp3" id="5_cchen"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ckabc7b53uhf3" path="res://scenes/mainMenu.occ" id="6_e46wu"]
 [ext_resource type="PackedScene" uid="uid://b3w08m1pqwag7" path="res://assets/objects/home.tscn" id="7_h7kjd"]
@@ -12,7 +13,7 @@
 
 [sub_resource type="Animation" id="Animation_dfbal"]
 resource_name = "camera"
-length = 50.0
+length = 33.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -72,6 +73,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 92.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../2D element/ColorRect2:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 29.6041, 30.2925),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_j6cm6"]
@@ -136,12 +149,33 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../2D element/ColorRect2:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tp5fa"]
 _data = {
 "RESET": SubResource("Animation_j6cm6"),
 "camera": SubResource("Animation_dfbal")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2buq"]
+bg_color = Color(0.529412, 0.631373, 0.552941, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83nhs"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lf2gl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Credit" type="Node3D"]
 script = ExtResource("1_5p6rm")
@@ -179,25 +213,6 @@ autoplay = "camera"
 
 [node name="2D element" type="Node" parent="."]
 
-[node name="Judul" type="Label" parent="2D element"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -852.0
-offset_top = 73.0
-offset_right = -49.0
-offset_bottom = 216.0
-grow_horizontal = 0
-rotation = -0.0820305
-theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
-theme_override_fonts/font = ExtResource("4_mjb26")
-theme_override_font_sizes/font_size = 81
-text = "AKU SI PEMBURU KUYANG"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-metadata/_edit_use_anchors_ = true
-
 [node name="ColorRect" type="ColorRect" parent="2D element"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -206,11 +221,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="ColorRect2" type="ColorRect" parent="2D element"]
+z_index = 100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
 [node name="TextEdit" type="TextEdit" parent="2D element"]
-offset_left = 759.0
-offset_top = 206.0
-offset_right = 1121.0
-offset_bottom = 721.0
+show_behind_parent = true
+offset_left = 24.0
+offset_top = -6.0
+offset_right = 1325.0
+offset_bottom = 717.0
+mouse_force_pass_scroll_events = false
 theme_override_colors/background_color = Color(0, 0, 0, 0)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 0)
@@ -220,6 +246,11 @@ theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
 theme_override_colors/word_highlighted_color = Color(0, 0, 0, 0)
 theme_override_colors/search_result_color = Color(0, 0, 0, 0)
 theme_override_colors/search_result_border_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("4_v17it")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_d2buq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_83nhs")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_lf2gl")
 text = "Judul Film  
 \"Kisah Tanpa Akhir\"
 
@@ -330,7 +361,6 @@ Kepada semua pihak yang telah membantu dan memberikan dukungan yang tak ternilai
 
 Hak Cipta © 2024 Politeknik Negeri Bandung Semua Hak Dilindungi
 "
-editable = false
 context_menu_enabled = false
 shortcut_keys_enabled = false
 selecting_enabled = false
@@ -338,7 +368,27 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
+wrap_mode = 1
 scroll_smooth = true
+
+[node name="Judul" type="Label" parent="2D element"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -892.0
+offset_top = 142.0
+offset_right = -89.0
+offset_bottom = 285.0
+grow_horizontal = 0
+rotation = -0.0820305
+theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
+theme_override_fonts/font = ExtResource("4_mjb26")
+theme_override_font_sizes/font_size = 81
+text = "AKU SI PEMBURU KUYANG"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("6_e46wu")
@@ -5143,11 +5193,7 @@ shadow_enabled = true
 [node name="home2" parent="Decoration" instance=ExtResource("7_h7kjd")]
 transform = Transform3D(0.339108, 0, 0.182293, 0, 0.385, 0, -0.182293, 0, 0.339108, 32.5753, -2.64351, -32.8049)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.05
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="Camera3D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="forest"]
 [editable path="Decoration/Pine Tree"]

@@ -4235,6 +4235,7 @@ bones/2850/rotation = Quaternion(0.416491, 0.459767, 0.461738, 0.633993)
 autoplay = "Action_001"
 
 [connection signal="pressed" from="2D element/Menu/Story Mode" to="." method="story_mode"]
+[connection signal="pressed" from="2D element/Menu/Credit" to="." method="_on_credit_pressed"]
 [connection signal="pressed" from="2D element/Menu/Quit" to="." method="quit_game"]
 
 [editable path="Pine Tree"]
