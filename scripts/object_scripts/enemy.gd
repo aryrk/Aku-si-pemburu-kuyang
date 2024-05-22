@@ -36,22 +36,26 @@ func _process(delta):
 	target_position.y += (cos(time * 5) * 1) * delta # Sine movement (up and down)
 	time += delta
 
+	# Maintain y-axis position to be at least the player's y-axis position
+	target_position.y = max(target_position.y, player.position.y)
+
 	if (distance_to_player <= 15.0 or chasing_player) and following_player:
-		# Look at player
-		self.look_at(player.position + Vector3(0, 0.5, 0), Vector3.UP, true)
-		
-		# Calculate direction towards the player
-		var direction = (player.position - position).normalized()
-		
-		# Move towards the player
-		var move_speed = 2.0
-		target_position += direction * move_speed * delta
+		if distance_to_player > 0.5:  # Check if the distance is more than 0.5 meters
+			# Look at player
+			self.look_at(player.position + Vector3(0, 0.5, 0), Vector3.UP, true)
+			
+			# Calculate direction towards the player
+			var direction = (player.position - position).normalized()
+			
+			# Move towards the player
+			var move_speed = 2.0
+			target_position += direction * move_speed * delta
 	else:
 		# Wandering behavior
 		wander_timer -= delta
 		if wander_timer <= 0:
 			# Choose a new random direction to wander in
-			wander_direction = Vector3(rnd.randf_range( - 1, 1), 0, rnd.randf_range( - 1, 1)).normalized()
+			wander_direction = Vector3(rnd.randf_range(-1, 1), 0, rnd.randf_range(-1, 1)).normalized()
 			wander_timer = wander_interval
 			
 		# Move in the wandering direction
@@ -65,6 +69,8 @@ func _process(delta):
 
 	# Update the position of the enemy
 	position = target_position
+
+
 
 # Take damage from player
 func damage(amount):
