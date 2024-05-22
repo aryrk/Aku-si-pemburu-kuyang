@@ -141,10 +141,14 @@ scale = Vector2(0.35, 0.35)
 pivot_offset = Vector2(64, 64)
 
 [node name="health" type="ProgressBar" parent="HUD"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
 offset_left = 19.0
-offset_top = 682.0
+offset_top = -38.0
 offset_right = 251.0
-offset_bottom = 699.0
+offset_bottom = -21.0
+grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_pmp4n")
 theme_override_styles/fill = SubResource("StyleBoxFlat_a8lad")
 value = 100.0
@@ -152,10 +156,14 @@ rounded = true
 show_percentage = false
 
 [node name="mana" type="ProgressBar" parent="HUD"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
 offset_left = 18.0
-offset_top = 655.0
+offset_top = -65.0
 offset_right = 250.0
-offset_bottom = 672.0
+offset_bottom = -48.0
+grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_lb5yw")
 theme_override_styles/fill = SubResource("StyleBoxFlat_gevrr")
 value = 100.0
@@ -163,19 +171,27 @@ rounded = true
 show_percentage = false
 
 [node name="Label" type="Label" parent="HUD"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
 offset_left = 32.0
-offset_top = 679.0
+offset_top = -41.0
 offset_right = 72.0
-offset_bottom = 705.0
+offset_bottom = -15.0
+grow_vertical = 0
 theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
 theme_override_font_sizes/font_size = 15
 text = "HP"
 
 [node name="Label2" type="Label" parent="HUD"]
-offset_left = 30.0
-offset_top = 651.0
-offset_right = 76.0
-offset_bottom = 677.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = -69.0
+offset_right = 75.0
+offset_bottom = -43.0
+grow_vertical = 0
 theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
 theme_override_font_sizes/font_size = 15
 text = "MANA"
@@ -183,8 +199,11 @@ text = "MANA"
 [node name="RedTint" type="ColorRect" parent="HUD"]
 visible = false
 z_index = -1
-offset_right = 1279.0
-offset_bottom = 726.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(1, 0.188235, 0.196078, 0.270588)
 
 [node name="DamageTimer" type="Timer" parent="HUD"]

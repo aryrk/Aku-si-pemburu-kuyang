@@ -10,8 +10,11 @@ script = ExtResource("1_epnmg")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -6
-offset_right = 1292.0
-offset_bottom = 735.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
@@ -77,21 +80,39 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Blood 1" type="Sprite2D" parent="."]
-position = Vector2(70, 683)
-scale = Vector2(0.735, 0.735)
-texture = ExtResource("2_bbcku")
-
-[node name="Blood 2" type="Sprite2D" parent="."]
-position = Vector2(1083, 12)
-rotation = -3.23759
-scale = Vector2(0.735, 0.735)
-texture = ExtResource("2_bbcku")
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 volume_db = 10.0
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Blood Corner 1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="Blood 1" type="Sprite2D" parent="Blood Corner 1"]
+position = Vector2(96, 1)
+scale = Vector2(0.735, 0.735)
+texture = ExtResource("2_bbcku")
+
+[node name="Blood Corner 2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Blood 2" type="Sprite2D" parent="Blood Corner 2"]
+position = Vector2(-14, 77)
+rotation = 3.0456
+scale = Vector2(0.735, -0.6)
+texture = ExtResource("2_bbcku")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

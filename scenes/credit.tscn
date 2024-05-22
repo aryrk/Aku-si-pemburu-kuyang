@@ -11,6 +11,81 @@
 [ext_resource type="PackedScene" uid="uid://7uxau4qbyeou" path="res://assets/Glbs/Forest/Pine Tree.gltf" id="8_mecce"]
 [ext_resource type="PackedScene" uid="uid://cyk7v8u7awv0c" path="res://assets/Glbs/Forest/Pohon Angker.gltf" id="9_s77va"]
 
+[sub_resource type="Animation" id="Animation_j6cm6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(21.099, 5.332, 26.206)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0977385, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Control/ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Control/TextEdit:scroll_vertical")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Control/ColorRect2:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_dfbal"]
 resource_name = "camera"
 length = 33.0
@@ -41,7 +116,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../2D element/ColorRect:color")
+tracks/2/path = NodePath("../Control/ColorRect:color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -65,7 +140,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../2D element/TextEdit:scroll_vertical")
+tracks/4/path = NodePath("../Control/TextEdit:scroll_vertical")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -77,7 +152,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../2D element/ColorRect2:color")
+tracks/5/path = NodePath("../Control/ColorRect2:color")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -85,81 +160,6 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_j6cm6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(21.099, 5.332, 26.206)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.0977385, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../2D element/ColorRect:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../AudioStreamPlayer2D:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../2D element/TextEdit:scroll_vertical")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../2D element/ColorRect2:color")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tp5fa"]
@@ -213,189 +213,12 @@ autoplay = "camera"
 
 [node name="2D element" type="Node" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="2D element"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="2D element"]
-z_index = 100
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0)
-
-[node name="TextEdit" type="TextEdit" parent="2D element"]
-show_behind_parent = true
-offset_left = 24.0
-offset_top = -6.0
-offset_right = 1325.0
-offset_bottom = 717.0
-mouse_force_pass_scroll_events = false
-theme_override_colors/background_color = Color(0, 0, 0, 0)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/selection_color = Color(0, 0, 0, 0)
-theme_override_colors/current_line_color = Color(0, 0, 0, 0)
-theme_override_colors/caret_color = Color(0, 0, 0, 0)
-theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
-theme_override_colors/word_highlighted_color = Color(0, 0, 0, 0)
-theme_override_colors/search_result_color = Color(0, 0, 0, 0)
-theme_override_colors/search_result_border_color = Color(0, 0, 0, 0)
-theme_override_fonts/font = ExtResource("4_v17it")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_d2buq")
-theme_override_styles/focus = SubResource("StyleBoxFlat_83nhs")
-theme_override_styles/read_only = SubResource("StyleBoxFlat_lf2gl")
-text = "Judul Film  
-\"Kisah Tanpa Akhir\"
-
-Produksi Oleh  
-Politeknik Negeri Bandung
-
-Disutradarai Oleh  
-Aryo Rakatama
-
-Produser Eksekutif  
-Budi Santoso
-
-Penulis Naskah  
-Dewi Lestari  
-Andi Wijaya
-
-Pemeran Utama  
-Ayu Dewi sebagai Maya  
-Rizky Febian sebagai Arif  
-Siti Badriah sebagai Sari  
-Reza Rahadian sebagai Bimo
-
-Pemeran Pendukung  
-Tasya Kamila sebagai Dinda  
-Iqbaal Ramadhan sebagai Dito  
-Angga Yunanda sebagai Rama
-
-Sinematografi  
-Rahmat Hidayat
-
-Desain Produksi  
-Siti Nurhaliza
-
-Penyunting Film  
-Dani Firmansyah
-
-Desain Kostum  
-Nina Zatulini
-
-Efek Visual  
-Rian Ekky Pradipta
-
-Musik Oleh  
-Erwin Gutawa
-
-Desain Suara  
-Teguh Priyanto
-
-Kru Kamera  
-Hendra Wijaya  
-Mira Andini  
-Yogi Pratama
-
-Asisten Sutradara  
-Putri Ayu  
-Dian Sastro
-
-Manajer Lokasi  
-Asep Sunandar
-
-Konsultan Naskah  
-Retno Wulan
-
-Pemeran Pengganti (Stunt)  
-Rudi Setiawan  
-Wati Sulastri
-
-Makeup Artis  
-Ayu Ting Ting  
-Luna Maya
-
-Kordinator Produksi  
-Yusuf Maulana
-
-Penyelaras Adegan  
-Bayu Kencana
-
-Direktur Fotografi  
-Maya Sari
-
-Teknisi Suara  
-Fajar Nugroho
-
-Tim Pemasaran  
-Zainal Abidin  
-Fitriani Ahmad
-
-Tim Publisitas  
-Nurul Hidayah  
-Andri Saputra
-
-Asisten Produksi  
-Intan Permatasari  
-Dwi Putra
-
-Animasi dan Grafik  
-Sigit Prabowo  
-Aldo Setiawan
-
-Konsultan Efek Khusus  
-Indra Kusuma
-
-Penghargaan Khusus  
-Kepada seluruh keluarga dan teman yang telah mendukung kami selama proses produksi
-
-Terima Kasih Spesial  
-Kepada semua pihak yang telah membantu dan memberikan dukungan yang tak ternilai
-
-Hak Cipta © 2024 Politeknik Negeri Bandung Semua Hak Dilindungi
-"
-context_menu_enabled = false
-shortcut_keys_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-wrap_mode = 1
-scroll_smooth = true
-
-[node name="Judul" type="Label" parent="2D element"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -892.0
-offset_top = 142.0
-offset_right = -89.0
-offset_bottom = 285.0
-grow_horizontal = 0
-rotation = -0.0820305
-theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
-theme_override_fonts/font = ExtResource("4_mjb26")
-theme_override_font_sizes/font_size = 81
-text = "AKU SI PEMBURU KUYANG"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-metadata/_edit_use_anchors_ = true
-
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("6_e46wu")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_cchen")
-volume_db = 10.0
+volume_db = 8.0
 autoplay = true
 
 [node name="Decoration" type="Node" parent="."]
@@ -5192,6 +5015,200 @@ shadow_enabled = true
 
 [node name="home2" parent="Decoration" instance=ExtResource("7_h7kjd")]
 transform = Transform3D(0.339108, 0, 0.182293, 0, 0.385, 0, -0.182293, 0, 0.339108, 32.5753, -2.64351, -32.8049)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control"]
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="TextEdit" type="TextEdit" parent="Control"]
+show_behind_parent = true
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_right = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+auto_translate = false
+localize_numeral_system = false
+mouse_force_pass_scroll_events = false
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 0)
+theme_override_colors/current_line_color = Color(0, 0, 0, 0)
+theme_override_colors/caret_color = Color(0, 0, 0, 0)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_colors/word_highlighted_color = Color(0, 0, 0, 0)
+theme_override_colors/search_result_color = Color(0, 0, 0, 0)
+theme_override_colors/search_result_border_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("4_v17it")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_d2buq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_83nhs")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_lf2gl")
+text = "Judul Film  
+\"Kisah Tanpa Akhir\"
+
+Produksi Oleh  
+Politeknik Negeri Bandung
+
+Disutradarai Oleh  
+Aryo Rakatama
+
+Produser Eksekutif  
+Budi Santoso
+
+Penulis Naskah  
+Dewi Lestari  
+Andi Wijaya
+
+Pemeran Utama  
+Ayu Dewi sebagai Maya  
+Rizky Febian sebagai Arif  
+Siti Badriah sebagai Sari  
+Reza Rahadian sebagai Bimo
+
+Pemeran Pendukung  
+Tasya Kamila sebagai Dinda  
+Iqbaal Ramadhan sebagai Dito  
+Angga Yunanda sebagai Rama
+
+Sinematografi  
+Rahmat Hidayat
+
+Desain Produksi  
+Siti Nurhaliza
+
+Penyunting Film  
+Dani Firmansyah
+
+Desain Kostum  
+Nina Zatulini
+
+Efek Visual  
+Rian Ekky Pradipta
+
+Musik Oleh  
+Erwin Gutawa
+
+Desain Suara  
+Teguh Priyanto
+
+Kru Kamera  
+Hendra Wijaya  
+Mira Andini  
+Yogi Pratama
+
+Asisten Sutradara  
+Putri Ayu  
+Dian Sastro
+
+Manajer Lokasi  
+Asep Sunandar
+
+Konsultan Naskah  
+Retno Wulan
+
+Pemeran Pengganti (Stunt)  
+Rudi Setiawan  
+Wati Sulastri
+
+Makeup Artis  
+Ayu Ting Ting  
+Luna Maya
+
+Kordinator Produksi  
+Yusuf Maulana
+
+Penyelaras Adegan  
+Bayu Kencana
+
+Direktur Fotografi  
+Maya Sari
+
+Teknisi Suara  
+Fajar Nugroho
+
+Tim Pemasaran  
+Zainal Abidin  
+Fitriani Ahmad
+
+Tim Publisitas  
+Nurul Hidayah  
+Andri Saputra
+
+Asisten Produksi  
+Intan Permatasari  
+Dwi Putra
+
+Animasi dan Grafik  
+Sigit Prabowo  
+Aldo Setiawan
+
+Konsultan Efek Khusus  
+Indra Kusuma
+
+Penghargaan Khusus  
+Kepada seluruh keluarga dan teman yang telah mendukung kami selama proses produksi
+
+Terima Kasih Spesial  
+Kepada semua pihak yang telah membantu dan memberikan dukungan yang tak ternilai
+
+Hak Cipta © 2024 Politeknik Negeri Bandung Semua Hak Dilindungi
+"
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+
+[node name="Judul" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -892.0
+offset_top = 142.0
+offset_right = -89.0
+offset_bottom = 285.0
+grow_horizontal = 0
+rotation = -0.0820305
+theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
+theme_override_fonts/font = ExtResource("4_mjb26")
+theme_override_font_sizes/font_size = 81
+text = "AKU SI PEMBURU KUYANG"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [connection signal="animation_finished" from="Camera3D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 

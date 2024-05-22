@@ -7,12 +7,48 @@
 [ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://assets/objects/enemy.tscn" id="4_x2xqb"]
 [ext_resource type="Script" path="res://scripts/animation/dead scene camera rig.gd" id="5_ak2eo"]
 [ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="6_1ay3x"]
+[ext_resource type="FontFile" uid="uid://xntpnbawxj3n" path="res://assets/fonts/Futura/FUTURA75BOLD.TTF" id="6_y1vly"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dx73nuapgnqbi" path="res://scenes/deadScene.occ" id="7_3ox78"]
-[ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://assets/fonts/lilita_one_regular.ttf" id="8_q7khf"]
 [ext_resource type="PackedScene" uid="uid://cqkwg0jjxo55c" path="res://assets/blend/sapu.blend" id="9_3nikd"]
 [ext_resource type="PackedScene" uid="uid://c72y6s4bu5tn" path="res://assets/blend/revolver.blend" id="10_pguur"]
 [ext_resource type="PackedScene" uid="uid://dpi6m1jchuj4p" path="res://assets/objects/torch.tscn" id="11_5fipp"]
 [ext_resource type="AudioStream" uid="uid://c4f2y88jjdxf" path="res://assets/sounds/Guts Theme Berserk.mp3" id="13_wy7uv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnqgp"]
+bg_color = Color(0.752941, 0, 0.203922, 0)
+corner_radius_top_left = 1005
+expand_margin_left = 65.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts2ch"]
+bg_color = Color(0.750013, 0, 0.22298, 1)
+corner_radius_top_left = 1024
+expand_margin_left = 65.0
+shadow_color = Color(0, 0, 0, 0.333333)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqcw0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_851k1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fbld"]
+bg_color = Color(0.752941, 0, 0.203922, 0)
+corner_radius_top_left = 1005
+expand_margin_left = 65.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vts6"]
+bg_color = Color(0.750013, 0, 0.22298, 1)
+corner_radius_top_left = 1024
+expand_margin_left = 65.0
+shadow_color = Color(0, 0, 0, 0.333333)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ge5jp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4ssk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="Animation" id="Animation_tyxgj"]
 length = 0.001
@@ -99,42 +135,6 @@ _data = {
 "camera": SubResource("Animation_rrk0i")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnqgp"]
-bg_color = Color(0.752941, 0, 0.203922, 0)
-corner_radius_top_left = 1005
-expand_margin_left = 65.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts2ch"]
-bg_color = Color(0.750013, 0, 0.22298, 1)
-corner_radius_top_left = 1024
-expand_margin_left = 65.0
-shadow_color = Color(0, 0, 0, 0.333333)
-shadow_size = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqcw0"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_851k1"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fbld"]
-bg_color = Color(0.752941, 0, 0.203922, 0)
-corner_radius_top_left = 1005
-expand_margin_left = 65.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vts6"]
-bg_color = Color(0.750013, 0, 0.22298, 1)
-corner_radius_top_left = 1024
-expand_margin_left = 65.0
-shadow_color = Color(0, 0, 0, 0.333333)
-shadow_size = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ge5jp"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4ssk"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
 [node name="Dead" type="Node3D"]
 script = ExtResource("1_dhfpa")
 
@@ -162,27 +162,13 @@ light_energy = 4.394
 shadow_enabled = true
 spot_range = 21.884
 
-[node name="Cam Rig" type="Node3D" parent="."]
-script = ExtResource("5_ak2eo")
-
-[node name="Camera3D" type="Camera3D" parent="Cam Rig"]
-transform = Transform3D(-3.61999e-06, 0.866026, -0.499998, 0, 0.499998, 0.866026, 1, 3.13501e-06, -1.80999e-06, 0.97, 1.415, 1.995)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Cam Rig"]
-root_node = NodePath("../Camera3D")
-libraries = {
-"": SubResource("AnimationLibrary_gagj3")
-}
-
-[node name="HUD" type="Node2D" parent="Cam Rig"]
-
-[node name="Label" type="Label" parent="Cam Rig/HUD"]
+[node name="Label" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 387.0
+offset_left = -253.0
 offset_top = 75.0
-offset_right = 883.0
+offset_right = 243.0
 offset_bottom = 282.0
 grow_horizontal = 2
 rotation = -0.13439
@@ -191,18 +177,27 @@ theme_override_fonts/font = ExtResource("6_1ay3x")
 theme_override_font_sizes/font_size = 120
 text = "mati gue"
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="Restart" type="Button" parent="Cam Rig/HUD"]
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Restart" type="Button" parent="HUD"]
+layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 987.0
-offset_top = 312.0
-offset_right = 1710.0
-offset_bottom = 356.0
+offset_left = -293.0
+offset_top = -48.0
+offset_right = 430.0
+offset_bottom = -4.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -217,16 +212,17 @@ text = "Restart
 "
 alignment = 0
 
-[node name="Go to main menu" type="Button" parent="Cam Rig/HUD"]
+[node name="Go to main menu" type="Button" parent="HUD"]
+layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 987.0
-offset_top = 413.0
-offset_right = 1710.0
-offset_bottom = 457.0
+offset_left = -293.0
+offset_top = 53.0
+offset_right = 430.0
+offset_bottom = 97.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -240,21 +236,22 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_851k1")
 text = "Main menu"
 alignment = 0
 
-[node name="Quit" type="Button" parent="Cam Rig/HUD"]
-anchors_preset = 6
+[node name="Quit" type="Button" parent="HUD"]
+layout_mode = 1
+anchors_preset = 3
 anchor_left = 1.0
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 1132.0
-offset_top = 653.0
-offset_right = 1517.0
-offset_bottom = 693.0
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -68.0
+offset_right = 281.0
+offset_bottom = -28.0
 grow_horizontal = 0
-grow_vertical = 2
+grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("8_q7khf")
+theme_override_fonts/font = ExtResource("6_y1vly")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_8fbld")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6vts6")
@@ -262,6 +259,18 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ge5jp")
 theme_override_styles/focus = SubResource("StyleBoxFlat_p4ssk")
 text = "Quit"
 alignment = 0
+
+[node name="Cam Rig" type="Node3D" parent="."]
+script = ExtResource("5_ak2eo")
+
+[node name="Camera3D" type="Camera3D" parent="Cam Rig"]
+transform = Transform3D(-3.61999e-06, 0.866026, -0.499998, 0, 0.499998, 0.866026, 1, 3.13501e-06, -1.80999e-06, 0.97, 1.415, 1.995)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cam Rig"]
+root_node = NodePath("../Camera3D")
+libraries = {
+"": SubResource("AnimationLibrary_gagj3")
+}
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("7_3ox78")
@@ -296,6 +305,6 @@ stream = ExtResource("13_wy7uv")
 volume_db = 7.0
 autoplay = true
 
-[connection signal="pressed" from="Cam Rig/HUD/Restart" to="." method="restart_game"]
-[connection signal="pressed" from="Cam Rig/HUD/Go to main menu" to="." method="main_menu"]
-[connection signal="pressed" from="Cam Rig/HUD/Quit" to="." method="quit_game"]
+[connection signal="pressed" from="HUD/Restart" to="." method="restart_game"]
+[connection signal="pressed" from="HUD/Go to main menu" to="." method="main_menu"]
+[connection signal="pressed" from="HUD/Quit" to="." method="quit_game"]

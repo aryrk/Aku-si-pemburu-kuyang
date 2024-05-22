@@ -153,16 +153,21 @@ libraries = {
 }
 autoplay = "rotation"
 
-[node name="HUD" type="Node2D" parent="Sapu Lidi"]
+[node name="HUD" type="Control" parent="Sapu Lidi"]
 visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Heading" type="Label" parent="Sapu Lidi/HUD"]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 380.0
+offset_left = 340.0
 offset_top = 78.0
-offset_right = 1279.0
+offset_right = 1239.0
 offset_bottom = 251.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(1, 0, 0.196078, 1)
@@ -174,12 +179,13 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="SubHeading" type="Label" parent="Sapu Lidi/HUD"]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 383.0
+offset_left = 343.0
 offset_top = 258.0
-offset_right = 1280.0
+offset_right = 1240.0
 offset_bottom = 372.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_36n2q")
@@ -208,16 +214,21 @@ libraries = {
 }
 autoplay = "gun_animation"
 
-[node name="HUD" type="Node2D" parent="Kuyang"]
+[node name="HUD" type="Control" parent="Kuyang"]
 visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Heading" type="Label" parent="Kuyang/HUD"]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 380.0
+offset_left = 340.0
 offset_top = 78.0
-offset_right = 1279.0
+offset_right = 1239.0
 offset_bottom = 251.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(1, 0, 0.196078, 1)
@@ -229,12 +240,13 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="SubHeading" type="Label" parent="Kuyang/HUD"]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 383.0
+offset_left = 343.0
 offset_top = 258.0
-offset_right = 1280.0
+offset_right = 1240.0
 offset_bottom = 372.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_36n2q")
@@ -265,16 +277,24 @@ libraries = {
 }
 autoplay = "gun_animation"
 
-[node name="HUD" type="Node2D" parent="Pistol"]
+[node name="HUD" type="Control" parent="Pistol"]
 visible = false
-
-[node name="Heading" type="Label" parent="Pistol/HUD"]
+layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 380.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Heading" type="Label" parent="Pistol/HUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -900.0
 offset_top = 78.0
-offset_right = 1279.0
+offset_right = -1.0
 offset_bottom = 251.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(1, 0, 0.196078, 1)
@@ -286,12 +306,12 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="SubHeading" type="Label" parent="Pistol/HUD"]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 383.0
+offset_left = -897.0
 offset_top = 258.0
-offset_right = 1280.0
 offset_bottom = 372.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_36n2q")
@@ -300,9 +320,9 @@ text = "Efektif untuk jarak jauh"
 horizontal_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Pistol/HUD"]
-offset_left = 506.0
+offset_left = -734.0
 offset_top = 436.0
-offset_right = 1163.0
+offset_right = -77.0
 offset_bottom = 621.0
 text = "sejenis senjata api di mana peluru dimasukkan ke tabung berputar. Cara pengisian senapan kisar dibagi menjadi 2 menurut rancangan dan bentuk revolver. Yang pertama adalah pengisian satu per satu seperti senapan kisar jenis lama seperti Colt's, dan yang kedua adalah langsung, ketika silinder pengangkut peluru keluar."
 scroll_active = false
@@ -321,14 +341,10 @@ grow_vertical = 0
 theme_override_styles/fill = SubResource("StyleBoxFlat_fehne")
 
 [node name="Judul" type="Label" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1413.0
-offset_top = 127.0
-offset_right = -610.0
-offset_bottom = 270.0
-grow_horizontal = 0
+offset_left = -157.0
+offset_top = 141.0
+offset_right = 646.0
+offset_bottom = 284.0
 rotation = -0.0820305
 theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
 theme_override_fonts/font = ExtResource("2_36n2q")
