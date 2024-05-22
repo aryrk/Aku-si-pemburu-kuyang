@@ -138,6 +138,7 @@ sky_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.345, 0.82, 2.34)
+far = 8.21
 
 [node name="Sapu Lidi" type="Node3D" parent="."]
 visible = false
@@ -194,6 +195,7 @@ text = "Senjata paling mematikan"
 horizontal_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Sapu Lidi/HUD"]
+layout_mode = 0
 offset_left = 506.0
 offset_top = 436.0
 offset_right = 1163.0
@@ -255,6 +257,7 @@ text = "legenda pulau kalimantan"
 horizontal_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Kuyang/HUD"]
+layout_mode = 0
 offset_left = 506.0
 offset_top = 436.0
 offset_right = 1163.0
@@ -320,6 +323,7 @@ text = "Efektif untuk jarak jauh"
 horizontal_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Pistol/HUD"]
+layout_mode = 0
 offset_left = -734.0
 offset_top = 436.0
 offset_right = -77.0

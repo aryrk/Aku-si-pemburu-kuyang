@@ -85,6 +85,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:far")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [71.61]
+}
 
 [sub_resource type="Animation" id="Animation_dfbal"]
 resource_name = "camera"
@@ -161,6 +173,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:far")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4.2, 4.27, 8.52, 8.65, 14.9191, 15.1591, 19.1229, 19.4829),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [71.61, 71.61, 63.06, 63.06, 11.06, 11.06, 65.86, 65.86, 31.91]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tp5fa"]
 _data = {
@@ -195,7 +219,7 @@ visible = false
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.995227, -0.0975829, 0, 0.0975829, 0.995227, 21.099, 5.332, 26.206)
 fov = 45.0
-far = 3995.8
+far = 71.61
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
 transform = Transform3D(0.960314, 0.182143, 0.211237, -0.242749, 0.918768, 0.311348, -0.137368, -0.35027, 0.926521, 0.171324, 0.162238, -0.193737)
