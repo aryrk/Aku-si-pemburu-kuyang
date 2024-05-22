@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7hni5morvp00"
-path="res://.godot/imported/rina kaget.png-342427f612394472ac1b0b9f5eb222bd.ctex"
+uid="uid://c6tbmrprj0gsc"
+path="res://.godot/imported/Woman-Shocked_prev_ui.png-80c2e782db2582646b834f2cd94e1a05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://timeline/charImages/rina kaget.png"
-dest_files=["res://.godot/imported/rina kaget.png-342427f612394472ac1b0b9f5eb222bd.ctex"]
+source_file="res://timeline/charImages/Woman-Shocked_prev_ui.png"
+dest_files=["res://.godot/imported/Woman-Shocked_prev_ui.png-80c2e782db2582646b834f2cd94e1a05.ctex"]
 
 [params]
 

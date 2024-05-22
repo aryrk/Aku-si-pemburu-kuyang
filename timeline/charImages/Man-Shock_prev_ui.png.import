@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1cfo6vc6d3a4"
-path="res://.godot/imported/rina.png-004063985fd1fef91ef835bf472a70a5.ctex"
+uid="uid://7bx6gakpgqpf"
+path="res://.godot/imported/Man-Shock_prev_ui.png-6f1fa7895bbd75adc605026d295e6ebf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://timeline/charImages/rina.png"
-dest_files=["res://.godot/imported/rina.png-004063985fd1fef91ef835bf472a70a5.ctex"]
+source_file="res://timeline/charImages/Man-Shock_prev_ui.png"
+dest_files=["res://.godot/imported/Man-Shock_prev_ui.png-6f1fa7895bbd75adc605026d295e6ebf.ctex"]
 
 [params]
 

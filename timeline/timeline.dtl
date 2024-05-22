@@ -1,22 +1,19 @@
 [music path="res://assets/sounds/ambience.mp3" fade="0.0" volume="0.0"]
 [background arg="res://timeline/charImages/pexels-rpnickson-2885320 (1).jpg" fade="0.0"]
 join rina (RK) 0
-[background fade="0.0"]
-[background fade="0.0"]
-[background fade="0.0"]
-[style]
-rina (RK): Pa Ustadz!
+[style name="style"]
+rina (WOman-shocked): Pa Ustadz!
 join ustadz (UK) 4 [ z_index="14"]
-ustadz (UK): Ada Apa Rina? Kok lari lari gitu
-rina (RH): Di hutan sebelum gapura saya liat sesuatu pak!
+ustadz (Man-Why): Ada Apa Rina? Kok lari lari gitu
+rina (Woman-Why): Di hutan sebelum gapura saya liat sesuatu pak!
 [sound path="res://assets/sounds/shock.mp3" volume="0.0"]
-ustadz (UC): Liat apa Rina? Kok kayak kaget banget gitu?
-rina (RF): Saya liat manusia tapi kepalanya aja, kebawahnya organ semua pak!
-ustadz (UK): Hah? Yang bener kalo ngobrol tuh bu!
-rina (RH): Beneran pak!
-ustadz (UK): Kuyang maksud kamu, Rin?
-rina (RF): Iya pak! Beneran!
-ustadz (UC): Kuyang udah lama gak keliatan Rin! Terakhir ada kuyang pas saya kecil.
-rina (RF): Bener lho pak! Coba Pak Ustadz cek sendiri di hutan sana!
-ustadz (UK): Yaudah saya cek dulu rin!
-rina (RH): Hati hati pak ustadz.
+ustadz (Man-Confused): Liat apa Rina? Kok kayak kaget banget gitu?
+rina (woman-huh): Saya liat manusia tapi kepalanya aja, kebawahnya organ semua pak!
+ustadz (Man-Huh): Hah? Yang bener kalo ngobrol tuh bu!
+rina (woman-huh): Beneran pak!
+ustadz (Man-Why): Kuyang maksud kamu, Rin?
+rina (WOman-shocked): Iya pak! Beneran!
+ustadz (Man-Confused): Kuyang udah lama gak keliatan Rin! Terakhir ada kuyang pas saya kecil.
+rina (Woman-Why): Bener lho pak! Coba Pak Ustadz cek sendiri di hutan sana!
+ustadz (Man-Why): Yaudah saya cek dulu rin!
+rina (woman-huh): Hati hati pak ustadz.

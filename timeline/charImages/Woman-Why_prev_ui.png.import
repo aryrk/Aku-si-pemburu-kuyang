@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2hujethnkv11"
-path="res://.godot/imported/Rina-Fokus_prev_ui.png-c5ff0a0bc60130394f41d9fd72511a1d.ctex"
+uid="uid://g24xq8o8p6v4"
+path="res://.godot/imported/Woman-Why_prev_ui.png-bbf1722561dadc4cc716e14c66575205.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://timeline/charImages/Rina-Fokus_prev_ui.png"
-dest_files=["res://.godot/imported/Rina-Fokus_prev_ui.png-c5ff0a0bc60130394f41d9fd72511a1d.ctex"]
+source_file="res://timeline/charImages/Woman-Why_prev_ui.png"
+dest_files=["res://.godot/imported/Woman-Why_prev_ui.png-bbf1722561dadc4cc716e14c66575205.ctex"]
 
 [params]
 

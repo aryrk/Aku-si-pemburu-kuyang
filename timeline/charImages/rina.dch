@@ -8,49 +8,40 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "Rina",
+"default_portrait": "Woman-Why",
 "description": "Rina is Woman that live in Bukit Jaya Village.",
 "display_name": "Rina",
 "mirror": false,
 "nicknames": ["Rina"],
 "offset": Vector2(0, 0),
 "portraits": {
-"RF": {
+"WOman-shocked": {
 "export_overrides": {
-"image": "\"res://timeline/charImages/Rina-Fokus_prev_ui.png\""
+"image": "\"res://timeline/charImages/Woman-Shocked_prev_ui.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"RH": {
+"Woman-Why": {
 "export_overrides": {
-"image": "\"res://timeline/charImages/image_prev_ui (1).png\""
+"image": "\"res://timeline/charImages/Woman-Why_prev_ui.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"RK": {
+"woman-huh": {
 "export_overrides": {
-"image": "\"res://timeline/charImages/Rina-Ihiw_prev_ui.png\""
+"image": "\"res://timeline/charImages/Woman-Serious_prev_ui.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"Rina": {
-"export_overrides": {
-"image": "\"res://timeline/charImages/rina.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
+"scale": 1.0,
 "scene": ""
 }
 },
-"scale": 0.75
+"scale": 1.0
 }
