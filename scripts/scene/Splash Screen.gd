@@ -14,15 +14,16 @@ func _process(delta):
 
 
 func _on_timer_timeout():
+	if current >= max:
+		SceneSwitcher.change_scene("res://scenes/mainMenu.tscn")
+		return
 	if current > 0:
 		for i in range(1,current+1):
 			get_node("Control/"+str(i)).hide()
 			
 	
 	current+=1
-	if(get_node("Control/"+str(current)) == null):
-		SceneSwitcher.change_scene("res://scenes/mainMenu.tscn")
-		return
+	
 	get_node("Control/"+str(current)).show()
 	player.stream = load("res://assets/sounds/Splash/Drum"+str(current)+".mp3")
 	player.play()
