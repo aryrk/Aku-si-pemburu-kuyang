@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c46xk7jbcqknx"
-path="res://.godot/imported/rina-heboh.png-f4bf197c8db428ec55a74b31c1e0bcfe.ctex"
+uid="uid://cnwsqrhsbiqv7"
+path="res://.godot/imported/Man-Huh_prev_ui.png-cb288a0fe8837cc3af9f52e69135dbc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://timeline/charImages/rina-heboh.png"
-dest_files=["res://.godot/imported/rina-heboh.png-f4bf197c8db428ec55a74b31c1e0bcfe.ctex"]
+source_file="res://timeline/charImages/Man-Huh_prev_ui.png"
+dest_files=["res://.godot/imported/Man-Huh_prev_ui.png-cb288a0fe8837cc3af9f52e69135dbc8.ctex"]
 
 [params]
 

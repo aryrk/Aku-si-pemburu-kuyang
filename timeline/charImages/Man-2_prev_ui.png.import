@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn1yu4bxcpt3h"
-path="res://.godot/imported/Rina-Ihiw_prev_ui.png-ead49354b3c51ad7ef5fe9a07a9e1e7f.ctex"
+uid="uid://b854cngm0ir6w"
+path="res://.godot/imported/Man-2_prev_ui.png-5690ac6316193cfaf65ec1175c72f48f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://timeline/charImages/Rina-Ihiw_prev_ui.png"
-dest_files=["res://.godot/imported/Rina-Ihiw_prev_ui.png-ead49354b3c51ad7ef5fe9a07a9e1e7f.ctex"]
+source_file="res://timeline/charImages/Man-2_prev_ui.png"
+dest_files=["res://.godot/imported/Man-2_prev_ui.png-5690ac6316193cfaf65ec1175c72f48f.ctex"]
 
 [params]
 

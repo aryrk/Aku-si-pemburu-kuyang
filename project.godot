@@ -28,13 +28,15 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "rina": "res://timeline/charImages/rina.dch",
-"ustadz": "res://timeline/ustadz.dch"
+"ustadz": "res://timeline/shaman.dch"
 }
 directories/dtl_directory={
 "timeline": "res://timeline/timeline.dtl"
 }
-layout/style_list=["res://timeline/style.tres"]
+layout/style_list=["res://timeline/style.tres", "res://timeline/charImages/New_File.tres"]
 layout/default_style="res://timeline/style.tres"
+glossary/default_case_sensitive=true
+variables={}
 
 [display]
 

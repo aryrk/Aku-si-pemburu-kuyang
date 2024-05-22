@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biwjxo4ose7e1"
-path="res://.godot/imported/uSTADZ-kAGETT_prev_ui.png-81511b5c4f26ea9207a48ee8aba6ed41.ctex"
+uid="uid://dnqsk3umu175p"
+path="res://.godot/imported/Woman-Serious_prev_ui.png-cf1d198244591b9f2369ba3837775ce7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://timeline/charImages/uSTADZ-kAGETT_prev_ui.png"
-dest_files=["res://.godot/imported/uSTADZ-kAGETT_prev_ui.png-81511b5c4f26ea9207a48ee8aba6ed41.ctex"]
+source_file="res://timeline/charImages/Woman-Serious_prev_ui.png"
+dest_files=["res://.godot/imported/Woman-Serious_prev_ui.png-cf1d198244591b9f2369ba3837775ce7.ctex"]
 
 [params]
 
