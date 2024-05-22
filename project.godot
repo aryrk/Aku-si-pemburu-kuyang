@@ -28,7 +28,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "rina": "res://timeline/charImages/rina.dch",
-"ustadz": "res://timeline/shaman.dch"
+"shaman": "res://timeline/shaman.dch",
+"ustadz": "res://timeline/ustadz.dch"
 }
 directories/dtl_directory={
 "timeline": "res://timeline/timeline.dtl"
