@@ -1,10 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=10 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://assets/objects/player.tscn" id="2_elriq"]
-[ext_resource type="Script" path="res://scripts/hud.gd" id="3_s8mkj"]
-[ext_resource type="Texture2D" uid="uid://b7agokrdv1vma" path="res://assets/sprites/sapu.png" id="4_mbwt6"]
-[ext_resource type="Texture2D" uid="uid://c3043r43npmxj" path="res://assets/sprites/revolver.png" id="5_g3f3m"]
 [ext_resource type="PackedScene" uid="uid://bbj1htdp75rwe" path="res://assets/objects/forest.tscn" id="6_fjnt1"]
 [ext_resource type="PackedScene" uid="uid://dlauce5ctudt5" path="res://assets/objects/kunti.tscn" id="8_3odig"]
 [ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://assets/objects/enemy.tscn" id="8_7ty2f"]
@@ -13,201 +10,13 @@
 [ext_resource type="ArrayOccluder3D" uid="uid://mkjgp8vvt5ob" path="res://scenes/main.occ" id="9_tpccx"]
 [ext_resource type="PackedScene" uid="uid://cvl5lucse5ox3" path="res://assets/blend/forest/ground.blend" id="10_bh4ku"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4dhy"]
-bg_color = Color(0.215686, 0.215686, 0.215686, 0.560784)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fql0j"]
-bg_color = Color(3.32102e-06, 0.581735, 0.0692278, 0.329412)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmp4n"]
-bg_color = Color(1, 1, 1, 0.333333)
-corner_radius_top_left = 1024
-corner_radius_bottom_right = 1024
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8lad"]
-bg_color = Color(0, 0.72549, 0.160784, 1)
-border_width_left = 35
-border_color = Color(0.8, 0.8, 0.8, 0.596078)
-corner_radius_top_left = 1024
-corner_radius_bottom_right = 1024
-shadow_color = Color(0, 0, 0, 0.243137)
-shadow_size = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb5yw"]
-bg_color = Color(1, 1, 1, 0.333333)
-corner_radius_top_right = 1024
-corner_radius_bottom_left = 1024
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gevrr"]
-bg_color = Color(0, 0.647059, 0.909804, 1)
-border_width_left = 60
-border_color = Color(0.8, 0.8, 0.8, 0.596078)
-corner_radius_top_right = 1024
-corner_radius_bottom_left = 1024
-shadow_color = Color(0, 0, 0, 0.243137)
-shadow_size = 4
-
 [node name="Main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_q8fpv")
 
-[node name="Player" parent="." node_paths=PackedStringArray("crosshair") instance=ExtResource("2_elriq")]
+[node name="Player" parent="." instance=ExtResource("2_elriq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.56511, -2.2528)
-crosshair = NodePath("../HUD/Crosshair")
-
-[node name="HUD" type="CanvasLayer" parent="."]
-script = ExtResource("3_s8mkj")
-
-[node name="Control" type="Control" parent="HUD"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = 260.0
-offset_right = 20.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Control"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -41.0
-offset_top = -43.0
-offset_right = 39.0
-offset_bottom = 37.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Node2D2" type="Node2D" parent="HUD/Control/HBoxContainer"]
-
-[node name="Sprite2D" type="Sprite2D" parent="HUD/Control/HBoxContainer/Node2D2"]
-position = Vector2(36.9999, 34)
-scale = Vector2(0.085, 0.085)
-texture = ExtResource("4_mbwt6")
-
-[node name="ProgressBar" type="ProgressBar" parent="HUD/Control/HBoxContainer/Node2D2"]
-offset_right = 80.0
-offset_bottom = 80.0
-theme_override_styles/background = SubResource("StyleBoxFlat_u4dhy")
-theme_override_styles/fill = SubResource("StyleBoxFlat_fql0j")
-max_value = 10.0
-value = 1.0
-rounded = true
-fill_mode = 3
-show_percentage = false
-
-[node name="Node2D" type="Node2D" parent="HUD/Control/HBoxContainer"]
-position = Vector2(20, 0)
-
-[node name="ProgressBar2" type="ProgressBar" parent="HUD/Control/HBoxContainer/Node2D"]
-offset_left = 81.0
-offset_right = 161.0
-offset_bottom = 80.0
-theme_override_styles/background = SubResource("StyleBoxFlat_u4dhy")
-theme_override_styles/fill = SubResource("StyleBoxFlat_fql0j")
-max_value = 10.0
-value = 1.0
-rounded = true
-fill_mode = 3
-show_percentage = false
-
-[node name="Sprite2D2" type="Sprite2D" parent="HUD/Control/HBoxContainer/Node2D"]
-position = Vector2(132, 39)
-scale = Vector2(0.109167, 0.0989815)
-texture = ExtResource("5_g3f3m")
-
-[node name="Crosshair" type="TextureRect" parent="HUD"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.35, 0.35)
-pivot_offset = Vector2(64, 64)
-
-[node name="health" type="ProgressBar" parent="HUD"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 19.0
-offset_top = -38.0
-offset_right = 251.0
-offset_bottom = -21.0
-grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_pmp4n")
-theme_override_styles/fill = SubResource("StyleBoxFlat_a8lad")
-value = 100.0
-rounded = true
-show_percentage = false
-
-[node name="mana" type="ProgressBar" parent="HUD"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 18.0
-offset_top = -65.0
-offset_right = 250.0
-offset_bottom = -48.0
-grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_lb5yw")
-theme_override_styles/fill = SubResource("StyleBoxFlat_gevrr")
-value = 100.0
-rounded = true
-show_percentage = false
-
-[node name="Label" type="Label" parent="HUD"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 32.0
-offset_top = -41.0
-offset_right = 72.0
-offset_bottom = -15.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
-theme_override_font_sizes/font_size = 15
-text = "HP"
-
-[node name="Label2" type="Label" parent="HUD"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 29.0
-offset_top = -69.0
-offset_right = 75.0
-offset_bottom = -43.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
-theme_override_font_sizes/font_size = 15
-text = "MANA"
-
-[node name="RedTint" type="ColorRect" parent="HUD"]
-visible = false
-z_index = -1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 0.188235, 0.196078, 0.270588)
-
-[node name="DamageTimer" type="Timer" parent="HUD"]
-wait_time = 0.3
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -497,6 +306,3 @@ transform = Transform3D(28.3851, 0, 0, 0, 28.3851, 0, 0, 0, 28.3851, 276.116, -2
 
 [node name="ground4" parent="." instance=ExtResource("10_bh4ku")]
 transform = Transform3D(28.3851, 0, 0, 0, 28.3851, 0, 0, 0, 28.3851, -379.734, -2.791, -18.231)
-
-[connection signal="health_updated" from="Player" to="HUD" method="_on_health_updated"]
-[connection signal="timeout" from="HUD/DamageTimer" to="HUD" method="remove_red_tint"]

@@ -1,20 +1,14 @@
 extends Node3D
 @onready var player := $AudioStreamPlayer2D
 @onready var current := 0
-@onready var max :int = 3
+@onready var max_img :int = 3
 @onready var timer := $Timer
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	timer.wait_time = current+2
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _on_timer_timeout():
-	if current >= max:
+	if current >= max_img:
 		SceneSwitcher.change_scene("res://scenes/mainMenu.tscn")
 		return
 	if current > 0:

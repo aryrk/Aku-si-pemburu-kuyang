@@ -27,7 +27,7 @@ func _process(delta):
 # 	stop_emision()
 
 
-func action_shoot(delta):
+func action_shoot(_delta):
 	if Input.is_action_pressed("shoot"):
 		# hold_duration += delta
 		emision_energy = 10
