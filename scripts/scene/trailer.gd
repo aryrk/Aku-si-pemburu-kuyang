@@ -2,7 +2,9 @@ extends Node3D
 
 func go_to_main_menu():
 	SceneSwitcher.change_scene("res://scenes/mainMenu.tscn")
-
+func _process(_delta):
+	if (Input.is_anything_pressed()==true):
+		go_to_main_menu()
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
