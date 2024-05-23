@@ -126,6 +126,16 @@ func _input(event):
 		rotation_target.y -= event.relative.x / mouse_sensitivity
 		rotation_target.x -= event.relative.y / mouse_sensitivity
 
+func go_to_pause_menu():
+	get_node("HUD/Pause Menu").show()
+	GameStat.pause()
+	
+func exit_pause_menu():
+	get_node("HUD/Pause Menu").hide()
+	GameStat.resume()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	mouse_captured = true
+
 func handle_controls(_delta):
 	
 	# Mouse capture
@@ -133,12 +143,15 @@ func handle_controls(_delta):
 	if Input.is_action_just_pressed("mouse_capture"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		mouse_captured = true
-	
+		
 	if Input.is_action_just_pressed("mouse_capture_exit"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		mouse_captured = false
 		
 		input_mouse = Vector2.ZERO
+		
+		go_to_pause_menu()
+		
 	
 	action_shoot()
 	# if Input.is_action_just_pressed("reload"):

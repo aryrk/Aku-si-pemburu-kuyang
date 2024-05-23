@@ -212,6 +212,7 @@ autoplay = "RESET"
 [node name="2D element" type="Node" parent="."]
 
 [node name="Splash Screen" type="Node2D" parent="2D element"]
+visible = false
 
 [node name="Info" type="Label" parent="2D element/Splash Screen"]
 anchors_preset = 3
@@ -1361,7 +1362,7 @@ bones/937/rotation = Quaternion(0.770893, 0.441917, 0.455696, -0.0526669)
 autoplay = "Action"
 
 [node name="Pine Tree2" parent="." instance=ExtResource("8_oy5tq")]
-transform = Transform3D(0.204, 0, 0, 0, 0.204, 0, 0, 0, 0.204, 38.9003, -2.81946, -29.4787)
+transform = Transform3D(0.201488, -0.0319126, 0, 0.0319126, 0.201488, 0, 0, 0, 0.204, 1.386, 0.296, -3.087)
 
 [node name="Skeleton3D" parent="Pine Tree2/treeArm_001" index="1"]
 bones/2/rotation = Quaternion(0.00175067, -0.00251368, -0.00428767, 0.999986)

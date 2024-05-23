@@ -160,10 +160,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -22.0
-offset_top = -48.0
-offset_right = 18.0
-offset_bottom = -8.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
@@ -277,6 +277,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Dark BG" type="ColorRect" parent="HUD/Pause Menu"]
+visible = false
+z_index = 10
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -292,10 +294,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -679.0
-offset_top = -25.0
-offset_right = 12.0
-offset_bottom = 19.0
+offset_left = -182.0
+offset_top = 75.0
+offset_right = 18.0
+offset_bottom = 119.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -308,98 +310,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_vu63v")
 theme_override_styles/focus = SubResource("StyleBoxFlat_berlm")
 text = "resume"
 alignment = 0
-
-[node name="Restart" type="Button" parent="HUD/Pause Menu"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -679.0
-offset_top = 50.0
-offset_right = 16.0
-offset_bottom = 94.0
-grow_horizontal = 0
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("7_77573")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_bho4x")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5mv7u")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_vu63v")
-theme_override_styles/focus = SubResource("StyleBoxFlat_berlm")
-text = "restart"
-alignment = 0
-
-[node name="Main Menu" type="Button" parent="HUD/Pause Menu"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -692.0
-offset_top = 122.0
-offset_right = 3.0
-offset_bottom = 166.0
-grow_horizontal = 0
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("7_77573")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_bho4x")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5mv7u")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_vu63v")
-theme_override_styles/focus = SubResource("StyleBoxFlat_berlm")
-text = "main menu"
-alignment = 0
-
-[node name="Quit" type="Button" parent="HUD/Pause Menu"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -117.0
-offset_top = -76.0
-offset_right = 83.0
-offset_bottom = -31.9998
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_fonts/font = ExtResource("7_77573")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_bho4x")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5mv7u")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_vu63v")
-theme_override_styles/focus = SubResource("StyleBoxFlat_berlm")
-text = "Quit
-"
-alignment = 0
-
-[node name="Judul" type="Label" parent="HUD/Pause Menu"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -396.0
-offset_top = 148.0
-offset_right = 407.0
-offset_bottom = 291.0
-grow_horizontal = 2
-rotation = -0.0820305
-theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
-theme_override_fonts/font = ExtResource("7_77573")
-theme_override_font_sizes/font_size = 81
-text = "AKU SI PEMBURU KUYANG"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -490,8 +400,6 @@ autoplay = true
 
 [connection signal="health_updated" from="." to="HUD" method="_on_health_updated"]
 [connection signal="timeout" from="HUD/Damage_taken/DamageTimer" to="HUD" method="remove_red_tint"]
-[connection signal="pressed" from="HUD/Pause Menu/Resume" to="." method="exit_pause_menu"]
-[connection signal="pressed" from="HUD/Pause Menu/Main Menu" to="HUD" method="_on_main_menu_pressed"]
-[connection signal="pressed" from="HUD/Pause Menu/Quit" to="HUD" method="_on_quit_pressed"]
+[connection signal="pressed" from="HUD/Pause Menu/Resume" to="HUD" method="_on_resume_pressed"]
 [connection signal="timeout" from="BackSpeaker/SoundTimer" to="BackSpeaker" method="_on_sound_timer_timeout"]
 [connection signal="timeout" from="TopSpeaker/SoundTimer" to="TopSpeaker" method="_on_sound_timer_timeout"]
