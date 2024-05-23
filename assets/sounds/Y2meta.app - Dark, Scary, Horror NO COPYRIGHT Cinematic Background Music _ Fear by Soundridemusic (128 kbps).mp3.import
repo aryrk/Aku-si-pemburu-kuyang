@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5b81gsjrgxxv"
+path="res://.godot/imported/Y2meta.app - Dark, Scary, Horror NO COPYRIGHT Cinematic Background Music _ Fear by Soundridemusic (128 kbps).mp3-1a60fc8c047ab847464fabd1d2bebfcb.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Y2meta.app - Dark, Scary, Horror NO COPYRIGHT Cinematic Background Music _ Fear by Soundridemusic (128 kbps).mp3"
+dest_files=["res://.godot/imported/Y2meta.app - Dark, Scary, Horror NO COPYRIGHT Cinematic Background Music _ Fear by Soundridemusic (128 kbps).mp3-1a60fc8c047ab847464fabd1d2bebfcb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
