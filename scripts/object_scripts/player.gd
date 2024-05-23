@@ -53,7 +53,7 @@ signal health_updated
 @onready var sound_footsteps = $SoundFootsteps
 @onready var blaster_cooldown = $Cooldown
 
-@export var crosshair: TextureRect
+@onready var crosshair = $HUD/Crosshair
 
 # Functions
 

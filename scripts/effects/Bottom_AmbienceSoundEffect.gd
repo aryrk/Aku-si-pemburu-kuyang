@@ -7,8 +7,6 @@ func _ready():
 func randomize_player_timeout():
 	timer.wait_time = randf_range(30, 100)
 
-func _process(delta):
-	pass
 
 func _on_sound_timer_timeout():
 	if is_playing():

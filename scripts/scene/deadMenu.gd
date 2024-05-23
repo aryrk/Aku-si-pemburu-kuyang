@@ -5,10 +5,6 @@ func _ready():
 	Audio.stop_all_sounds()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func restart_game():
 	SceneSwitcher.change_scene("res://scenes/loading.tscn",{"next_scene":"res://scenes/main.tscn"})
 func main_menu():

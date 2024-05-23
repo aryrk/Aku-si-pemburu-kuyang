@@ -10,7 +10,7 @@ func change_scene(next_scene, params=null):
 	
 
 # In the newly opened scene, you can get the parameters by name
-func get_param(name):
-	if _params != null and _params.has(name):
-		return _params[name]
+func get_param(param_name):
+	if _params != null and _params.has(param_name):
+		return _params[param_name]
 	return null
