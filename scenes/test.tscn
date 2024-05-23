@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://7skl6dhvgnjh"]
+[gd_scene load_steps=7 format=3 uid="uid://7skl6dhvgnjh"]
 
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://assets/objects/player.tscn" id="1_6w2fg"]
 [ext_resource type="PackedScene" uid="uid://dlauce5ctudt5" path="res://assets/objects/kunti.tscn" id="2_6boub"]
 [ext_resource type="PackedScene" uid="uid://cvl5lucse5ox3" path="res://assets/blend/forest/ground.blend" id="3_t7uvr"]
 [ext_resource type="PackedScene" uid="uid://b3w08m1pqwag7" path="res://assets/objects/home.tscn" id="4_r5ehm"]
+[ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://assets/objects/enemy.tscn" id="6_h88vl"]
 [ext_resource type="ArrayOccluder3D" uid="uid://ck1s0bwdtgdar" path="res://scenes/test.occ" id="7_x2cx7"]
 
 [node name="Test" type="Node3D"]
@@ -43,3 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 0.870321, 0.492484, 0, -0.492484, 0.870321, 
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("7_x2cx7")
+
+[node name="enemy-flying" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_h88vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.37139, 0.00515092, 5.17453)
+player = NodePath("../Player")

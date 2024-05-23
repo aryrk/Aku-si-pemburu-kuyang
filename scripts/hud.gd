@@ -15,6 +15,7 @@ func add_red_tint():
 	Audio.play("assets/sounds/steam.mp3")
 	red_tint.show()
 	timer_red_tint.start()
+	$"Damage_taken/Blur anim".play("blur")
 
 func remove_red_tint():
 	red_tint.hide()
