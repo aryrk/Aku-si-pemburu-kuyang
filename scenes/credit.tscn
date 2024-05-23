@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://vg2h1our3f6m"]
+[gd_scene load_steps=18 format=3 uid="uid://vg2h1our3f6m"]
 
 [ext_resource type="Script" path="res://scripts/scene/credit.gd" id="1_5p6rm"]
 [ext_resource type="Environment" uid="uid://cdlvrv0x313vt" path="res://scenes/day-environment.tres" id="1_ue568"]
@@ -10,6 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://b3w08m1pqwag7" path="res://assets/objects/home.tscn" id="7_h7kjd"]
 [ext_resource type="PackedScene" uid="uid://7uxau4qbyeou" path="res://assets/Glbs/Forest/Pine Tree.gltf" id="8_mecce"]
 [ext_resource type="PackedScene" uid="uid://cyk7v8u7awv0c" path="res://assets/Glbs/Forest/Pohon Angker.gltf" id="9_s77va"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_psd7t"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 40.15
 
 [sub_resource type="Animation" id="Animation_j6cm6"]
 length = 0.001
@@ -97,6 +101,42 @@ tracks/6/keys = {
 "update": 0,
 "values": [71.61]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../WorldEnvironment:camera_attributes:dof_blur_far_distance")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [40.15]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../WorldEnvironment:camera_attributes:dof_blur_far_enabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:near")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.635]
+}
 
 [sub_resource type="Animation" id="Animation_dfbal"]
 resource_name = "camera"
@@ -108,10 +148,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(4.21985, 4.25854, 8.51731, 8.64111, 14.9168, 15.1463, 19.1787, 19.4738),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(4.21985, 4.25854, 8.51731, 8.64111, 14.9168, 15.1463, 19.123, 19.1787, 19.4738),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(21.099, 5.332, 26.206), Vector3(38.201, -2.19, -42.338), Vector3(38.201, -2.19, -42.338), Vector3(35.981, 1.135, -30.518), Vector3(35.981, 1.135, -30.518), Vector3(32.275, 4.815, 19.33), Vector3(32.275, 4.815, 19.33), Vector3(23.51, 1.015, 21.09)]
+"values": [Vector3(21.099, 5.332, 26.206), Vector3(38.201, -2.19, -42.338), Vector3(38.201, -2.19, -42.338), Vector3(35.981, 1.135, -30.518), Vector3(35.981, 1.135, -30.518), Vector3(30.86, 4.815, 20.175), Vector3(30.86, 4.815, 20.175), Vector3(32.275, 4.815, 19.33), Vector3(23.51, 1.015, 21.09)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -185,6 +225,42 @@ tracks/6/keys = {
 "update": 0,
 "values": [71.61, 71.61, 63.06, 63.06, 11.06, 11.06, 65.86, 65.86, 31.91]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../WorldEnvironment:camera_attributes:dof_blur_far_distance")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4.2221, 4.26116, 8.52169, 8.64319, 14.926, 15.1559, 19.477),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [40.15, 40.15, 37.15, 37.15, 8.15, 8.15, 4.8, 10.8]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../WorldEnvironment:camera_attributes:dof_blur_far_enabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 8.52062, 8.5857, 14.9216, 15.0778, 19.1212, 30.1122, 30.684),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false, true, true, true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:near")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 4.21992, 4.25843, 4.2587, 8.51659, 8.51727, 8.63947, 14.9169, 15.1462, 19.1237, 19.4736),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [3.635, 3.635, 2.0, 1.19, 1.19, 2.0, 2.728, 2.728, 1.322, 1.322, 2.728]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tp5fa"]
 _data = {
@@ -206,6 +282,7 @@ script = ExtResource("1_5p6rm")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_ue568")
+camera_attributes = SubResource("CameraAttributesPractical_psd7t")
 
 [node name="forest" parent="." instance=ExtResource("2_j7sqd")]
 transform = Transform3D(0.945519, 0, -0.325568, 0, 1, 0, 0.325568, 0, 0.945519, -1.565, 0.585, -8.742)
@@ -219,6 +296,7 @@ visible = false
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.995227, -0.0975829, 0, 0.0975829, 0.995227, 21.099, 5.332, 26.206)
 fov = 45.0
+near = 3.635
 far = 71.61
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]

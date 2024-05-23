@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5rp8gb1h4yvk"]
+[gd_scene load_steps=14 format=3 uid="uid://c5rp8gb1h4yvk"]
 
 [ext_resource type="PackedScene" uid="uid://c7fk7aitfjr3v" path="res://assets/objects/sapu.tscn" id="1_2rqm0"]
 [ext_resource type="Script" path="res://scripts/scene/loading.gd" id="1_xqqm6"]
@@ -99,10 +99,39 @@ tracks/1/keys = {
 "values": [Vector3(-0.513, 0, 0.13), Vector3(-0.243, 0, 0.13), Vector3(-0.753, 0, 0.13)]
 }
 
+[sub_resource type="Animation" id="Animation_3oscu"]
+resource_name = "gun_new"
+length = 50.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 6.07811, 0), Vector3(0, 4.52564, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.293, 0.535, 0.13)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tsufk"]
 _data = {
 "RESET": SubResource("Animation_8tpys"),
 "gun_animation": SubResource("Animation_13qer"),
+"gun_new": SubResource("Animation_3oscu"),
 "kuyang": SubResource("Animation_v7ug2"),
 "rotation": SubResource("Animation_ssgpt")
 }
@@ -157,20 +186,23 @@ autoplay = "rotation"
 [node name="HUD" type="Control" parent="Sapu Lidi"]
 visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
 
 [node name="Heading" type="Label" parent="Sapu Lidi/HUD"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 340.0
-offset_top = 78.0
-offset_right = 1239.0
-offset_bottom = 251.0
-grow_horizontal = 0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -900.0
+offset_top = -282.0
+offset_right = -1.0
+offset_bottom = -109.0
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0.196078, 1)
 theme_override_fonts/font = ExtResource("2_36n2q")
 theme_override_font_sizes/font_size = 100
@@ -178,30 +210,36 @@ text = "SAPU LIDI"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+metadata/_edit_use_anchors_ = true
 
 [node name="SubHeading" type="Label" parent="Sapu Lidi/HUD"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 343.0
-offset_top = 258.0
-offset_right = 1240.0
-offset_bottom = 372.0
-grow_horizontal = 0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -897.0
+offset_top = -102.0
+offset_bottom = 12.0
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_36n2q")
 theme_override_font_sizes/font_size = 60
 text = "Senjata paling mematikan"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Sapu Lidi/HUD"]
-layout_mode = 0
-offset_left = 506.0
-offset_top = 436.0
-offset_right = 1163.0
-offset_bottom = 621.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -774.0
+offset_top = 76.0
+offset_right = -117.0
+offset_bottom = 261.0
+grow_vertical = 2
 text = "Sapu lidi adalah alat pembersih halaman, pekarangan, atau jalan raya, sapu lidi banyak di gunakan oleh perumahan, perkantoran atau petugas kebersihan, yang terbuat dari lidi pelepah pohon, lidi yang digunakan bisa berasal dari pelapah kelapa atau aren. Sapu lidi merupakan peralatan rumah tangga khas Indonesia."
 scroll_active = false
+metadata/_edit_use_anchors_ = true
 
 [node name="Kuyang" type="Node3D" parent="."]
 visible = false
@@ -219,20 +257,23 @@ autoplay = "gun_animation"
 [node name="HUD" type="Control" parent="Kuyang"]
 visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
 
 [node name="Heading" type="Label" parent="Kuyang/HUD"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 340.0
-offset_top = 78.0
-offset_right = 1239.0
-offset_bottom = 251.0
-grow_horizontal = 0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -900.0
+offset_top = -282.0
+offset_right = -1.0
+offset_bottom = -109.0
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0.196078, 1)
 theme_override_fonts/font = ExtResource("2_36n2q")
 theme_override_font_sizes/font_size = 100
@@ -240,32 +281,38 @@ text = "KUYANG"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+metadata/_edit_use_anchors_ = true
 
 [node name="SubHeading" type="Label" parent="Kuyang/HUD"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 343.0
-offset_top = 258.0
-offset_right = 1240.0
-offset_bottom = 372.0
-grow_horizontal = 0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -897.0
+offset_top = -102.0
+offset_bottom = 12.0
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_36n2q")
 theme_override_font_sizes/font_size = 60
 text = "legenda pulau kalimantan"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Kuyang/HUD"]
-layout_mode = 0
-offset_left = 506.0
-offset_top = 436.0
-offset_right = 1163.0
-offset_bottom = 621.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -774.0
+offset_top = 76.0
+offset_right = -117.0
+offset_bottom = 261.0
+grow_vertical = 2
 text = "Kuyang, Krasue, atau Palasik adalah cerita rakyat, makhluk ini dikenal masyarakat di Kalimantan. Kuyang diceritakan sebagai manusia (wanita) yang menuntut ajaran ilmu hitam untuk mencapai kehidupan abadi.
 
 Penampakan kuyang cukup kontroversial, namun masyarakat Kalimantan masih mempercayai adanya kuyang"
 scroll_active = false
+metadata/_edit_use_anchors_ = true
 
 [node name="Pistol" type="Node3D" parent="."]
 visible = false
@@ -278,28 +325,28 @@ root_node = NodePath("../revolver")
 libraries = {
 "": SubResource("AnimationLibrary_tsufk")
 }
-autoplay = "gun_animation"
+autoplay = "gun_new"
 
 [node name="HUD" type="Control" parent="Pistol"]
 visible = false
 layout_mode = 3
-anchors_preset = 1
+anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
+anchor_bottom = 1.0
 grow_horizontal = 0
+grow_vertical = 2
 
 [node name="Heading" type="Label" parent="Pistol/HUD"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
 offset_left = -900.0
-offset_top = 78.0
+offset_top = -282.0
 offset_right = -1.0
-offset_bottom = 251.0
-grow_horizontal = 0
+offset_bottom = -109.0
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0.196078, 1)
 theme_override_fonts/font = ExtResource("2_36n2q")
 theme_override_font_sizes/font_size = 100
@@ -307,29 +354,36 @@ text = "SENAPAN KISAR"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+metadata/_edit_use_anchors_ = true
 
 [node name="SubHeading" type="Label" parent="Pistol/HUD"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
 offset_left = -897.0
-offset_top = 258.0
-offset_bottom = 372.0
+offset_top = -102.0
+offset_bottom = 12.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_36n2q")
 theme_override_font_sizes/font_size = 60
 text = "Efektif untuk jarak jauh"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Pistol/HUD"]
-layout_mode = 0
-offset_left = -734.0
-offset_top = 436.0
-offset_right = -77.0
-offset_bottom = 621.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -774.0
+offset_top = 76.0
+offset_right = -117.0
+offset_bottom = 261.0
+grow_vertical = 2
 text = "sejenis senjata api di mana peluru dimasukkan ke tabung berputar. Cara pengisian senapan kisar dibagi menjadi 2 menurut rancangan dan bentuk revolver. Yang pertama adalah pengisian satu per satu seperti senapan kisar jenis lama seperti Colt's, dan yang kedua adalah langsung, ketika silinder pengangkut peluru keluar."
 scroll_active = false
+metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 anchors_preset = 12
@@ -344,11 +398,23 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/fill = SubResource("StyleBoxFlat_fehne")
 
-[node name="Judul" type="Label" parent="."]
-offset_left = -157.0
-offset_top = 141.0
-offset_right = 646.0
-offset_bottom = 284.0
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+autostart = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Judul" type="Label" parent="Control"]
+layout_mode = 1
+offset_left = 52.0
+offset_top = 102.0
+offset_right = 491.0
+offset_bottom = 245.0
 rotation = -0.0820305
 theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
 theme_override_fonts/font = ExtResource("2_36n2q")
@@ -357,10 +423,5 @@ text = "AKU SI PEMBURU KUYANG"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.05
-one_shot = true
-autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
