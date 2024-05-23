@@ -9,7 +9,7 @@ func _ready():
 
 func _on_timer_timeout():
 	if current >= max_img:
-		SceneSwitcher.change_scene("res://scenes/mainMenu.tscn")
+		SceneSwitcher.change_scene("res://scenes/trailer.tscn")
 		return
 	if current > 0:
 		for i in range(1,current+1):
