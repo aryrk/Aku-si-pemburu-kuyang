@@ -323,7 +323,7 @@ stream = ExtResource("5_cchen")
 volume_db = 8.0
 autoplay = true
 
-[node name="Decoration" type="Node" parent="."]
+[node name="Decoration" type="Node3D" parent="."]
 
 [node name="home" parent="Decoration" instance=ExtResource("7_h7kjd")]
 transform = Transform3D(0.14851, 0, -0.192997, 0, 0.243522, 0, 0.192997, 0, 0.14851, 28.0223, -1.55874, 8.84609)

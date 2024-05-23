@@ -342,7 +342,7 @@ autoplay = true
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("7_5ey75")
 
-[node name="Kuyang" type="Node" parent="."]
+[node name="Kuyang" type="Node3D" parent="."]
 
 [node name="enemy-flying" parent="Kuyang" node_paths=PackedStringArray("player") instance=ExtResource("5_uv5oq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.9388, 9.42067, 3.60942)
@@ -504,7 +504,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2947, -4.03915, -26.2544)
 player = NodePath("../../Camera3D")
 following_player = false
 
-[node name="Decoration" type="Node" parent="."]
+[node name="Decoration" type="Node3D" parent="."]
 
 [node name="home" parent="Decoration" instance=ExtResource("6_7funt")]
 transform = Transform3D(0.14851, 0, -0.192997, 0, 0.243522, 0, 0.192997, 0, 0.14851, 28.0223, -1.55874, 8.84609)

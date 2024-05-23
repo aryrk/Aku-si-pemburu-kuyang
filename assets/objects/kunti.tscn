@@ -26,13 +26,21 @@ max_distance = 500.0
 transform = Transform3D(1.17717, 0, 0, 0, 1.17717, 0, 0, 0, 0.792226, 0.394216, 0.274453, -0.0338528)
 shape = SubResource("BoxShape3D_ut66l")
 
-[node name="Jumpscare" type="Sprite2D" parent="."]
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Jumpscare" type="Control" parent="."]
 visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Jumpscare" type="Sprite2D" parent="Jumpscare"]
 position = Vector2(644, 360)
 scale = Vector2(0.685, 0.685)
 texture = ExtResource("4_iw0s5")
-
-[node name="Timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="remove_jumpscare"]
