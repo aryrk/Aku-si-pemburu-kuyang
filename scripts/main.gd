@@ -21,3 +21,5 @@ func _on_animation_tree_animation_finished(anim_name):
 	if anim_name == "goal_achieved":
 		GameStat.release_mouse()
 		SceneSwitcher.change_scene("res://scenes/credit.tscn")
+		
+		# commit test

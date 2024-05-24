@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cmjoiayebmtjq"]
+[gd_scene load_steps=26 format=3 uid="uid://cmjoiayebmtjq"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_nng21"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="2_rarx0"]
@@ -10,12 +10,146 @@
 [ext_resource type="Environment" uid="uid://cdlvrv0x313vt" path="res://scenes/day-environment.tres" id="8_txpoe"]
 [ext_resource type="AudioStream" uid="uid://b18wbfkvi0s0l" path="res://assets/sounds/Splash/Drum1.mp3" id="9_g5xxk"]
 [ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="10_dr0m7"]
+[ext_resource type="PackedScene" uid="uid://c1haswlfahscj" path="res://assets/objects/boss.tscn" id="11_f5hbf"]
 [ext_resource type="PackedScene" uid="uid://bbj1htdp75rwe" path="res://assets/objects/forest.tscn" id="13_0c4gq"]
 [ext_resource type="PackedScene" uid="uid://dlauce5ctudt5" path="res://assets/objects/kunti.tscn" id="14_2qk22"]
 [ext_resource type="PackedScene" uid="uid://b3w08m1pqwag7" path="res://assets/objects/home.tscn" id="15_qiejp"]
 [ext_resource type="PackedScene" uid="uid://blmsq6ba8113a" path="res://assets/objects/wall.tscn" id="16_i5gol"]
 [ext_resource type="ArrayOccluder3D" uid="uid://mkjgp8vvt5ob" path="res://scenes/main.occ" id="17_nvsqa"]
 [ext_resource type="PackedScene" uid="uid://cvl5lucse5ox3" path="res://assets/blend/forest/ground.blend" id="18_1x3wk"]
+
+[sub_resource type="Animation" id="Animation_nqnfx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(43.054, 6.109, -27.362)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.314159, 2.26893, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Enemies/boss:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 13.7098, -60.9855)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Enemies/boss:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Enemies/boss:following_player")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5xvuk"]
+resource_name = "intro"
+length = 4.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 2.1, 3, 3.8, 3.9, 4.1, 4.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(43.054, 6.109, -27.362), Vector3(43.054, 6.109, -27.362), Vector3(-5.302, -2.458, -15.502), Vector3(3.923, 1.492, -26.967), Vector3(3.923, 1.492, -26.967), Vector3(3.923, 1.492, -26.967), Vector3(0.467, 2.537, -25.967), Vector3(0.467, 2.537, -25.967), Vector3(0.467, 2.537, -18.827)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 2, 2.1, 3, 3.8, 3.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.314159, 2.26893, 0), Vector3(0.314159, 2.26893, 0), Vector3(0.279253, 0, 0), Vector3(1.51844, 0, 0), Vector3(-0.619592, 1.11177, 0), Vector3(-0.619592, 1.11177, 0), Vector3(0.113446, 0.724312, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Enemies/boss:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.8, 1.1, 2, 2.1, 3, 3.9, 4.1, 4.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 13.7098, -60.9855), Vector3(49.447, 12.905, -11.227), Vector3(1.447, 12.905, -66.227), Vector3(-9.553, 20.905, -47.227), Vector3(-9.553, 20.905, 3.123), Vector3(0.467, 10.345, -29.827), Vector3(0.467, 0.92, -29.827), Vector3(0.467, 0.92, -29.827), Vector3(0.467, 0.92, -29.827), Vector3(0.467, 0.92, -14.547)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Enemies/boss:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.8, 1.1, 2, 2.1, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.758834, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Enemies/boss:following_player")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gihom"]
+_data = {
+"RESET": SubResource("Animation_nqnfx"),
+"intro": SubResource("Animation_5xvuk")
+}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a7sfo"]
 shader = ExtResource("4_tnw0w")
@@ -511,6 +645,16 @@ _data = {
 [node name="Main" type="Node3D"]
 script = ExtResource("1_nng21")
 
+[node name="Intro" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Intro"]
+transform = Transform3D(-0.642789, 0.23672, 0.72855, 0, 0.951057, -0.309017, -0.766043, -0.198633, -0.611329, 43.054, 6.109, -27.362)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Intro"]
+libraries = {
+"": SubResource("AnimationLibrary_gihom")
+}
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 process_mode = 3
 environment = ExtResource("2_rarx0")
@@ -589,9 +733,13 @@ stream = ExtResource("6_e03qi")
 volume_db = 5.0
 
 [node name="Player" parent="." instance=ExtResource("3_h3hkb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.56511, -2.2528)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56256, 54.5956)
 
 [node name="Enemies" type="Node" parent="."]
+
+[node name="boss" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("11_f5hbf")]
+player = NodePath("../../Player")
+following_player = false
 
 [node name="Level" type="Node" parent="."]
 

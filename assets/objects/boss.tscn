@@ -1,10 +1,64 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1haswlfahscj"]
+[gd_scene load_steps=8 format=3 uid="uid://c1haswlfahscj"]
 
 [ext_resource type="Script" path="res://scripts/object_scripts/boss.gd" id="1_ffxcj"]
 [ext_resource type="PackedScene" uid="uid://44hbug2elpac" path="res://assets/blend/kuyang.blend" id="2_xin65"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_iix87"]
 radius = 0.75
+
+[sub_resource type="Animation" id="Animation_m4b1o"]
+resource_name = "pre_tele"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 200, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wog51"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_27jtw"]
+resource_name = "post_tele"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 200, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q1gan"]
+_data = {
+"RESET": SubResource("Animation_wog51"),
+"post_tele": SubResource("Animation_27jtw"),
+"pre_tele": SubResource("Animation_m4b1o")
+}
 
 [node name="enemy-flying" type="Area3D"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -15,7 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("SphereShape3D_iix87")
 
 [node name="RayCast" type="RayCast3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 target_position = Vector3(0, 0, 0.8)
 
 [node name="RayCast_playermover" type="RayCast3D" parent="."]
@@ -38,6 +92,12 @@ autostart = true
 
 [node name="Timer_Hit_Received_CD" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../RayCast")
+libraries = {
+"": SubResource("AnimationLibrary_q1gan")
+}
 
 [connection signal="tree_entered" from="CollisionShape3D" to="." method="_on_collision_shape_3d_tree_entered"]
 [connection signal="tree_exited" from="CollisionShape3D" to="." method="_on_collision_shape_3d_tree_exited"]

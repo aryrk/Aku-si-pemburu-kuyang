@@ -6,11 +6,12 @@ extends Node3D
 @onready var raycast = $RayCast
 @onready var transform_point = $"."
 @onready var hit_received_cd_timer: Timer = $Timer_Hit_Received_CD
+@onready var animation_player = $AnimationPlayer
 
-var health := 5000
+var health := 10000
 var hits_received := 0
 var max_damage_taken := 500
-var base_speed := 3.0  # Base speed of the boss
+var base_speed := 3.5  # Base speed of the boss
 var speed_increment := 0.2
 var time := 0.0
 var target_position: Vector3
@@ -76,10 +77,16 @@ func damage(amount):
 		chasing_player = true  # Start chasing the player after being hit
 
 func random_teleport():
+	animation_player.play("pre_tele")  # Play the pre-teleport animation
+	await animation_player.animation_finished  # Wait for the animation to finish
+	
 	var random_x = rnd.randf_range(-20, 20)
 	var random_z = rnd.randf_range(-20, 20)
 	target_position = Vector3(random_x, position.y, random_z)
 	base_speed += speed_increment
+
+	# Now, the enemy has teleported, trigger the post-teleport animation
+	animation_player.play("post_tele")
 
 func destroy():
 	Audio.play("assets/sounds/ghast/dead.mp3")
