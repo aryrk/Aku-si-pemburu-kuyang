@@ -20,10 +20,10 @@ var rotation_target: Vector3
 
 var input_mouse: Vector2
 
+var alive = true
 var health: int = 100
 var mana: int = 100
 var is_healing: bool = false
-var heal_counter = 0
 var maxHealth: int = 100
 var gravity := 0.0
 
@@ -138,6 +138,9 @@ func exit_pause_menu():
 
 func handle_controls(_delta):
 	
+	if !alive:
+		return
+	
 	# Mouse capture
 	
 	if Input.is_action_just_pressed("mouse_capture"):
@@ -157,10 +160,9 @@ func handle_controls(_delta):
 	# if Input.is_action_just_pressed("reload"):
 	# 	action_reload()
 	# Movement
-	if Input.is_action_just_pressed("heal") and heal_counter < 3:
+	if Input.is_action_just_pressed("heal"):
 		is_healing = true
 		action_heal()
-		heal_counter += 1
 	else:
 		is_healing = false
 	
@@ -351,11 +353,13 @@ func damage(amount):
 	health_updated.emit(health, mana) # Update health on HUD
 	
 	if health <= 0:
+		alive=false
+		$Head/Camera/AnimationPlayer.play("death")
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		mouse_captured = false
 		
 		input_mouse = Vector2.ZERO
-		get_tree().change_scene_to_file(DEAD_MENU)
+		
 		
 func action_heal():
 	if mana == 0 or health == maxHealth:
@@ -365,3 +369,8 @@ func action_heal():
 	health = min(health + heal_amount, maxHealth)
 	health_updated.emit(health, mana)
 	Audio.play("assets/sounds/heal.mp3")
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name=="death":
+		get_tree().change_scene_to_file(DEAD_MENU)
