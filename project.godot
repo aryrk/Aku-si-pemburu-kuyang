@@ -158,6 +158,7 @@ dialogic_default_action={
 [rendering]
 
 occlusion_culling/bvh_build_quality=0
+textures/vram_compression/import_etc2_astc=true
 anti_aliasing/quality/msaa_3d=1
 anti_aliasing/quality/screen_space_aa=1
 occlusion_culling/use_occlusion_culling=true
