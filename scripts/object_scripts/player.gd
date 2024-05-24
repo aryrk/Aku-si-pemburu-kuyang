@@ -350,7 +350,7 @@ func damage(amount):
 	health -= amount
 	health_updated.emit(health, mana) # Update health on HUD
 	
-	if health < 0:
+	if health <= 0:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		mouse_captured = false
 		

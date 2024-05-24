@@ -2425,7 +2425,7 @@ bones/937/rotation = Quaternion(0.770901, 0.446935, 0.449252, -0.0642975)
 autoplay = "Action"
 
 [node name="Pine Tree3" parent="." instance=ExtResource("8_oy5tq")]
-transform = Transform3D(0.199542, 0.042414, 0, -0.042414, 0.199542, 0, 0, 0, 0.204, 6.971, -8.429, -14.097)
+transform = Transform3D(0.199542, 0.0424141, 0, -0.0424141, 0.199542, 0, 0, 0, 0.204, 6.971, -8.429, -14.097)
 
 [node name="Skeleton3D" parent="Pine Tree3/treeArm_001" index="1"]
 bones/2/rotation = Quaternion(0.00175067, -0.00251368, -0.00428767, 0.999986)
