@@ -390,9 +390,8 @@ autoplay = "camera"
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("6_e46wu")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_cchen")
-volume_db = 8.0
 autoplay = true
 
 [node name="Decoration" type="Node3D" parent="."]
