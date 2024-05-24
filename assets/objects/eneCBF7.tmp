@@ -6,7 +6,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_iix87"]
 radius = 0.75
 
-[node name="enemy-flying" type="Area3D"]
+[node name="enemy-flying" type="CharacterBody3D"]
 script = ExtResource("1_ukop8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -34,7 +34,5 @@ max_distance = 20.0
 wait_time = 3.0
 autostart = true
 
-[connection signal="tree_entered" from="CollisionShape3D" to="." method="_on_collision_shape_3d_tree_entered"]
-[connection signal="tree_exited" from="CollisionShape3D" to="." method="_on_collision_shape_3d_tree_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer_Moan" to="." method="moan"]
