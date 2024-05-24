@@ -1,26 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://c1haswlfahscj"]
 
 [ext_resource type="Script" path="res://scripts/object_scripts/boss.gd" id="1_ffxcj"]
-[ext_resource type="PackedScene" uid="uid://44hbug2elpac" path="res://assets/blend/kuyang.blend" id="2_xin65"]
+[ext_resource type="PackedScene" uid="uid://buw2vf8bkuq7m" path="res://assets/blend/ratu kuyang.blend" id="2_0s740"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_iix87"]
 radius = 0.75
-
-[sub_resource type="Animation" id="Animation_m4b1o"]
-resource_name = "pre_tele"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 200, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_wog51"]
 length = 0.001
@@ -53,6 +37,22 @@ tracks/0/keys = {
 "values": [Vector3(0, 200, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_m4b1o"]
+resource_name = "pre_tele"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 200, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q1gan"]
 _data = {
 "RESET": SubResource("Animation_wog51"),
@@ -79,9 +79,6 @@ target_position = Vector3(0, 0, 8)
 wait_time = 0.25
 autostart = true
 
-[node name="kuyang" parent="." instance=ExtResource("2_xin65")]
-transform = Transform3D(0.305045, 0, 0, 0, 0.305045, 0, 0, 0, 0.305045, -0.00631237, -0.511109, -0.0988748)
-
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 volume_db = 1.0
 max_distance = 20.0
@@ -98,6 +95,23 @@ root_node = NodePath("../RayCast")
 libraries = {
 "": SubResource("AnimationLibrary_q1gan")
 }
+
+[node name="ratu kuyang" parent="." instance=ExtResource("2_0s740")]
+transform = Transform3D(0.246617, 0, 0, 0, 0.246617, 0, 0, 0, 0.246617, -7.03335e-06, -0.46804, 0.020337)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.333333, 0, -2.91409e-08, -1.23252e-08, 0.302051, 0.140983, 2.64061e-08, 0.140983, -0.302051, -0.0995041, 0.477047, 0.206584)
+light_color = Color(0.797871, 0, 0.128843, 1)
+light_energy = 30.0
+spot_range = 9.792
+spot_angle = 23.18
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.333333, 0, -2.91409e-08, -1.23252e-08, 0.302051, 0.140983, 2.64061e-08, 0.140983, -0.302051, 0.0504892, 0.477047, 0.206584)
+light_color = Color(0.797871, 0, 0.128843, 1)
+light_energy = 30.0
+spot_range = 9.792
+spot_angle = 23.18
 
 [connection signal="tree_entered" from="CollisionShape3D" to="." method="_on_collision_shape_3d_tree_entered"]
 [connection signal="tree_exited" from="CollisionShape3D" to="." method="_on_collision_shape_3d_tree_exited"]
