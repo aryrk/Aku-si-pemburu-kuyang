@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=24 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_81rpc"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://dbq6nrtxy7nnf" path="res://assets/sounds/Splash/Drum3.mp3" id="14_ihqa1"]
 [ext_resource type="AudioStream" uid="uid://b18wbfkvi0s0l" path="res://assets/sounds/Splash/Drum1.mp3" id="14_qp0b1"]
 [ext_resource type="Environment" uid="uid://cdlvrv0x313vt" path="res://scenes/day-environment.tres" id="15_iwxbk"]
+[ext_resource type="PackedScene" uid="uid://c1haswlfahscj" path="res://assets/objects/boss.tscn" id="18_fg2yp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a7sfo"]
 shader = ExtResource("3_e0mlj")
@@ -566,6 +567,10 @@ player = NodePath("../../Player")
 
 [node name="enemy-flying3" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
 transform = Transform3D(-0.707098, -0.00499162, -0.707098, -0.00352961, 0.999988, -0.00352961, 0.707107, 0, -0.707107, -13.8302, 3.53992, 9)
+player = NodePath("../../Player")
+
+[node name="enemy-flying4" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("18_fg2yp")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.405, -0.956, -18.002)
 player = NodePath("../../Player")
 
 [node name="Level" type="Node" parent="."]

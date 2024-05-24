@@ -32,7 +32,8 @@ directories/dch_directory={
 "rina": "res://timeline/charImages/rina.dch",
 "shaman": "res://timeline/shaman.dch",
 "timeline/shaman": "res://scenes/timeline/shaman.dch",
-"timeline/ustadz": "res://scenes/timeline/ustadz.dch"
+"timeline/ustadz": "res://scenes/timeline/ustadz.dch",
+"ustadz": "res://timeline/ustadz.dch"
 }
 directories/dtl_directory={
 "timeline": "res://timeline/timeline.dtl",
