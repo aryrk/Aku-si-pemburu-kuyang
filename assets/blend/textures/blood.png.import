@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://s5635jeh62qn"
 path.s3tc="res://.godot/imported/blood.png-21f70d14adce864852b69367da96a805.s3tc.ctex"
+path.etc2="res://.godot/imported/blood.png-21f70d14adce864852b69367da96a805.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/blend/textures/blood.png"
-dest_files=["res://.godot/imported/blood.png-21f70d14adce864852b69367da96a805.s3tc.ctex"]
+dest_files=["res://.godot/imported/blood.png-21f70d14adce864852b69367da96a805.s3tc.ctex", "res://.godot/imported/blood.png-21f70d14adce864852b69367da96a805.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bg80h2ler0xin"
 path.s3tc="res://.godot/imported/face.png-97524b4c013963f0fe1086c2b86e2cef.s3tc.ctex"
+path.etc2="res://.godot/imported/face.png-97524b4c013963f0fe1086c2b86e2cef.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/blend/textures/face.png"
-dest_files=["res://.godot/imported/face.png-97524b4c013963f0fe1086c2b86e2cef.s3tc.ctex"]
+dest_files=["res://.godot/imported/face.png-97524b4c013963f0fe1086c2b86e2cef.s3tc.ctex", "res://.godot/imported/face.png-97524b4c013963f0fe1086c2b86e2cef.etc2.ctex"]
 
 [params]
 
