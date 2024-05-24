@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=23 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_81rpc"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
@@ -17,7 +17,6 @@
 [ext_resource type="AudioStream" uid="uid://dbq6nrtxy7nnf" path="res://assets/sounds/Splash/Drum3.mp3" id="14_ihqa1"]
 [ext_resource type="AudioStream" uid="uid://b18wbfkvi0s0l" path="res://assets/sounds/Splash/Drum1.mp3" id="14_qp0b1"]
 [ext_resource type="Environment" uid="uid://cdlvrv0x313vt" path="res://scenes/day-environment.tres" id="15_iwxbk"]
-[ext_resource type="PackedScene" uid="uid://c1haswlfahscj" path="res://assets/objects/boss.tscn" id="18_fg2yp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a7sfo"]
 shader = ExtResource("3_e0mlj")
@@ -352,10 +351,10 @@ tracks/3/path = NodePath("AudioStreamPlayer:playing")
 tracks/3/interp = 0
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.3, 0.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [false, true, true]
+"values": [false, false, true, true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -495,6 +494,97 @@ environment = ExtResource("1_q8fpv")
 [node name="Player" parent="." instance=ExtResource("2_elriq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.56511, -2.2528)
 
+[node name="2D element" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Black" type="ColorRect" parent="2D element"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Blur" type="ColorRect" parent="2D element"]
+material = SubResource("ShaderMaterial_a7sfo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main Task" type="Label" parent="2D element"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -405.0
+offset_top = -94.0
+offset_right = 409.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.949836, 0, 0.1745, 1)
+theme_override_fonts/font = ExtResource("12_do0bt")
+theme_override_font_sizes/font_size = 50
+text = "Bunuh semua kuyang"
+horizontal_alignment = 1
+
+[node name="Helper" type="Label" parent="2D element"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -153.0
+offset_top = 14.0
+offset_right = -18.0
+offset_bottom = 37.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("13_4t857")
+text = "10 kuyang tersisa"
+
+[node name="BlackOverlay" type="ColorRect" parent="2D element"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationTree" type="AnimationPlayer" parent="2D element"]
+libraries = {
+"": SubResource("AnimationLibrary_wmxim")
+}
+autoplay = "opening"
+
+[node name="Judul" type="Label" parent="2D element"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -401.5
+offset_top = -71.5
+offset_right = 401.5
+offset_bottom = 71.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0820305
+theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
+theme_override_fonts/font = ExtResource("12_do0bt")
+theme_override_font_sizes/font_size = 81
+text = "AKU SI PEMBURU KUYANG"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="2D element"]
+stream = ExtResource("13_osc5y")
+volume_db = 5.0
+
 [node name="Enemies" type="Node" parent="."]
 
 [node name="enemy-flying" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
@@ -507,10 +597,6 @@ player = NodePath("../../Player")
 
 [node name="enemy-flying3" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
 transform = Transform3D(-0.707098, -0.00499162, -0.707098, -0.00352961, 0.999988, -0.00352961, 0.707107, 0, -0.707107, -13.8302, 3.53992, 9)
-player = NodePath("../../Player")
-
-[node name="enemy-flying4" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("18_fg2yp")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -19.8039, 2.31923, -1.14198)
 player = NodePath("../../Player")
 
 [node name="Level" type="Node" parent="."]
@@ -719,96 +805,5 @@ transform = Transform3D(28.3851, 0, 0, 0, 28.3851, 0, 0, 0, 28.3851, 276.116, -2
 
 [node name="ground4" parent="." instance=ExtResource("10_bh4ku")]
 transform = Transform3D(28.3851, 0, 0, 0, 28.3851, 0, 0, 0, 28.3851, -379.734, -2.791, -18.231)
-
-[node name="2D element" type="CanvasLayer" parent="."]
-process_mode = 3
-
-[node name="Black" type="ColorRect" parent="2D element"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0)
-
-[node name="Blur" type="ColorRect" parent="2D element"]
-material = SubResource("ShaderMaterial_a7sfo")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Main Task" type="Label" parent="2D element"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -405.0
-offset_top = -94.0
-offset_right = 409.0
-offset_bottom = -7.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.949836, 0, 0.1745, 1)
-theme_override_fonts/font = ExtResource("12_do0bt")
-theme_override_font_sizes/font_size = 50
-text = "Bunuh semua kuyang"
-horizontal_alignment = 1
-
-[node name="Helper" type="Label" parent="2D element"]
-visible = false
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -153.0
-offset_top = 14.0
-offset_right = -18.0
-offset_bottom = 37.0
-grow_horizontal = 0
-theme_override_fonts/font = ExtResource("13_4t857")
-text = "10 kuyang tersisa"
-
-[node name="BlackOverlay" type="ColorRect" parent="2D element"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0)
-
-[node name="AnimationTree" type="AnimationPlayer" parent="2D element"]
-libraries = {
-"": SubResource("AnimationLibrary_wmxim")
-}
-autoplay = "opening"
-
-[node name="Judul" type="Label" parent="2D element"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -401.5
-offset_top = -71.5
-offset_right = 401.5
-offset_bottom = 71.5
-grow_horizontal = 2
-grow_vertical = 2
-rotation = -0.0820305
-theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
-theme_override_fonts/font = ExtResource("12_do0bt")
-theme_override_font_sizes/font_size = 81
-text = "AKU SI PEMBURU KUYANG"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="2D element"]
-stream = ExtResource("13_osc5y")
-volume_db = 5.0
 
 [connection signal="animation_finished" from="2D element/AnimationTree" to="." method="_on_animation_tree_animation_finished"]
