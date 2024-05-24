@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c62wy00iw7on1"
 path.s3tc="res://.godot/imported/Al-baqarah.png-20a89d4a3dce0a6b6fbc76dc53933bca.s3tc.ctex"
+path.etc2="res://.godot/imported/Al-baqarah.png-20a89d4a3dce0a6b6fbc76dc53933bca.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/blend/textures/Al-baqarah.png"
-dest_files=["res://.godot/imported/Al-baqarah.png-20a89d4a3dce0a6b6fbc76dc53933bca.s3tc.ctex"]
+dest_files=["res://.godot/imported/Al-baqarah.png-20a89d4a3dce0a6b6fbc76dc53933bca.s3tc.ctex", "res://.godot/imported/Al-baqarah.png-20a89d4a3dce0a6b6fbc76dc53933bca.etc2.ctex"]
 
 [params]
 

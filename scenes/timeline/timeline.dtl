@@ -1,0 +1,19 @@
+[music path="res://assets/sounds/ambience.mp3" fade="0.0" volume="0.0"]
+[background arg="res://timeline/charImages/pexels-rpnickson-2885320 (1).jpg" fade="0.0"]
+join rina (RK) 0
+[style name="style"]
+rina (WOman-shocked): Pa Ustadz!
+join ustadz (UK) 4 [ z_index="14"]
+ustadz (Man-Why): Ada Apa Rina? Kok lari lari gitu
+rina (Woman-Why): Di hutan sebelum gapura saya liat sesuatu pak!
+[sound path="res://assets/sounds/shock.mp3" volume="0.0"]
+ustadz (Man-Confused): Liat apa Rina? Kok kayak kaget banget gitu?
+rina (woman-huh): Saya liat manusia tapi kepalanya aja, kebawahnya organ semua pak!
+ustadz (Man-Huh): Hah? Yang bener kalo ngobrol tuh bu!
+rina (woman-huh): Beneran pak!
+ustadz (Man-Why): Kuyang maksud kamu, Rin?
+rina (WOman-shocked): Iya pak! Beneran!
+ustadz (Man-Confused): Kuyang udah lama gak keliatan Rin! Terakhir ada kuyang pas saya kecil.
+rina (Woman-Why): Bener lho pak! Coba Pak Ustadz cek sendiri di hutan sana!
+ustadz (Man-Why): Yaudah saya cek dulu rin!
+rina (woman-huh): Hati hati pak ustadz.

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqntfnjepa7nh"
 path.s3tc="res://.godot/imported/KellyJeanHorrorPhotography-127-990x660.jpg-3709293d8e84af1a559efa26ca1eebd7.s3tc.ctex"
+path.etc2="res://.godot/imported/KellyJeanHorrorPhotography-127-990x660.jpg-3709293d8e84af1a559efa26ca1eebd7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/blend/textures/KellyJeanHorrorPhotography-127-990x660.jpg"
-dest_files=["res://.godot/imported/KellyJeanHorrorPhotography-127-990x660.jpg-3709293d8e84af1a559efa26ca1eebd7.s3tc.ctex"]
+dest_files=["res://.godot/imported/KellyJeanHorrorPhotography-127-990x660.jpg-3709293d8e84af1a559efa26ca1eebd7.s3tc.ctex", "res://.godot/imported/KellyJeanHorrorPhotography-127-990x660.jpg-3709293d8e84af1a559efa26ca1eebd7.etc2.ctex"]
 
 [params]
 

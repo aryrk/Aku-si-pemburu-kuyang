@@ -2,18 +2,29 @@
 [background arg="res://timeline/charImages/pexels-rpnickson-2885320 (1).jpg" fade="0.0"]
 join rina (RK) 0
 [style name="style"]
-rina (WOman-shocked): Pa Ustadz!
-join ustadz (UK) 4 [ z_index="14"]
-ustadz (Man-Why): Ada Apa Rina? Kok lari lari gitu
-rina (Woman-Why): Di hutan sebelum gapura saya liat sesuatu pak!
+rina (WOman-shocked): Mbah!
+join shaman (Man-Shocked) 4 [ z_index="14"]
+ (Man-Why): Ada Apa Rina? Kok lari lari gitu
+rina (Woman-Why): Di deket gubuk kosong yang di hutan itu saya liat sesuatu pak!
+shaman (Man-Huh): Liat apa Rina? Kok kayak kaget banget gitu?
+[wait time="2.0"]
 [sound path="res://assets/sounds/shock.mp3" volume="0.0"]
-ustadz (Man-Confused): Liat apa Rina? Kok kayak kaget banget gitu?
 rina (woman-huh): Saya liat manusia tapi kepalanya aja, kebawahnya organ semua pak!
-ustadz (Man-Huh): Hah? Yang bener kalo ngobrol tuh bu!
+shaman (Man-Huh): Hah? Yang bener kalo ngobrol tuh Rin!
 rina (woman-huh): Beneran pak!
-ustadz (Man-Why): Kuyang maksud kamu, Rin?
+shaman (Man-Why): Kuyang maksud kamu, Rin?
 rina (WOman-shocked): Iya pak! Beneran!
-ustadz (Man-Confused): Kuyang udah lama gak keliatan Rin! Terakhir ada kuyang pas saya kecil.
-rina (Woman-Why): Bener lho pak! Coba Pak Ustadz cek sendiri di hutan sana!
-ustadz (Man-Why): Yaudah saya cek dulu rin!
-rina (woman-huh): Hati hati pak ustadz.
+shaman (Man-Confused): Kuyang udah lama gak keliatan Rin! Terakhir ada kuyang pas saya kecil.
+rina (Woman-Why): Bener lho pak! Coba bapak cek sendiri di hutan sana!
+shaman (Man-Why): Yaudah saya cek dulu, Rin!
+rina (woman-huh): Hati hati mbah!
+shaman (Man-Confused): Baik, Rin!
+leave shaman
+leave rina
+[background arg="res://timeline/charImages/3840x2160-house-forest-fog-creepy-night-4k_1540576153.jpg" fade="0.0"]
+join shaman 4
+shaman (Man-Confused): Hah dimana emang si Rina liat kuyang? katanya deket gubuk ini.
+[sound path="res://assets/sounds/ghast/moan1.mp3" volume="0.0"]
+shaman (Man-Shocked): Heh suara apaan itu?
+shaman: Ga bener ini itu beneran suara kuyang! kuyangnya beneran balik lagi!
+leave shaman

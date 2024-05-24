@@ -28,12 +28,16 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"charImages/rina": "res://scenes/timeline/charImages/rina.dch",
 "rina": "res://timeline/charImages/rina.dch",
 "shaman": "res://timeline/shaman.dch",
+"timeline/shaman": "res://scenes/timeline/shaman.dch",
+"timeline/ustadz": "res://scenes/timeline/ustadz.dch",
 "ustadz": "res://timeline/ustadz.dch"
 }
 directories/dtl_directory={
-"timeline": "res://timeline/timeline.dtl"
+"timeline": "res://timeline/timeline.dtl",
+"timeline/timeline": "res://scenes/timeline/timeline.dtl"
 }
 layout/style_list=["res://timeline/style.tres", "res://timeline/charImages/New_File.tres"]
 layout/default_style="res://timeline/style.tres"
@@ -155,6 +159,7 @@ dialogic_default_action={
 [rendering]
 
 occlusion_culling/bvh_build_quality=0
+textures/vram_compression/import_etc2_astc=true
 anti_aliasing/quality/msaa_3d=1
 anti_aliasing/quality/screen_space_aa=1
 occlusion_culling/use_occlusion_culling=true

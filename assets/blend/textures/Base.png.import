@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://0q2y50u05ih1"
 path.s3tc="res://.godot/imported/Base.png-88a528e4900fa0a30f5cd5de6de2f839.s3tc.ctex"
+path.etc2="res://.godot/imported/Base.png-88a528e4900fa0a30f5cd5de6de2f839.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/blend/textures/Base.png"
-dest_files=["res://.godot/imported/Base.png-88a528e4900fa0a30f5cd5de6de2f839.s3tc.ctex"]
+dest_files=["res://.godot/imported/Base.png-88a528e4900fa0a30f5cd5de6de2f839.s3tc.ctex", "res://.godot/imported/Base.png-88a528e4900fa0a30f5cd5de6de2f839.etc2.ctex"]
 
 [params]
 

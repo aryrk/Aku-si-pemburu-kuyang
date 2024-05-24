@@ -27,12 +27,14 @@ autostart = true
 transform = Transform3D(0.305045, 0, 0, 0, 0.305045, 0, 0, 0, 0.305045, -0.00631237, -0.511109, -0.0988748)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-volume_db = 1.0
+volume_db = 2.0
 max_distance = 20.0
 
 [node name="Timer_Moan" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
 
+[connection signal="tree_entered" from="CollisionShape3D" to="." method="_on_collision_shape_3d_tree_entered"]
+[connection signal="tree_exited" from="CollisionShape3D" to="." method="_on_collision_shape_3d_tree_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer_Moan" to="." method="moan"]

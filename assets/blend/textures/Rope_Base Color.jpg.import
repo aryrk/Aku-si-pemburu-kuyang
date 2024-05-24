@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlayw00ag1q7x"
 path.s3tc="res://.godot/imported/Rope_Base Color.jpg-2d3cf77688644ce5845f8b5a1473d28d.s3tc.ctex"
+path.etc2="res://.godot/imported/Rope_Base Color.jpg-2d3cf77688644ce5845f8b5a1473d28d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/blend/textures/Rope_Base Color.jpg"
-dest_files=["res://.godot/imported/Rope_Base Color.jpg-2d3cf77688644ce5845f8b5a1473d28d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Rope_Base Color.jpg-2d3cf77688644ce5845f8b5a1473d28d.s3tc.ctex", "res://.godot/imported/Rope_Base Color.jpg-2d3cf77688644ce5845f8b5a1473d28d.etc2.ctex"]
 
 [params]
 
