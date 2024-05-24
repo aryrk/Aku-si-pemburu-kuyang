@@ -137,6 +137,42 @@ tracks/9/keys = {
 "update": 0,
 "values": [3.635]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Control/Judul:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Control/TextEdit:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../Control/Thanks For Playing:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_dfbal"]
 resource_name = "camera"
@@ -196,7 +232,7 @@ tracks/4/path = NodePath("../Control/TextEdit:scroll_vertical")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 30.1942),
+"times": PackedFloat32Array(0, 27.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 92.0]
@@ -208,10 +244,10 @@ tracks/5/path = NodePath("../Control/ColorRect2:color")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 29.6041, 30.2925),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 27.2, 27.9, 29, 29.5, 31.6, 33),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -244,7 +280,7 @@ tracks/8/path = NodePath("../WorldEnvironment:camera_attributes:dof_blur_far_ena
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 8.52062, 8.5857, 14.9216, 15.0778, 19.1212, 30.1122, 30.684),
+"times": PackedFloat32Array(0, 8.52062, 8.5857, 14.9216, 15.0778, 19.1212, 28.7, 29.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, true, false, false, true, true, true, false]
@@ -260,6 +296,42 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [3.635, 3.635, 2.0, 1.19, 1.19, 2.0, 2.728, 2.728, 1.322, 1.322, 2.728]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Control/Judul:visible")
+tracks/10/interp = 0
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 28.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Control/TextEdit:visible")
+tracks/11/interp = 0
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 28.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../Control/Thanks For Playing:visible")
+tracks/12/interp = 0
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 29),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tp5fa"]
@@ -5308,6 +5380,22 @@ theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
 theme_override_fonts/font = ExtResource("4_mjb26")
 theme_override_font_sizes/font_size = 81
 text = "AKU SI PEMBURU KUYANG"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Thanks For Playing" type="Label" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
+theme_override_fonts/font = ExtResource("4_mjb26")
+theme_override_font_sizes/font_size = 100
+text = "THANKS FOR PLAYING"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
