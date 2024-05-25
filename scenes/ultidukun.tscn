@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bbj1htdp75rwe" path="res://assets/objects/forest.tscn" id="3_n6s25"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dx73nuapgnqbi" path="res://scenes/deadScene.occ" id="4_4q1uu"]
 [ext_resource type="AudioStream" uid="uid://bmwjge66k82rv" path="res://assets/sounds/spell.mp3" id="5_tfb0f"]
-[ext_resource type="PackedScene" uid="uid://cq6gas7vl8ng2" path="res://assets/Glbs/dukun/dukun ulti.gltf" id="6_4733v"]
+[ext_resource type="PackedScene" uid="uid://cq6gas7vl8ng2" path="res://assets/Glbs/Dukun/dukun ulti.gltf" id="6_4733v"]
 [ext_resource type="PackedScene" uid="uid://buw2vf8bkuq7m" path="res://assets/blend/ratu kuyang.blend" id="7_knnny"]
 [ext_resource type="PackedScene" uid="uid://dhwx7afp6dsnr" path="res://assets/objects/Magic ring.tscn" id="8_c52x3"]
 [ext_resource type="Environment" uid="uid://bnxn74ffjvfst" path="res://scenes/environtment/main-lighting-environment.tres" id="8_mv4co"]

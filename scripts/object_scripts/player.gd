@@ -23,6 +23,7 @@ var input_mouse: Vector2
 var alive = true
 var health: int = 100
 var mana: int = 100
+var maxMana: int = 100
 var is_healing: bool = false
 var maxHealth: int = 100
 var gravity := 0.0
@@ -362,10 +363,10 @@ func damage(amount):
 		
 		
 func action_heal():
-	if mana == 0 or health == maxHealth:
+	if mana < (maxMana/2) or health == maxHealth:
 		return
 	var heal_amount = 20 # Adjust the amount as needed
-	use_mana(mana / 2)
+	use_mana(maxMana / 2)
 	health = min(health + heal_amount, maxHealth)
 	health_updated.emit(health, mana)
 	Audio.play("assets/sounds/heal.mp3")
