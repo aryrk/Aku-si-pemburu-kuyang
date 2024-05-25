@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://vg2h1our3f6m"]
 
 [ext_resource type="Script" path="res://scripts/scene/credit.gd" id="1_5p6rm"]
-[ext_resource type="Environment" uid="uid://cdlvrv0x313vt" path="res://scenes/day-environment.tres" id="1_ue568"]
+[ext_resource type="Environment" uid="uid://cdlvrv0x313vt" path="res://scenes/environtment/day-environment.tres" id="1_ue568"]
 [ext_resource type="PackedScene" uid="uid://bbj1htdp75rwe" path="res://assets/objects/forest.tscn" id="2_j7sqd"]
 [ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="4_mjb26"]
 [ext_resource type="FontFile" uid="uid://x3ttexngrqfu" path="res://assets/fonts/Futura/FUTURA55REGULAR.TTF" id="4_v17it"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://divl3olv7mdq5"]
 
 [ext_resource type="Script" path="res://scripts/scene/deadMenu.gd" id="1_dhfpa"]
-[ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_if0yu"]
+[ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/environtment/main-environment.tres" id="1_if0yu"]
 [ext_resource type="PackedScene" uid="uid://bbj1htdp75rwe" path="res://assets/objects/forest.tscn" id="2_hiwlf"]
 [ext_resource type="PackedScene" uid="uid://bpwi6u40rkab4" path="res://assets/blend/dead human.blend" id="3_o3mk4"]
 [ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://assets/objects/enemy.tscn" id="4_x2xqb"]

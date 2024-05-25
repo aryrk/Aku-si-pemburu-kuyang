@@ -1,9 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=28 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_81rpc"]
-[ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
+[ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/environtment/main-environment.tres" id="1_q8fpv"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://assets/objects/player.tscn" id="2_elriq"]
 [ext_resource type="Shader" path="res://assets/shader/blur.gdshader" id="3_e0mlj"]
+[ext_resource type="Script" path="res://scripts/effects/Lightning effect.gd" id="3_e8ecy"]
+[ext_resource type="Environment" uid="uid://bnxn74ffjvfst" path="res://scenes/environtment/main-lighting-environment.tres" id="4_pdohf"]
 [ext_resource type="PackedScene" uid="uid://bbj1htdp75rwe" path="res://assets/objects/forest.tscn" id="6_fjnt1"]
 [ext_resource type="PackedScene" uid="uid://dlauce5ctudt5" path="res://assets/objects/kunti.tscn" id="8_3odig"]
 [ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://assets/objects/enemy.tscn" id="8_7ty2f"]
@@ -16,7 +18,44 @@
 [ext_resource type="AudioStream" uid="uid://gg65fmtx3xw7" path="res://assets/sounds/Splash/Drum2.mp3" id="13_osc5y"]
 [ext_resource type="AudioStream" uid="uid://dbq6nrtxy7nnf" path="res://assets/sounds/Splash/Drum3.mp3" id="14_ihqa1"]
 [ext_resource type="AudioStream" uid="uid://b18wbfkvi0s0l" path="res://assets/sounds/Splash/Drum1.mp3" id="14_qp0b1"]
-[ext_resource type="Environment" uid="uid://cdlvrv0x313vt" path="res://scenes/day-environment.tres" id="15_iwxbk"]
+[ext_resource type="Environment" uid="uid://cdlvrv0x313vt" path="res://scenes/environtment/day-environment.tres" id="15_iwxbk"]
+
+[sub_resource type="Animation" id="Animation_5w3op"]
+resource_name = "lightning"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../WorldEnvironment:environment")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_q8fpv"), ExtResource("4_pdohf"), ExtResource("1_q8fpv")]
+}
+
+[sub_resource type="Animation" id="Animation_oj8b6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../WorldEnvironment:environment")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_q8fpv")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vm1df"]
+_data = {
+"RESET": SubResource("Animation_oj8b6"),
+"lightning": SubResource("Animation_5w3op")
+}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a7sfo"]
 shader = ExtResource("3_e0mlj")
@@ -290,7 +329,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(4),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["kamu berhasil membunuh semua kuyang"]
+"values": ["berhasil membunuh semua kuyang"]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -515,6 +554,22 @@ script = ExtResource("1_81rpc")
 process_mode = 3
 environment = ExtResource("1_q8fpv")
 
+[node name="Lightning effect" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_e8ecy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lightning effect"]
+libraries = {
+"": SubResource("AnimationLibrary_vm1df")
+}
+
+[node name="Timer" type="Timer" parent="Lightning effect"]
+wait_time = 100.0
+autostart = true
+
 [node name="2D element" type="CanvasLayer" parent="."]
 process_mode = 3
 layer = 100
@@ -569,10 +624,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 238.5
-offset_top = 288.5
-offset_right = 1041.5
-offset_bottom = 431.5
+offset_left = -401.5
+offset_top = -71.5
+offset_right = 401.5
+offset_bottom = 71.5
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0820305
@@ -812,4 +867,5 @@ transform = Transform3D(28.3851, 0, 0, 0, 28.3851, 0, 0, 0, 28.3851, 276.116, -2
 [node name="ground4" parent="." instance=ExtResource("10_bh4ku")]
 transform = Transform3D(28.3851, 0, 0, 0, 28.3851, 0, 0, 0, 28.3851, -379.734, -2.791, -18.231)
 
+[connection signal="timeout" from="Lightning effect/Timer" to="Lightning effect" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="2D element/AnimationTree" to="." method="_on_animation_tree_animation_finished"]
