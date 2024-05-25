@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdpaystwqv5gl"]
+
+[ext_resource type="PackedScene" uid="uid://ceh2afcff6863" path="res://assets/blend/magic/magic ball.gltf" id="1_sj3g3"]
+
+[node name="MagicBall" type="Node3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.866667, 0, 1)
+light_energy = 16.0
+
+[node name="magic ball" parent="." instance=ExtResource("1_sj3g3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0542948, -0.144468, -0.0258742)
+
+[node name="Icosphere_001" parent="magic ball" index="1"]
+transform = Transform3D(0.143113, 0.0171982, 0.0275769, -0.0146513, 0.145294, -0.0145781, -0.0290105, 0.011463, 0.143404, 0, 0, 0)
+
+[node name="BezierCircle_001" parent="magic ball" index="3"]
+transform = Transform3D(1, 0, 0, 0, -0.448074, -0.893997, 0, 0.893997, -0.448074, 0, 0, 0)
+
+[node name="AnimationPlayer" parent="magic ball" index="4"]
+autoplay = "Action"
+
+[editable path="magic ball"]

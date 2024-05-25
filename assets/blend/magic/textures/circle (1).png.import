@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c40b6ensdrdir"
-path.s3tc="res://.godot/imported/MikeAlger_Texture.jpg-aa1d857778633f101fb69f9b47e2805a.s3tc.ctex"
-path.etc2="res://.godot/imported/MikeAlger_Texture.jpg-aa1d857778633f101fb69f9b47e2805a.etc2.ctex"
+uid="uid://i42ksalfy2hc"
+path.s3tc="res://.godot/imported/circle (1).png-cf3ea969a192f81c6f1271adea7ae3cc.s3tc.ctex"
+path.etc2="res://.godot/imported/circle (1).png-cf3ea969a192f81c6f1271adea7ae3cc.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Glbs/Dukun/MikeAlger_Texture.jpg"
-dest_files=["res://.godot/imported/MikeAlger_Texture.jpg-aa1d857778633f101fb69f9b47e2805a.s3tc.ctex", "res://.godot/imported/MikeAlger_Texture.jpg-aa1d857778633f101fb69f9b47e2805a.etc2.ctex"]
+source_file="res://assets/blend/magic/textures/circle (1).png"
+dest_files=["res://.godot/imported/circle (1).png-cf3ea969a192f81c6f1271adea7ae3cc.s3tc.ctex", "res://.godot/imported/circle (1).png-cf3ea969a192f81c6f1271adea7ae3cc.etc2.ctex"]
 
 [params]
 
