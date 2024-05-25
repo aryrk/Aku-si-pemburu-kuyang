@@ -198,7 +198,7 @@ tracks/14/keys = {
 
 [sub_resource type="Animation" id="Animation_7tuep"]
 resource_name = "new_animation"
-length = 10.0
+length = 4.0
 loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = false

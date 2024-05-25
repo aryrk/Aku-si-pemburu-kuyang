@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://dxvvlck8lej3f"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_81rpc"]
+[ext_resource type="Script" path="res://scripts/scene/main.gd" id="1_81rpc"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/environtment/main-environment.tres" id="1_q8fpv"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://assets/objects/player.tscn" id="2_elriq"]
 [ext_resource type="Shader" path="res://assets/shader/blur.gdshader" id="3_e0mlj"]

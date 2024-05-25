@@ -10,7 +10,7 @@ func _ready():
 	enemies = get_node("Enemies")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$"2D element/Helper".text = str(enemies.get_child_count()) + " kuyang tersisa"
 	if enemies and enemies.get_child_count() == 0:
 		
@@ -20,4 +20,4 @@ func _process(delta):
 func _on_animation_tree_animation_finished(anim_name):
 	if anim_name == "goal_achieved":
 		GameStat.release_mouse()
-		SceneSwitcher.change_scene("res://scenes/credit.tscn")
+		SceneSwitcher.change_scene("res://scenes/ultidukun.tscn")

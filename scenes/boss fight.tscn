@@ -1,6 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://cmjoiayebmtjq"]
+[gd_scene load_steps=23 format=3 uid="uid://cmjoiayebmtjq"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_nng21"]
+[ext_resource type="Script" path="res://scripts/scene/boss fight.gd" id="1_yscp0"]
 [ext_resource type="Environment" uid="uid://dkx8x0b77bxfw" path="res://scenes/environtment/nightmare-environment.tres" id="2_mn3hb"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://assets/objects/player.tscn" id="3_h3hkb"]
 [ext_resource type="Shader" path="res://assets/shader/blur.gdshader" id="4_tnw0w"]
@@ -17,139 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://blmsq6ba8113a" path="res://assets/objects/wall.tscn" id="16_i5gol"]
 [ext_resource type="ArrayOccluder3D" uid="uid://mkjgp8vvt5ob" path="res://scenes/main.occ" id="17_nvsqa"]
 [ext_resource type="PackedScene" uid="uid://cvl5lucse5ox3" path="res://assets/blend/forest/ground.blend" id="18_1x3wk"]
-
-[sub_resource type="Animation" id="Animation_nqnfx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(43.054, 6.109, -27.362)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.314159, 2.26893, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Enemies/boss:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 13.7098, -60.9855)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Enemies/boss:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Enemies/boss:following_player")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_5xvuk"]
-resource_name = "intro"
-length = 4.7
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.1, 2.1, 3, 3.8, 3.9, 4.1, 4.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(43.054, 6.109, -27.362), Vector3(43.054, 6.109, -27.362), Vector3(-5.302, -2.458, -15.502), Vector3(3.923, 1.492, -26.967), Vector3(3.923, 1.492, -26.967), Vector3(3.923, 1.492, -26.967), Vector3(0.467, 2.537, -25.967), Vector3(0.467, 2.537, -25.967), Vector3(0.467, 2.537, -18.827)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 1.1, 2, 2.1, 3, 3.8, 3.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.314159, 2.26893, 0), Vector3(0.314159, 2.26893, 0), Vector3(0.279253, 0, 0), Vector3(1.51844, 0, 0), Vector3(-0.619592, 1.11177, 0), Vector3(-0.619592, 1.11177, 0), Vector3(0.113446, 0.724312, 0), Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Enemies/boss:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.8, 1.1, 2, 2.1, 3, 3.9, 4.1, 4.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 13.7098, -60.9855), Vector3(49.447, 12.905, -11.227), Vector3(1.447, 12.905, -66.227), Vector3(-9.553, 20.905, -47.227), Vector3(-9.553, 20.905, 3.123), Vector3(0.467, 10.345, -29.827), Vector3(0.467, 0.92, -29.827), Vector3(0.467, 0.92, -29.827), Vector3(0.467, 0.92, -29.827), Vector3(0.467, 0.92, -14.547)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Enemies/boss:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.7, 0.8, 1.1, 2, 2.1, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.758834, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Enemies/boss:following_player")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gihom"]
-_data = {
-"RESET": SubResource("Animation_nqnfx"),
-"intro": SubResource("Animation_5xvuk")
-}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a7sfo"]
 shader = ExtResource("4_tnw0w")
@@ -583,17 +450,7 @@ _data = {
 }
 
 [node name="Main" type="Node3D"]
-script = ExtResource("1_nng21")
-
-[node name="Intro" type="Node3D" parent="."]
-
-[node name="Camera3D" type="Camera3D" parent="Intro"]
-transform = Transform3D(-0.642789, 0.23672, 0.72855, 0, 0.951057, -0.309017, -0.766043, -0.198633, -0.611329, 43.054, 6.109, -27.362)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Intro"]
-libraries = {
-"": SubResource("AnimationLibrary_gihom")
-}
+script = ExtResource("1_yscp0")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 process_mode = 3
@@ -653,10 +510,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -401.5
-offset_top = -71.5
-offset_right = 401.5
-offset_bottom = 71.5
+offset_left = 238.5
+offset_top = 288.5
+offset_right = 1041.5
+offset_bottom = 431.5
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0820305
