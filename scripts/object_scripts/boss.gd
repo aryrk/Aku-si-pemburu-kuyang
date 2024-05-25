@@ -6,7 +6,6 @@ extends Node3D
 @onready var raycast = $RayCast
 @onready var transform_point = $"."
 @onready var hit_received_cd_timer: Timer = $Timer_Hit_Received_CD
-@onready var animation_player = $AnimationPlayer
 
 var health := 10000
 var hits_received := 0
@@ -38,19 +37,17 @@ func _ready():
 func _process(delta):
 	# Calculate the distance to the player
 	var distance_to_player = position.distance_to(player.position)
+	self.look_at(player.position + Vector3(0, 0.5, 0), Vector3.UP)
 	
 	# Functions to make the movement more smooth
 	target_position.x += (sin(time * 5) * 1) * delta # Cosine movement (left and right)
 	target_position.y += (cos(time * 5) * 1) * delta # Sine movement (up and down)
 	time += delta
 	
+	if distance_to_player < 3.0:
+		target_position.y = max(target_position.y, player.position.y)
 
-	# Maintain y-axis position to be at least the player's y-axis position
-	target_position.y = max(target_position.y, player.position.y)
-	if distance_to_player > 0.5:
-		# Look at player
-		self.look_at(player.position + Vector3(0, 0.5, 0), Vector3.UP)
-		
+	if distance_to_player > 1.6:
 		# Calculate direction towards the player
 		var direction = (player.position - position).normalized()
 		# Move towards the player
@@ -77,16 +74,13 @@ func damage(amount):
 		chasing_player = true  # Start chasing the player after being hit
 
 func random_teleport():
-	animation_player.play("pre_tele")  # Play the pre-teleport animation
-	await animation_player.animation_finished  # Wait for the animation to finish
+	# get player position
+	var player_pos = player.position
 	
-	var random_x = rnd.randf_range(-20, 20)
-	var random_z = rnd.randf_range(-20, 20)
+	var random_x = player_pos.x + rnd.randf_range(-25, 25)
+	var random_z = player_pos.z + rnd.randf_range(-25, 25)
 	target_position = Vector3(random_x, position.y, random_z)
 	base_speed += speed_increment
-
-	# Now, the enemy has teleported, trigger the post-teleport animation
-	animation_player.play("post_tele")
 
 func destroy():
 	Audio.play("assets/sounds/ghast/dead.mp3")

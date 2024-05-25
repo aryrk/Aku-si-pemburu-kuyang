@@ -1,64 +1,157 @@
-[gd_scene load_steps=28 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=25 format=3 uid="uid://cmjoiayebmtjq"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_81rpc"]
-[ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/environtment/main-environment.tres" id="1_q8fpv"]
-[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://assets/objects/player.tscn" id="2_elriq"]
-[ext_resource type="Shader" path="res://assets/shader/blur.gdshader" id="3_e0mlj"]
-[ext_resource type="Script" path="res://scripts/effects/Lightning effect.gd" id="3_e8ecy"]
-[ext_resource type="Environment" uid="uid://bnxn74ffjvfst" path="res://scenes/environtment/main-lighting-environment.tres" id="4_pdohf"]
-[ext_resource type="PackedScene" uid="uid://bbj1htdp75rwe" path="res://assets/objects/forest.tscn" id="6_fjnt1"]
-[ext_resource type="PackedScene" uid="uid://dlauce5ctudt5" path="res://assets/objects/kunti.tscn" id="8_3odig"]
-[ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://assets/objects/enemy.tscn" id="8_7ty2f"]
-[ext_resource type="PackedScene" uid="uid://b3w08m1pqwag7" path="res://assets/objects/home.tscn" id="8_q7mfa"]
-[ext_resource type="PackedScene" uid="uid://blmsq6ba8113a" path="res://assets/objects/wall.tscn" id="9_c4oyh"]
-[ext_resource type="ArrayOccluder3D" uid="uid://mkjgp8vvt5ob" path="res://scenes/main.occ" id="9_tpccx"]
-[ext_resource type="PackedScene" uid="uid://cvl5lucse5ox3" path="res://assets/blend/forest/ground.blend" id="10_bh4ku"]
-[ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="12_do0bt"]
-[ext_resource type="FontFile" uid="uid://xntpnbawxj3n" path="res://assets/fonts/Futura/FUTURA75BOLD.TTF" id="13_4t857"]
-[ext_resource type="AudioStream" uid="uid://gg65fmtx3xw7" path="res://assets/sounds/Splash/Drum2.mp3" id="13_osc5y"]
-[ext_resource type="AudioStream" uid="uid://dbq6nrtxy7nnf" path="res://assets/sounds/Splash/Drum3.mp3" id="14_ihqa1"]
-[ext_resource type="AudioStream" uid="uid://b18wbfkvi0s0l" path="res://assets/sounds/Splash/Drum1.mp3" id="14_qp0b1"]
-[ext_resource type="Environment" uid="uid://cdlvrv0x313vt" path="res://scenes/environtment/day-environment.tres" id="15_iwxbk"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_nng21"]
+[ext_resource type="Environment" uid="uid://dkx8x0b77bxfw" path="res://scenes/environtment/nightmare-environment.tres" id="2_mn3hb"]
+[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://assets/objects/player.tscn" id="3_h3hkb"]
+[ext_resource type="Shader" path="res://assets/shader/blur.gdshader" id="4_tnw0w"]
+[ext_resource type="FontFile" uid="uid://xntpnbawxj3n" path="res://assets/fonts/Futura/FUTURA75BOLD.TTF" id="5_d77o1"]
+[ext_resource type="AudioStream" uid="uid://gg65fmtx3xw7" path="res://assets/sounds/Splash/Drum2.mp3" id="6_e03qi"]
+[ext_resource type="AudioStream" uid="uid://dbq6nrtxy7nnf" path="res://assets/sounds/Splash/Drum3.mp3" id="7_ae3ej"]
+[ext_resource type="AudioStream" uid="uid://b18wbfkvi0s0l" path="res://assets/sounds/Splash/Drum1.mp3" id="9_g5xxk"]
+[ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="10_dr0m7"]
+[ext_resource type="PackedScene" uid="uid://c1haswlfahscj" path="res://assets/objects/boss.tscn" id="11_f5hbf"]
+[ext_resource type="PackedScene" uid="uid://bbj1htdp75rwe" path="res://assets/objects/forest.tscn" id="13_0c4gq"]
+[ext_resource type="PackedScene" uid="uid://dlauce5ctudt5" path="res://assets/objects/kunti.tscn" id="14_2qk22"]
+[ext_resource type="PackedScene" uid="uid://b3w08m1pqwag7" path="res://assets/objects/home.tscn" id="15_qiejp"]
+[ext_resource type="PackedScene" uid="uid://blmsq6ba8113a" path="res://assets/objects/wall.tscn" id="16_i5gol"]
+[ext_resource type="ArrayOccluder3D" uid="uid://mkjgp8vvt5ob" path="res://scenes/main.occ" id="17_nvsqa"]
+[ext_resource type="PackedScene" uid="uid://cvl5lucse5ox3" path="res://assets/blend/forest/ground.blend" id="18_1x3wk"]
 
-[sub_resource type="Animation" id="Animation_oj8b6"]
+[sub_resource type="Animation" id="Animation_nqnfx"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../WorldEnvironment:environment")
+tracks/0/path = NodePath("Camera3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(43.054, 6.109, -27.362)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.314159, 2.26893, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Enemies/boss:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 13.7098, -60.9855)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Enemies/boss:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Enemies/boss:following_player")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_q8fpv")]
+"values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_5w3op"]
-resource_name = "lightning"
-length = 0.5
+[sub_resource type="Animation" id="Animation_5xvuk"]
+resource_name = "intro"
+length = 4.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../WorldEnvironment:environment")
-tracks/0/interp = 0
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
+"times": PackedFloat32Array(0, 1, 1.1, 2.1, 3, 3.8, 3.9, 4.1, 4.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(43.054, 6.109, -27.362), Vector3(43.054, 6.109, -27.362), Vector3(-5.302, -2.458, -15.502), Vector3(3.923, 1.492, -26.967), Vector3(3.923, 1.492, -26.967), Vector3(3.923, 1.492, -26.967), Vector3(0.467, 2.537, -25.967), Vector3(0.467, 2.537, -25.967), Vector3(0.467, 2.537, -18.827)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 2, 2.1, 3, 3.8, 3.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.314159, 2.26893, 0), Vector3(0.314159, 2.26893, 0), Vector3(0.279253, 0, 0), Vector3(1.51844, 0, 0), Vector3(-0.619592, 1.11177, 0), Vector3(-0.619592, 1.11177, 0), Vector3(0.113446, 0.724312, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Enemies/boss:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.8, 1.1, 2, 2.1, 3, 3.9, 4.1, 4.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 13.7098, -60.9855), Vector3(49.447, 12.905, -11.227), Vector3(1.447, 12.905, -66.227), Vector3(-9.553, 20.905, -47.227), Vector3(-9.553, 20.905, 3.123), Vector3(0.467, 10.345, -29.827), Vector3(0.467, 0.92, -29.827), Vector3(0.467, 0.92, -29.827), Vector3(0.467, 0.92, -29.827), Vector3(0.467, 0.92, -14.547)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Enemies/boss:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.8, 1.1, 2, 2.1, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.758834, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Enemies/boss:following_player")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("1_q8fpv"), ExtResource("4_pdohf"), ExtResource("1_q8fpv")]
+"values": [false, false, true]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_vm1df"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gihom"]
 _data = {
-"RESET": SubResource("Animation_oj8b6"),
-"lightning": SubResource("Animation_5w3op")
+"RESET": SubResource("Animation_nqnfx"),
+"intro": SubResource("Animation_5xvuk")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a7sfo"]
-shader = ExtResource("3_e0mlj")
+shader = ExtResource("4_tnw0w")
 shader_parameter/lod = 0.0
 
 [sub_resource type="Animation" id="Animation_7pxtb"]
@@ -73,7 +166,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("13_osc5y")]
+"values": [ExtResource("6_e03qi")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -102,31 +195,31 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../WorldEnvironment:environment")
+tracks/3/path = NodePath("Blur:material:shader_parameter/lod")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_q8fpv")]
+"update": 0,
+"values": [0.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Blur:material:shader_parameter/lod")
+tracks/4/path = NodePath("Black:color")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Color(0, 0, 0, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Black:color")
+tracks/5/path = NodePath("BlackOverlay:color")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -138,94 +231,82 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("BlackOverlay:color")
+tracks/6/path = NodePath("Berhasil:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
+"update": 1,
+"values": [false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Berhasil:visible")
+tracks/7/path = NodePath("Berhasil:text")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": ["AKU SI PEMBURU KUYANG"]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Berhasil:text")
+tracks/8/path = NodePath("Berhasil:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["AKU SI PEMBURU KUYANG"]
+"update": 0,
+"values": [-0.0820305]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Berhasil:rotation")
+tracks/9/path = NodePath("Berhasil:size")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-0.0820305]
+"values": [Vector2(803, 143)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Berhasil:size")
+tracks/10/path = NodePath("Berhasil:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(803, 143)]
+"values": [Vector2(238.5, 288.5)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Berhasil:position")
+tracks/11/path = NodePath("Berhasil:theme_override_font_sizes/font_size")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(238.5, 288.5)]
+"update": 1,
+"values": [81]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Berhasil:theme_override_font_sizes/font_size")
+tracks/12/path = NodePath(".:layer")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [81]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath(".:layer")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -245,7 +326,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(4),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("14_ihqa1")]
+"values": [ExtResource("7_ae3ej")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -262,118 +343,106 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../WorldEnvironment:environment")
+tracks/2/path = NodePath("Blur:material:shader_parameter/lod")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3.8, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("1_q8fpv"), ExtResource("15_iwxbk")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Blur:material:shader_parameter/lod")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(4, 5.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 2.618]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Black:color")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Black:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(3.8, 4.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.352941)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("BlackOverlay:color")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BlackOverlay:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0, 8, 9.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Berhasil:visible")
-tracks/6/interp = 0
-tracks/6/loop_wrap = true
-tracks/6/keys = {
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Berhasil:visible")
+tracks/5/interp = 0
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Berhasil:text")
+tracks/6/interp = 0
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["kamu berhasil membunuh semua kuyang"]
+}
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Berhasil:text")
+tracks/7/path = NodePath("Berhasil:theme_override_font_sizes/font_size")
 tracks/7/interp = 0
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(4),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["berhasil membunuh semua kuyang"]
+"values": [40]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Berhasil:theme_override_font_sizes/font_size")
+tracks/8/path = NodePath("Berhasil:size")
 tracks/8/interp = 0
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(4),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [40]
+"update": 0,
+"values": [Vector2(1710, 173)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Berhasil:size")
+tracks/9/path = NodePath("Berhasil:position")
 tracks/9/interp = 0
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(4),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1710, 173)]
+"values": [Vector2(-215, 273.5)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Berhasil:position")
+tracks/10/path = NodePath(".:layer")
 tracks/10/interp = 0
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(4),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-215, 273.5)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath(".:layer")
-tracks/11/interp = 0
-tracks/11/loop_wrap = true
-tracks/11/keys = {
 "times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -382,7 +451,7 @@ tracks/11/keys = {
 
 [sub_resource type="Animation" id="Animation_y2awi"]
 resource_name = "opening"
-length = 7.0
+length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -390,10 +459,10 @@ tracks/0/path = NodePath("AudioStreamPlayer:stream")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.5, 2.75959, 4.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("13_osc5y"), ExtResource("14_qp0b1")]
+"values": [ExtResource("6_e03qi"), ExtResource("6_e03qi"), ExtResource("9_g5xxk")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -402,10 +471,10 @@ tracks/1/path = NodePath("AudioStreamPlayer:playing")
 tracks/1/interp = 0
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.6, 2.55959, 2.85959, 4.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, false, true, true]
+"values": [false, false, true, false, true, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -414,7 +483,7 @@ tracks/2/path = NodePath("Helper:visible")
 tracks/2/interp = 0
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 3.1),
+"times": PackedFloat32Array(0.1, 4.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -422,119 +491,108 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../WorldEnvironment:environment")
+tracks/3/path = NodePath("Black:color")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Black:color")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.3, 0.5, 3.1, 3.2),
+"times": PackedFloat32Array(0.3, 0.5, 4.8, 4.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("BlackOverlay:color")
-tracks/5/interp = 0
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BlackOverlay:color")
+tracks/4/interp = 0
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0.3, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Berhasil:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.5, 3.1),
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Berhasil:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 4.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Berhasil:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5, 2.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["ini belum berakhir", "lawan ketakutan
+terbesar"]
+}
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Berhasil:text")
-tracks/7/interp = 1
+tracks/7/path = NodePath("Berhasil:rotation")
+tracks/7/interp = 0
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["BUNUH SEMUA KUYANG"]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Berhasil:rotation")
-tracks/8/interp = 0
-tracks/8/loop_wrap = true
-tracks/8/keys = {
 "times": PackedFloat32Array(0.5),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Berhasil:size")
+tracks/8/interp = 0
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1025, 173), Vector2(886, 173), Vector2(886, 349)]
+}
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Berhasil:size")
+tracks/9/path = NodePath("Berhasil:position")
 tracks/9/interp = 0
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0.5, 2.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1025, 173), Vector2(886, 173)]
+"values": [Vector2(195, 269), Vector2(195, 181)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Berhasil:position")
-tracks/10/interp = 0
+tracks/10/path = NodePath("Berhasil:theme_override_font_sizes/font_size")
+tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(195, 269)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Berhasil:theme_override_font_sizes/font_size")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [100, 100]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath(".:layer")
-tracks/12/interp = 0
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 3.2),
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".:layer")
+tracks/11/interp = 0
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 4.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [100, 0]
@@ -548,27 +606,21 @@ _data = {
 }
 
 [node name="Main" type="Node3D"]
-script = ExtResource("1_81rpc")
+script = ExtResource("1_nng21")
+
+[node name="Intro" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Intro"]
+transform = Transform3D(-0.642789, 0.23672, 0.72855, 0, 0.951057, -0.309017, -0.766043, -0.198633, -0.611329, 43.054, 6.109, -27.362)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Intro"]
+libraries = {
+"": SubResource("AnimationLibrary_gihom")
+}
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 process_mode = 3
-environment = ExtResource("1_q8fpv")
-
-[node name="Lightning effect" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("3_e8ecy")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Lightning effect"]
-libraries = {
-"": SubResource("AnimationLibrary_vm1df")
-}
-
-[node name="Timer" type="Timer" parent="Lightning effect"]
-wait_time = 100.0
-autostart = true
+environment = ExtResource("2_mn3hb")
 
 [node name="2D element" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -600,7 +652,7 @@ offset_top = 14.0
 offset_right = -18.0
 offset_bottom = 37.0
 grow_horizontal = 0
-theme_override_fonts/font = ExtResource("13_4t857")
+theme_override_fonts/font = ExtResource("5_d77o1")
 text = "10 kuyang tersisa"
 
 [node name="BlackOverlay" type="ColorRect" parent="2D element"]
@@ -624,15 +676,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 238.5
-offset_top = 288.5
-offset_right = 1041.5
-offset_bottom = 431.5
+offset_left = -401.5
+offset_top = -71.5
+offset_right = 401.5
+offset_bottom = 71.5
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0820305
 theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
-theme_override_fonts/font = ExtResource("12_do0bt")
+theme_override_fonts/font = ExtResource("10_dr0m7")
 theme_override_font_sizes/font_size = 81
 text = "AKU SI PEMBURU KUYANG"
 horizontal_alignment = 1
@@ -640,232 +692,223 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="2D element"]
-stream = ExtResource("13_osc5y")
+stream = ExtResource("6_e03qi")
 volume_db = 5.0
 
-[node name="Player" parent="." instance=ExtResource("2_elriq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.56511, -2.2528)
+[node name="Player" parent="." instance=ExtResource("3_h3hkb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56256, 54.5956)
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="enemy-flying" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4487, 2.5, -6)
+[node name="boss" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("11_f5hbf")]
 player = NodePath("../../Player")
-
-[node name="enemy-flying2" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -30.4487, 2.5, 1.5)
-player = NodePath("../../Player")
-
-[node name="enemy-flying3" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -15.4487, 3.5, 9)
-player = NodePath("../../Player")
+following_player = false
 
 [node name="Level" type="Node" parent="."]
 
-[node name="forest" parent="Level" instance=ExtResource("6_fjnt1")]
+[node name="forest" parent="Level" instance=ExtResource("13_0c4gq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.394228, 9.53674e-07, 13.4598)
 
-[node name="forest2" parent="Level" instance=ExtResource("6_fjnt1")]
+[node name="forest2" parent="Level" instance=ExtResource("13_0c4gq")]
 transform = Transform3D(-0.0132117, 0, -0.999913, 0, 1, 0, 0.999913, 0, -0.0132117, -105.219, -0.018, 15.351)
 
 [node name="Decoration" type="Node" parent="."]
 
-[node name="kunt" parent="Decoration" instance=ExtResource("8_3odig")]
+[node name="kunt" parent="Decoration" instance=ExtResource("14_2qk22")]
 transform = Transform3D(1.64975, 0, 0, 0, 1.64975, 0, 0, 0, 1.64975, -67.6605, -3.0589, 54.8263)
 
-[node name="home" parent="Decoration" instance=ExtResource("8_q7mfa")]
+[node name="home" parent="Decoration" instance=ExtResource("15_qiejp")]
 transform = Transform3D(0.275325, 0, 0, 0, 0.275325, 0, 0, 0, 0.275325, -67.4214, -3.20352, 50.8433)
 
 [node name="Boundary" type="Node" parent="."]
 
-[node name="wall" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 51.4937, -3.0097, 28.5476)
 
-[node name="wall2" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall2" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 51.4937, -3.0097, 38.7556)
 
-[node name="wall3" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall3" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 51.4937, -3.0097, 51.5759)
 
-[node name="wall4" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall4" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 51.4937, -3.0097, 61.6055)
 
-[node name="wall5" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall5" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 51.4937, -3.0097, 16.5435)
 
-[node name="wall6" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall6" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 51.4937, -3.0097, 4.24063)
 
-[node name="wall7" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall7" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 51.4937, -3.0097, -5.69774)
 
-[node name="wall8" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall8" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 51.4937, -3.0097, -16.4311)
 
-[node name="wall9" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall9" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 51.4937, -3.0097, -26.9398)
 
-[node name="wall10" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall10" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 51.4937, -3.0097, -36.7284)
 
-[node name="wall11" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall11" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.1, -3.0097, 28.5476)
 
-[node name="wall12" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall12" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.1, -3.0097, 38.7556)
 
-[node name="wall13" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall13" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.1, -3.0097, 51.5759)
 
-[node name="wall14" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall14" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.1, -3.0097, 61.6055)
 
-[node name="wall15" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall15" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.1, -3.0097, 16.5435)
 
-[node name="wall16" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall16" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.1, -3.0097, 4.24063)
 
-[node name="wall17" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall17" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.1, -3.0097, -5.69774)
 
-[node name="wall18" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall18" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.1, -3.0097, -16.4311)
 
-[node name="wall19" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall19" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.1, -3.0097, -26.9398)
 
-[node name="wall20" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall20" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.1, -3.0097, -36.7284)
 
-[node name="wall21" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall21" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, 11.4925, -3.0097, 64.7163)
 
-[node name="wall22" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall22" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, 21.6943, -3.0097, 65.0701)
 
-[node name="wall23" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall23" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, 34.507, -3.0097, 65.5144)
 
-[node name="wall24" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall24" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, 44.5306, -3.0097, 65.8619)
 
-[node name="wall25" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall25" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, -0.504395, -3.0097, 64.3003)
 
-[node name="wall26" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall26" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, -12.7998, -3.0097, 63.8739)
 
-[node name="wall27" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall27" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, -22.7322, -3.0097, 63.5295)
 
-[node name="wall28" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall28" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, -33.4592, -3.0097, 63.1576)
 
-[node name="wall29" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall29" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, -43.9616, -3.0097, 62.7934)
 
-[node name="wall30" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall30" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, -53.7442, -3.0097, 62.4541)
 
-[node name="wall31" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall31" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, -66.9531, -3.0097, 63.1576)
 
-[node name="wall32" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall32" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, -77.4554, -3.0097, 62.7934)
 
-[node name="wall33" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall33" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, -87.2381, -3.0097, 62.4541)
 
-[node name="wall34" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall34" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, -101.292, -3.0097, 63.1576)
 
-[node name="wall35" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall35" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, -111.795, -3.0097, 62.7934)
 
-[node name="wall36" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall36" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, -121.577, -3.0097, 62.4541)
 
-[node name="wall37" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall37" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, -132.239, -3.0097, 63.1576)
 
-[node name="wall38" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall38" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, -142.741, -3.0097, 62.7934)
 
-[node name="wall39" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall39" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(0.0346554, 0, 0.999399, 0, 1, 0, -0.999399, 0, 0.0346554, -152.524, -3.0097, 62.4541)
 
-[node name="wall40" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall40" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.4925, -3.0097, -37.4733)
 
-[node name="wall41" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall41" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 21.6943, -3.0097, -37.1196)
 
-[node name="wall42" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall42" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 34.507, -3.0097, -36.6753)
 
-[node name="wall43" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall43" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 44.5306, -3.0097, -36.3277)
 
-[node name="wall44" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall44" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.504395, -3.0097, -37.8893)
 
-[node name="wall45" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall45" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.7998, -3.0097, -38.3157)
 
-[node name="wall46" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall46" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -22.7322, -3.0097, -38.6601)
 
-[node name="wall47" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall47" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -33.4592, -3.0097, -39.0321)
 
-[node name="wall48" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall48" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -43.9616, -3.0097, -39.3963)
 
-[node name="wall49" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall49" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -53.7442, -3.0097, -39.7355)
 
-[node name="wall50" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall50" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -66.9531, -3.0097, -39.0321)
 
-[node name="wall51" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall51" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -77.4554, -3.0097, -39.3963)
 
-[node name="wall52" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall52" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -87.2381, -3.0097, -39.7355)
 
-[node name="wall53" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall53" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -101.292, -3.0097, -39.0321)
 
-[node name="wall54" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall54" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -111.795, -3.0097, -39.3963)
 
-[node name="wall55" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall55" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -121.577, -3.0097, -39.7355)
 
-[node name="wall56" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall56" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -132.239, -3.0097, -39.0321)
 
-[node name="wall57" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall57" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -142.741, -3.0097, -39.3963)
 
-[node name="wall58" parent="Boundary" instance=ExtResource("9_c4oyh")]
+[node name="wall58" parent="Boundary" instance=ExtResource("16_i5gol")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -152.524, -3.0097, -39.7355)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-occluder = ExtResource("9_tpccx")
+occluder = ExtResource("17_nvsqa")
 
-[node name="ground" parent="." instance=ExtResource("10_bh4ku")]
+[node name="ground" parent="." instance=ExtResource("18_1x3wk")]
 transform = Transform3D(15.2847, 0, 0, 0, 15.2847, 0, 0, 0, 15.2847, -46.6054, -2.94524, 179.668)
 
-[node name="ground2" parent="." instance=ExtResource("10_bh4ku")]
+[node name="ground2" parent="." instance=ExtResource("18_1x3wk")]
 transform = Transform3D(15.2847, 0, 0, 0, 15.2847, 0, 0, 0, 15.2847, -46.6054, -3.15515, -163.785)
 
-[node name="ground3" parent="." instance=ExtResource("10_bh4ku")]
+[node name="ground3" parent="." instance=ExtResource("18_1x3wk")]
 transform = Transform3D(28.3851, 0, 0, 0, 28.3851, 0, 0, 0, 28.3851, 276.116, -2.79099, -18.231)
 
-[node name="ground4" parent="." instance=ExtResource("10_bh4ku")]
+[node name="ground4" parent="." instance=ExtResource("18_1x3wk")]
 transform = Transform3D(28.3851, 0, 0, 0, 28.3851, 0, 0, 0, 28.3851, -379.734, -2.791, -18.231)
 
-[connection signal="timeout" from="Lightning effect/Timer" to="Lightning effect" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="2D element/AnimationTree" to="." method="_on_animation_tree_animation_finished"]
