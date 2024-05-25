@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cq6gas7vl8ng2"
-path="res://.godot/imported/dukun ulti.gltf-92aafff15fe8992715d8eb710dac2e3f.scn"
+path="res://.godot/imported/dukun ulti.gltf-0cf69f3064a6701bd219afaa162f65fd.scn"
 
 [deps]
 
-source_file="res://assets/Glbs/Dukun/dukun ulti.gltf"
-dest_files=["res://.godot/imported/dukun ulti.gltf-92aafff15fe8992715d8eb710dac2e3f.scn"]
+source_file="res://assets/Glbs/dukun/dukun ulti.gltf"
+dest_files=["res://.godot/imported/dukun ulti.gltf-0cf69f3064a6701bd219afaa162f65fd.scn"]
 
 [params]
 
