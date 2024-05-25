@@ -540,7 +540,6 @@ volume_db = -5.0
 
 [node name="boss" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("11_f5hbf")]
 player = NodePath("../../Player")
-following_player = false
 
 [node name="Level" type="Node" parent="."]
 

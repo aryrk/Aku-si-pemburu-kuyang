@@ -453,16 +453,17 @@ transform = Transform3D(0.899863, 0.0279239, 0, -0.0157072, 1.59976, 0, 0, 0, 0.
 shape = SubResource("SphereShape3D_iix87")
 
 [node name="RayCast" type="RayCast3D" parent="."]
-transform = Transform3D(40, 0, 0, 0, 60, 0, 0, 0, 1, 0, 0, -0.3)
+transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 1, 0, 0, -0.333333)
 target_position = Vector3(0, 0, 0.8)
 hit_from_inside = true
+collide_with_areas = true
 
 [node name="RayCast_playermover" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, 8)
 hit_from_inside = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.25
+wait_time = 0.07
 autostart = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
