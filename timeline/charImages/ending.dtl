@@ -1,0 +1,18 @@
+[music path="res://assets/sounds/Y2meta.app - _MELANCHOLIA_ Music Box _Sad, creepy song_ (128 kbps).mp3" fade="0.0" volume="0.0"]
+[background arg="res://timeline/charImages/s3.png" fade="0.0"]
+join shaman (Man-Why) 4
+shaman: Siapa sebenernya kamu? Hentikan teror ini!
+join kuyangBoss 0
+[style name="style"]
+kuyangBoss (KuyangBoss-Default): Kamu tak mengenaliku, pak?
+shaman: Suara itu...
+shaman (Man-Shocked): Zahra! kamu... tak masuk akal!
+kuyangBoss: Ini saya pak, maafkan namun ini jalan yang ku pilih. Aku terbutakan oleh nafsuku
+kuyangBoss: Jika memang niatmu untuk mengakhiri ini lakukanlah
+shaman: Tak mungkin aku membunuh istriku sendiri!
+shaman (Man-Confused): Kenapa! Zah jelaskan padaku! Teganya kau pada desa ini! Kepada ku?
+kuyangBoss: Aku menggunakan kuyang tersebut untuk membantuku mencari mangsa dan mencapai tujuan akhirku yaitu keabadian
+shaman (Man-Confused): Kita sebagai paranormal disini membantu mereka yang membutuhkan, Zah! Bukan menggunakan mereka untuk kepentingan kita!
+kuyangBoss: Ini semua salahku pak, lakukan apa yang perlu kamu lakukan untuk melindugi desa ini. Ritual kuyang ini tak dapat dibatalkan kecuali aku mati.
+shaman: Maafkan aku Zahra, aku tak bisa membiarkan desa ini menderita lagi seperti kejadian di masa lalu.
+kuyangBoss: Terimakasih untuk selama ini, pak. Maafkan aku memilih jalan ini.

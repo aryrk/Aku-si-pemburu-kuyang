@@ -30,6 +30,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "charImages/rina": "res://scenes/timeline/charImages/rina.dch",
+"kuyangBoss": "res://timeline/charImages/kuyangBoss.dch",
 "rina": "res://timeline/charImages/rina.dch",
 "shaman": "res://timeline/shaman.dch",
 "timeline/shaman": "res://scenes/timeline/shaman.dch",
@@ -37,6 +38,7 @@ directories/dch_directory={
 "ustadz": "res://timeline/ustadz.dch"
 }
 directories/dtl_directory={
+"ending": "res://timeline/charImages/ending.dtl",
 "timeline": "res://timeline/timeline.dtl",
 "timeline/timeline": "res://scenes/timeline/timeline.dtl"
 }

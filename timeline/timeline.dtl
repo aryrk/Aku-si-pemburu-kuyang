@@ -1,10 +1,24 @@
 [music path="res://assets/sounds/ambience.mp3" fade="0.0" volume="0.0"]
+[background arg="res://timeline/charImages/s1.png" fade="0.0"]
+join rina (Woman-Why) 4
+[wait time="3.0"]
 [background arg="res://timeline/charImages/pexels-rpnickson-2885320 (1).jpg" fade="0.0"]
-join rina (RK) 0
-[style name="style"]
+rina (Woman-Why): Gak biasanya jalan sini agak sepi. Biasanya agak ramean apa gara-gara pulang kemaleman ya.
+[sound path="res://assets/sounds/effect/Brush Rustling/Rust1.mp3" volume="0.0"]
+rina (WOman-shocked): Suara apaan tuh? Mana tengah hutan gini
+rina (Woman-Why): Duh cek dulu deh buat mastiin siapa tau cuman kucing kan.
+leave rina
+[background arg="res://timeline/charImages/S2.png" fade="0.0"]
+[wait time="2.0"]
+join rina 4
+rina (WOman-shocked): Lah?! Itu orang kok kepalanya doang kebawahnya organ!
+rina (Woman-Why): Harus lapor ke si Mbah nih! Gawat!
+leave rina
+[background arg="res://timeline/charImages/6225b0298e78a_1646637097.jpg" fade="0.0"]
+join rina (WOman-shocked) 0
 rina (WOman-shocked): Mbah!
 join shaman (Man-Shocked) 4 [ z_index="14"]
- (Man-Why): Ada Apa Rina? Kok lari lari gitu
+Ada Apa Rina? Kok lari lari gitu
 rina (Woman-Why): Di deket gubuk kosong yang di hutan itu saya liat sesuatu pak!
 shaman (Man-Huh): Liat apa Rina? Kok kayak kaget banget gitu?
 [wait time="2.0"]
@@ -13,7 +27,7 @@ rina (woman-huh): Saya liat manusia tapi kepalanya aja, kebawahnya organ semua p
 shaman (Man-Huh): Hah? Yang bener kalo ngobrol tuh Rin!
 rina (woman-huh): Beneran pak!
 shaman (Man-Why): Kuyang maksud kamu, Rin?
-rina (WOman-shocked): Iya pak! Beneran!
+rina (WOman-shocked): Iya pak pokoknya itu! Beneran!
 shaman (Man-Confused): Kuyang udah lama gak keliatan Rin! Terakhir ada kuyang pas saya kecil.
 rina (Woman-Why): Bener lho pak! Coba bapak cek sendiri di hutan sana!
 shaman (Man-Why): Yaudah saya cek dulu, Rin!
@@ -27,5 +41,6 @@ shaman (Man-Confused): Hah dimana emang si Rina liat kuyang? katanya deket gubuk
 [wait time="1.0"]
 [sound path="res://assets/sounds/ghast/moan1.mp3" volume="0.0"]
 shaman (Man-Shocked): Heh suara apaan itu?
-shaman: Ga bener ini itu beneran suara kuyang! kuyangnya beneran balik lagi!
+shaman: Ga bener ini. Itu beneran suara kuyang! kuyangnya beneran balik lagi! 
+shaman: Harus diburu sebelum jadi malapetaka!
 leave shaman

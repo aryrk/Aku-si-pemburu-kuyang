@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "KuyangBoss-Default",
+"description": "",
+"display_name": "kuyangBoss",
+"mirror": false,
+"nicknames": ["Kuyang"],
+"offset": Vector2(-5, 0),
+"portraits": {
+"KuyangBoss-Default": {
+"export_overrides": {
+"image": "\"res://timeline/charImages/kuyangboss_prev_ui.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}
