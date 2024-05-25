@@ -8,7 +8,7 @@ extends Node3D
 @onready var hit_received_cd_timer: Timer = $Timer_Hit_Received_CD
 @onready var animation := $AnimationPlayer
 
-var health := 400
+var health := 10000
 var hits_received := 0
 var max_damage_taken := 500
 var base_speed := 3.5 # Base speed of the boss
