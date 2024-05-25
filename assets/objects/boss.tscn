@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://buw2vf8bkuq7m" path="res://assets/blend/ratu kuyang.blend" id="2_0s740"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_iix87"]
-radius = 0.75
 
 [sub_resource type="Animation" id="Animation_wog51"]
 length = 0.001
@@ -65,15 +64,17 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 script = ExtResource("1_ffxcj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+transform = Transform3D(0.899863, 0.0279239, 0, -0.0157072, 1.59976, 0, 0, 0, 0.2, 0, 0.25, 0)
 shape = SubResource("SphereShape3D_iix87")
 
 [node name="RayCast" type="RayCast3D" parent="."]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+transform = Transform3D(40, 0, 0, 0, 60, 0, 0, 0, 1, 0, 0, -0.3)
 target_position = Vector3(0, 0, 0.8)
+hit_from_inside = true
 
 [node name="RayCast_playermover" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, 8)
+hit_from_inside = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
