@@ -24,6 +24,7 @@ leave rina
 [background arg="res://timeline/charImages/3840x2160-house-forest-fog-creepy-night-4k_1540576153.jpg" fade="0.0"]
 join shaman 4
 shaman (Man-Confused): Hah dimana emang si Rina liat kuyang? katanya deket gubuk ini.
+[wait time="1.0"]
 [sound path="res://assets/sounds/ghast/moan1.mp3" volume="0.0"]
 shaman (Man-Shocked): Heh suara apaan itu?
 shaman: Ga bener ini itu beneran suara kuyang! kuyangnya beneran balik lagi!
