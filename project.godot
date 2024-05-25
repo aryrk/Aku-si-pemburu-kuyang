@@ -23,8 +23,8 @@ config/icon="res://icon-aspk.png"
 Audio="*res://scripts/audio.gd"
 SceneSwitcher="*res://scripts/scene_switcher.gd"
 GameStat="*res://scripts/game_stat.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Tools="*res://scripts/tools.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 

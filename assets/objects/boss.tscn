@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1haswlfahscj"]
+[gd_scene load_steps=13 format=3 uid="uid://c1haswlfahscj"]
 
 [ext_resource type="Script" path="res://scripts/object_scripts/boss.gd" id="1_ffxcj"]
 [ext_resource type="PackedScene" uid="uid://buw2vf8bkuq7m" path="res://assets/blend/ratu kuyang.blend" id="2_0s740"]
+[ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="3_534qr"]
+[ext_resource type="Shader" path="res://assets/shader/vhs glitch.gdshader" id="4_co08s"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_iix87"]
 
@@ -19,45 +21,77 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_27jtw"]
-resource_name = "post_tele"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 200, 0), Vector3(0, 0, 0)]
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Control/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_m4b1o"]
-resource_name = "pre_tele"
-length = 0.2
+resource_name = "teleport"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
+tracks/0/path = NodePath("../Control/ColorRect:visible")
+tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 200, 0)]
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_6rm6j"]
+resource_name = "start"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Control/ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q1gan"]
 _data = {
 "RESET": SubResource("Animation_wog51"),
-"post_tele": SubResource("Animation_27jtw"),
-"pre_tele": SubResource("Animation_m4b1o")
+"start": SubResource("Animation_6rm6j"),
+"teleport": SubResource("Animation_m4b1o")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kau5u"]
+bg_color = Color(0, 0, 0, 0.482353)
+corner_radius_top_left = 10
+corner_radius_top_right = 1024
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ymeu"]
+bg_color = Color(0.701961, 0.117647, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 1024
+corner_radius_bottom_left = 10
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ydpm6"]
+shader = ExtResource("4_co08s")
+shader_parameter/range = 0.1
+shader_parameter/noiseQuality = 300.0
+shader_parameter/noiseIntensity = 0.6
+shader_parameter/offsetIntensity = 0.03
+shader_parameter/colorOffsetIntensity = 5.0
 
 [node name="enemy-flying" type="Area3D"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -81,11 +115,12 @@ wait_time = 0.25
 autostart = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-volume_db = 1.0
-max_distance = 20.0
+volume_db = 25.0
+max_db = 6.0
+max_distance = 4096.0
 
 [node name="Timer_Moan" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 autostart = true
 
 [node name="Timer_Hit_Received_CD" type="Timer" parent="."]
@@ -96,6 +131,7 @@ root_node = NodePath("../RayCast")
 libraries = {
 "": SubResource("AnimationLibrary_q1gan")
 }
+autoplay = "start"
 
 [node name="ratu kuyang" parent="." instance=ExtResource("2_0s740")]
 transform = Transform3D(0.246617, 0, 0, 0, 0.246617, 0, 0, 0, 0.246617, -7.03335e-06, -0.46804, 0.020337)
@@ -113,6 +149,52 @@ light_color = Color(0.797871, 0, 0.128843, 1)
 light_energy = 30.0
 spot_range = 9.792
 spot_angle = 23.18
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Health" type="ProgressBar" parent="HUD"]
+layout_mode = 1
+offset_left = 141.0
+offset_top = 16.0
+offset_right = 867.0
+offset_bottom = 43.0
+theme_override_styles/background = SubResource("StyleBoxFlat_kau5u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4ymeu")
+value = 32.9
+show_percentage = false
+
+[node name="Label" type="Label" parent="HUD"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 115.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.930223, 0.11862, 1.92523e-07, 1)
+theme_override_fonts/font = ExtResource("3_534qr")
+theme_override_font_sizes/font_size = 20
+text = "Ratu Kuyang"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+visible = false
+material = SubResource("ShaderMaterial_ydpm6")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="tree_entered" from="CollisionShape3D" to="." method="_on_collision_shape_3d_tree_entered"]
 [connection signal="tree_exited" from="CollisionShape3D" to="." method="_on_collision_shape_3d_tree_exited"]

@@ -6,6 +6,7 @@ extends Node3D
 @onready var raycast = $RayCast
 @onready var transform_point = $"."
 @onready var hit_received_cd_timer: Timer = $Timer_Hit_Received_CD
+@onready var animation := $AnimationPlayer
 
 var health := 10000
 var hits_received := 0
@@ -30,9 +31,11 @@ func _ready():
 	target_position = position
 	audio_stream = $AudioStreamPlayer3D
 	timer_moan = $Timer_Moan
-	timer_moan.wait_time = randf_range(3, 10)
 	hit_received_cd_timer.wait_time = 0.2
 	hit_received_cd_timer.one_shot = true
+	
+	$HUD/Health.max_value = health
+	$HUD/Health.value = health
 
 func _process(delta):
 	# Calculate the distance to the player
@@ -60,10 +63,10 @@ func damage(amount):
 	if not hit_received_cd_timer.is_stopped():  # Check if cooldown is active
 		return  # Ignore hits during cooldown
 	amount = min(amount, max_damage_taken)  # Limit the damage taken to max_damage_taken
-	Audio.play("assets/sounds/ghast/hurt.mp3")
 	health -= amount
 	hits_received += 1
 	hit_received_cd_timer.start()  # Start cooldown timer
+	$HUD/Health.value = health
 
 	if health <= 0 and not destroyed:
 		destroy()
@@ -74,7 +77,11 @@ func damage(amount):
 		chasing_player = true  # Start chasing the player after being hit
 
 func random_teleport():
+	Audio.play("assets/sounds/effect/Glitch/Glitch"+str(randi_range(1,12))+".mp3")
+	animation.play("teleport")
+	
 	# get player position
+	
 	var player_pos = player.position
 	
 	var random_x = player_pos.x + rnd.randf_range(-25, 25)
@@ -88,11 +95,10 @@ func destroy():
 	queue_free()
 
 func moan():
-	if rnd.randi_range(0, 1) == 0 and not audio_stream.playing:
-		audio_stream.pitch_scale = randf_range(0.8, 1.2)
-		audio_stream.stream = load("assets/sounds/ghast/moan" + str(rnd.randi_range(1, 5)) + ".mp3")
+	if not audio_stream.playing:
+		audio_stream.stream = load("assets/sounds/Laugh/Laugh"+str(randi_range(1,5))+".mp3")
 		audio_stream.play()
-		timer_moan.wait_time = randf_range(3, 10)
+		timer_moan.wait_time = randf_range(3, 7)
 
 func _on_timer_timeout():
 	if raycast.is_colliding():
