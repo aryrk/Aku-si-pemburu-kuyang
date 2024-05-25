@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://cmjoiayebmtjq"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_nng21"]
-[ext_resource type="Environment" uid="uid://dkx8x0b77bxfw" path="res://scenes/nightmare-environment.tres" id="2_mn3hb"]
+[ext_resource type="Environment" uid="uid://dkx8x0b77bxfw" path="res://scenes/environtment/nightmare-environment.tres" id="2_mn3hb"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://assets/objects/player.tscn" id="3_h3hkb"]
 [ext_resource type="Shader" path="res://assets/shader/blur.gdshader" id="4_tnw0w"]
 [ext_resource type="FontFile" uid="uid://xntpnbawxj3n" path="res://assets/fonts/Futura/FUTURA75BOLD.TTF" id="5_d77o1"]
@@ -535,7 +535,7 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": ["ini belum berakhir", "lawan ketakutan
-terbesarmu"]
+terbesar"]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -678,8 +678,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -401.5
 offset_top = -71.5
-offset_right = 593.5
-offset_bottom = 101.5
+offset_right = 401.5
+offset_bottom = 71.5
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0820305
