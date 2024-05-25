@@ -24,6 +24,7 @@ Audio="*res://scripts/audio.gd"
 SceneSwitcher="*res://scripts/scene_switcher.gd"
 GameStat="*res://scripts/game_stat.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Tools="*res://scripts/tools.gd"
 
 [dialogic]
 
@@ -158,6 +159,7 @@ dialogic_default_action={
 
 occlusion_culling/bvh_build_quality=0
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 anti_aliasing/quality/msaa_3d=1
 anti_aliasing/quality/screen_space_aa=1
 occlusion_culling/use_occlusion_culling=true
