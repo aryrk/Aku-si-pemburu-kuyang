@@ -1,6 +1,5 @@
-[gd_scene load_steps=28 format=3 uid="uid://4ikyrx3wxpjf"]
+[gd_scene load_steps=27 format=3 uid="uid://4ikyrx3wxpjf"]
 
-[ext_resource type="Script" path="res://scripts/scene/main.gd" id="1_tqtgl"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/environtment/main-environment.tres" id="2_dk1q0"]
 [ext_resource type="Script" path="res://scripts/effects/Lightning effect.gd" id="3_t3rb6"]
 [ext_resource type="Environment" uid="uid://bnxn74ffjvfst" path="res://scenes/environtment/main-lighting-environment.tres" id="4_kk63x"]
@@ -12,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://b18wbfkvi0s0l" path="res://assets/sounds/Splash/Drum1.mp3" id="10_rq5c7"]
 [ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="11_8pyga"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://assets/objects/player.tscn" id="12_7icq8"]
-[ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://assets/objects/enemy.tscn" id="13_qf1k4"]
+[ext_resource type="Script" path="res://scripts/Spawner.gd" id="13_loen8"]
 [ext_resource type="PackedScene" uid="uid://bbj1htdp75rwe" path="res://assets/objects/forest.tscn" id="14_p0yvn"]
 [ext_resource type="PackedScene" uid="uid://dlauce5ctudt5" path="res://assets/objects/kunti.tscn" id="15_eupk6"]
 [ext_resource type="PackedScene" uid="uid://b3w08m1pqwag7" path="res://assets/objects/home.tscn" id="16_xh5de"]
@@ -548,7 +547,6 @@ _data = {
 }
 
 [node name="Main" type="Node3D"]
-script = ExtResource("1_tqtgl")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 process_mode = 3
@@ -624,10 +622,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 238.5
-offset_top = 288.5
-offset_right = 1041.5
-offset_bottom = 431.5
+offset_left = -401.5
+offset_top = -71.5
+offset_right = 401.5
+offset_bottom = 71.5
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0820305
@@ -646,19 +644,9 @@ volume_db = 5.0
 [node name="Player" parent="." instance=ExtResource("12_7icq8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.56511, -2.2528)
 
-[node name="Enemies" type="Node" parent="."]
-
-[node name="enemy-flying" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("13_qf1k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4487, 2.5, -6)
-player = NodePath("../../Player")
-
-[node name="enemy-flying2" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("13_qf1k4")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -30.4487, 2.5, 1.5)
-player = NodePath("../../Player")
-
-[node name="enemy-flying3" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("13_qf1k4")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -15.4487, 3.5, 9)
-player = NodePath("../../Player")
+[node name="Spawner" type="Node3D" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("13_loen8")
+player = NodePath("../Player")
 
 [node name="Level" type="Node" parent="."]
 

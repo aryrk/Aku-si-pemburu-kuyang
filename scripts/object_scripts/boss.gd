@@ -123,7 +123,7 @@ func _on_timer_timeout():
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		if collider.has_method("damage"):
-			collider.damage(0.2)
+			collider.damage(5)
 
 func _on_timer_hit_received_cd_timeout():
 	pass
