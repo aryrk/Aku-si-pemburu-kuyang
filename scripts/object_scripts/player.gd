@@ -38,6 +38,7 @@ var container_offset = Vector3(1.2, -1.1, -2.75)
 var tween: Tween
 
 const DEAD_MENU = "res://scenes/dead.tscn"
+@onready var current_scene = get_tree().current_scene.scene_file_path
 
 
 # var max_ammo: int = 10
@@ -374,4 +375,9 @@ func action_heal():
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name=="death":
-		get_tree().change_scene_to_file(DEAD_MENU)
+		SceneSwitcher.change_scene(DEAD_MENU, {"previous":current_scene})
+
+
+func _on_restart_pressed():
+	GameStat.resume()
+	SceneSwitcher.change_scene(current_scene)

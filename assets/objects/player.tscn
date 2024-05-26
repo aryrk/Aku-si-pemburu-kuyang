@@ -961,6 +961,7 @@ autoplay = true
 [connection signal="health_updated" from="." to="HUD" method="_on_health_updated"]
 [connection signal="timeout" from="HUD/Damage_taken/DamageTimer" to="HUD" method="remove_red_tint"]
 [connection signal="pressed" from="HUD/Pause Menu/Resume" to="." method="exit_pause_menu"]
+[connection signal="pressed" from="HUD/Pause Menu/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="HUD/Pause Menu/Main Menu" to="HUD" method="_on_main_menu_pressed"]
 [connection signal="pressed" from="HUD/Pause Menu/Quit" to="HUD" method="_on_quit_pressed"]
 [connection signal="animation_finished" from="Head/Camera/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
