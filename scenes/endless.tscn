@@ -1,5 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://4ikyrx3wxpjf"]
+[gd_scene load_steps=28 format=3 uid="uid://4ikyrx3wxpjf"]
 
+[ext_resource type="Script" path="res://scripts/endless.gd" id="1_esj8e"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/environtment/main-environment.tres" id="2_dk1q0"]
 [ext_resource type="Script" path="res://scripts/effects/Lightning effect.gd" id="3_t3rb6"]
 [ext_resource type="Environment" uid="uid://bnxn74ffjvfst" path="res://scenes/environtment/main-lighting-environment.tres" id="4_kk63x"]
@@ -548,6 +549,7 @@ _data = {
 }
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_esj8e")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 process_mode = 3
@@ -862,4 +864,4 @@ transform = Transform3D(28.3851, 0, 0, 0, 28.3851, 0, 0, 0, 28.3851, -379.734, -
 
 [connection signal="timeout" from="Lightning effect/Timer" to="Lightning effect" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="2D element/AnimationTree" to="." method="_on_animation_tree_animation_finished"]
-[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="spawn_at_random"]
+[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="spawn_enemy_randomly"]
