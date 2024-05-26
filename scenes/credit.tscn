@@ -235,7 +235,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 27.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 92.0]
+"values": [0.0, 144.17]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -5244,115 +5244,167 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_d2buq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_83nhs")
 theme_override_styles/read_only = SubResource("StyleBoxFlat_lf2gl")
-text = "Judul Film  
-\"Kisah Tanpa Akhir\"
+text = "
 
-Produksi Oleh  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+“Aku si pemburu kuyang”
+
+Produksi oleh:
+Heaplow team
 Politeknik Negeri Bandung
+Jurusan Teknik Komputer dan Informatika
 
-Disutradarai Oleh  
+Programmer:
+Aryo Rakatama
+Muhammad Rama Nurimani
+Muhammad Mathar Rizqi
+
+Lead Programmer:
+Muhammad Mathar Rizqi
+
+Efek Visual:
+Aryo Rakatama
+Muhammad Rama Nurimani
+
+3D Modeling:
+Aryo Rakatama
+Muhammad Rama Nurimani
+
+Ilustrasi dan Grafis 2D:
+Muhammad Rama Nurimani
+
+Storyline:
+Muhammad Rama Nurimani
+
+Post Processing effect:
 Aryo Rakatama
 
-Produser Eksekutif  
-Budi Santoso
+Animasi dan Grafik:
+Aryo Rakatama
+Muhammad Rama Nurimani
 
-Penulis Naskah  
-Dewi Lestari  
-Andi Wijaya
+Aset 3D:
+Wood Cottage - Home 3D Model FREE
+(1LoST)
 
-Pemeran Utama  
-Ayu Dewi sebagai Maya  
-Rizky Febian sebagai Arif  
-Siti Badriah sebagai Sari  
-Reza Rahadian sebagai Bimo
+skull low poly
+(Federico-Felici)
 
-Pemeran Pendukung  
-Tasya Kamila sebagai Dinda  
-Iqbaal Ramadhan sebagai Dito  
-Angga Yunanda sebagai Rama
+Female Model Free 3D Model
+(Utku-E)
 
-Sinematografi  
-Rahmat Hidayat
+Forest
+(rhfqcntrkf)
 
-Desain Produksi  
-Siti Nurhaliza
+Rigged T-Pose Human Male w 50 Face Blendshapes
+(Mike Alger)
 
-Penyunting Film  
-Dani Firmansyah
+Efek Suara:
+Drum Warfare - Super Epic Drums - Dark Dramatic soundtracks - BIG DRUMMING
+(FesliyanStudios Background Music)
 
-Desain Kostum  
-Nina Zatulini
+Dramatic Tension Cinematic Drums | Free Sound Effects | Scary Halloween Sounds
+(Free Sounds Library)
 
-Efek Visual  
-Rian Ekky Pradipta
+Cinematic Horror Sound Effects | No Copyright | Horror HQ
+(F3 Studio)
 
-Musik Oleh  
-Erwin Gutawa
+Creepy Little Girl Whispering Horror Sounds (HD) (FREE)
+(LARA'S HORROR SOUNDS)
 
-Desain Suara  
-Teguh Priyanto
+Smiley Ghost Screaming Sound Effect (Download Sounds)
+(Koishi Komeiji The YouTuber 2023)
 
-Kru Kamera  
-Hendra Wijaya  
-Mira Andini  
-Yogi Pratama
+Sound Effects - Air Or Steam Pressure Release
+(Real Talk Tours)
 
-Asisten Sutradara  
-Putri Ayu  
-Dian Sastro
+Guts Theme Berserk
+(Scooby)
 
-Manajer Lokasi  
-Asep Sunandar
+Blood World
+(Yume 2kki)
 
-Konsultan Naskah  
-Retno Wulan
+Megan McDuffee - Don't Go In There | Scary Dark Ambient Music
+(Horror Music World)
 
-Pemeran Pengganti (Stunt)  
-Rudi Setiawan  
-Wati Sulastri
+Owl Sound Effects
+(Sound Ocean)
 
-Makeup Artis  
-Ayu Ting Ting  
-Luna Maya
+Bush Rustling Sound | Bush Rustling Sound Effect | Free Sound Effects
+(BridgeSound)
 
-Kordinator Produksi  
-Yusuf Maulana
+Creepy Little Girl Crying and Weeping Sound Effect | Free Horror Sounds
+(LARA'S HORROR SOUNDS)
 
-Penyelaras Adegan  
-Bayu Kencana
+Gideon Rises
+(Disney, Gravity Falls | Brad Breek)
 
-Direktur Fotografi  
-Maya Sari
+lightning sound effect
+(Effect Land)
 
-Teknisi Suara  
-Fajar Nugroho
+Thunder Sound effect
+(MrSoundtabel)
 
-Tim Pemasaran  
-Zainal Abidin  
-Fitriani Ahmad
+Faceless Beast | Epic, Intense, Horror Music
+(Daniel Garavini)
 
-Tim Publisitas  
-Nurul Hidayah  
-Andri Saputra
+Glitch Sound Effects
+(2MirrorsDialogue)
 
-Asisten Produksi  
-Intan Permatasari  
-Dwi Putra
+Evil Laughing Woman Sound - Woman Laugh Sound Effect | Ver. 2
+(Distorted Room)
 
-Animasi dan Grafik  
-Sigit Prabowo  
-Aldo Setiawan
+Earthquake Sound Effect | Realistic Earthquake | No Copyright | Free Download
+(Creative Commons Club)
 
-Konsultan Efek Khusus  
-Indra Kusuma
+Spell Sound Effect
+(Brandon Ditsch) on Youtube
 
-Penghargaan Khusus  
+Free Horror Trailer Intro 30 second No Copyright For Video Cinematic Teaser.
+(MYDN MOTIVATION) on Youtube
+
+\"MELANCHOLIA\" Music Box |Sad, creepy song|
+(Ryan Creep) on YouTube
+
+Gambar dan Grafik:
+House at Night
+(https://houseofmadness.ca/)
+
+House-forest-creepy-night
+(https://www.pixel4k.com/house-forest-fog-creepy-night-4k-59730.html)
+
+
+Penghargaan Khusus:
 Kepada seluruh keluarga dan teman yang telah mendukung kami selama proses produksi
 
-Terima Kasih Spesial  
+Sarjana Godot:
+Muhammad Mathar Rizqi
+
+Magister Blender:
+Aryo Rakatama:
+
+S3 Adobe Ilustrator:
+Muhammad Rama Nurimani
+
+Terima Kasih Spesial
 Kepada semua pihak yang telah membantu dan memberikan dukungan yang tak ternilai
 
-Hak Cipta © 2024 Politeknik Negeri Bandung Semua Hak Dilindungi
+Hak Cipta © 2024 Politeknik Negeri Bandung Semua Hak Dilindungi | Heaplow Team
+
 "
 context_menu_enabled = false
 shortcut_keys_enabled = false
@@ -5365,6 +5417,7 @@ wrap_mode = 1
 scroll_smooth = true
 
 [node name="Judul" type="Label" parent="Control"]
+z_index = 12
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

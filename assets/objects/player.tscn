@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dl2ed4gkybggf"]
+[gd_scene load_steps=39 format=3 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" path="res://scripts/object_scripts/player.gd" id="1_druum"]
 [ext_resource type="Resource" uid="uid://c56y8pqoyk15f" path="res://assets/weapons/blaster.tres" id="2_f77es"]
@@ -6,10 +6,13 @@
 [ext_resource type="SpriteFrames" uid="uid://dbv3sy5qjatnl" path="res://assets/sprites/burst_animation.tres" id="4_eyl5h"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="4_mb7y7"]
 [ext_resource type="Texture2D" uid="uid://8ggihh27mlrr" path="res://assets/sprites/blob_shadow.png" id="5_17vvb"]
+[ext_resource type="Texture2D" uid="uid://qyyv8iq8fs52" path="res://assets/sprites/loop-arrow.png" id="5_g8uvb"]
 [ext_resource type="AudioStream" uid="uid://cydjn1ct3hps2" path="res://assets/sounds/walking.ogg" id="6_er85k"]
+[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="6_ogal8"]
 [ext_resource type="Script" path="res://scripts/effects/Top_AmbienceSoundEffect.gd" id="7_4ik00"]
 [ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="7_77573"]
 [ext_resource type="Script" path="res://scripts/effects/Bottom_AmbienceSoundEffect.gd" id="7_ho0q8"]
+[ext_resource type="Texture2D" uid="uid://bgb001b7vgjgt" path="res://assets/sprites/Healing_Icon.png" id="7_k4qaq"]
 [ext_resource type="Shader" path="res://assets/shader/blur.gdshader" id="7_y4yd6"]
 [ext_resource type="AudioStream" uid="uid://dwufnmaeqohsl" path="res://assets/sounds/ambience.mp3" id="9_5xeak"]
 [ext_resource type="AudioStream" uid="uid://gg65fmtx3xw7" path="res://assets/sounds/Splash/Drum2.mp3" id="9_8dhlp"]
@@ -481,6 +484,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -89.0
+offset_right = -70.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 90
@@ -566,6 +570,56 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
 theme_override_font_sizes/font_size = 15
 text = "MANA"
+
+[node name="Helper" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="HUD/Helper"]
+position = Vector2(631.14, 614.36)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("5_g8uvb")
+
+[node name="Switch Weapon" type="Label" parent="HUD/Helper/Sprite2D2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 472.195
+offset_top = -687.5
+offset_right = 472.197
+offset_bottom = -254.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_ogal8")
+theme_override_font_sizes/font_size = 800
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/Helper"]
+position = Vector2(278.505, 667.485)
+scale = Vector2(0.132, 0.132)
+texture = ExtResource("7_k4qaq")
+
+[node name="Heal" type="Label" parent="HUD/Helper/Sprite2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -172.5
+offset_right = -125.0
+offset_bottom = 363.705
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_ogal8")
+theme_override_font_sizes/font_size = 200
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Damage_taken" type="Control" parent="HUD"]
 layout_mode = 3
