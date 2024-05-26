@@ -61,6 +61,10 @@ func damage(amount,use_mana):
 
 # Destroy the enemy when out of health
 func destroy():
+	var params = GameStat.get_param("kuyang_terbunuh")
+	params+=1
+	GameStat.set_param({"kuyang_terbunuh":params})
+	get_node("../../2D element/Helper").text = str(params)+" kuyang terbunuh"
 	Audio.play("assets/sounds/ghast/dead.mp3")
 	destroyed = true
 	queue_free()

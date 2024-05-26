@@ -64,6 +64,7 @@ func _process(delta):
 
 func damage(amount, use_mana):
 	if use_mana and immune_to_mana:
+		animation.play("shield")
 		return
 	amount = min(amount, max_damage_taken)
 	health -= amount
