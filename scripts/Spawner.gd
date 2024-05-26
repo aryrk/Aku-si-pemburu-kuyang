@@ -25,4 +25,4 @@ func spawn_enemy_randomly():
 	instance.position = pos
 	add_child(instance)
 	
-	$Timer.wait_time = randf_range(0,5)
+	$Timer.wait_time = randf_range(0,10)

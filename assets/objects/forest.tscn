@@ -29,16 +29,16 @@
 [node name="forest" type="Node3D"]
 
 [node name="grass_1_1" parent="." instance=ExtResource("1_6j8yw")]
-transform = Transform3D(6.66333, 0, 0, 0, 6.66333, 0, 0, 0, 6.66333, 0.240162, -3.0434, -0.588196)
+transform = Transform3D(4.14242, 0, 0, 0, 4.14242, 0, 0, 0, 4.14242, 0.240162, -3.0434, -0.588196)
 
 [node name="grass_1_2" parent="." instance=ExtResource("2_h4nx2")]
-transform = Transform3D(6.66333, 0, 0, 0, 6.66333, 0, 0, 0, 6.66333, 0.240162, -3.0434, -0.588196)
+transform = Transform3D(4.14242, 0, 0, 0, 4.14242, 0, 0, 0, 4.14242, 0.240162, -3.0434, -0.588196)
 
 [node name="grass_2_1" parent="." instance=ExtResource("3_polym")]
-transform = Transform3D(6.66333, 0, 0, 0, 6.66333, 0, 0, 0, 6.66333, 0.240162, -3.0434, -0.588196)
+transform = Transform3D(4.14242, 0, 0, 0, 4.14242, 0, 0, 0, 4.14242, 0.240162, -3.0434, -0.588196)
 
 [node name="grass_2_2" parent="." instance=ExtResource("4_6b2gx")]
-transform = Transform3D(6.66333, 0, 0, 0, 6.66333, 0, 0, 0, 6.66333, 0.240162, -3.0434, -0.588196)
+transform = Transform3D(4.14242, 0, 0, 0, 4.14242, 0, 0, 0, 4.14242, 0.240162, -3.0434, -0.588196)
 
 [node name="ground" parent="." instance=ExtResource("5_ito4n")]
 transform = Transform3D(6.66333, 0, 0, 0, 6.66333, 0, 0, 0, 6.66333, 0.240162, -3.0434, -0.588196)
