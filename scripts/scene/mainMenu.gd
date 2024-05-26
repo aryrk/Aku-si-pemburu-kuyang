@@ -31,3 +31,7 @@ func _input(event):
 
 func _on_credit_pressed():
 	SceneSwitcher.change_scene("res://scenes/credit.tscn")
+
+
+func _on_endless_pressed():
+	SceneSwitcher.change_scene("res://scenes/loading.tscn",{"next_scene":"res://scenes/endless.tscn"})
