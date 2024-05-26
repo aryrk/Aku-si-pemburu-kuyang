@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl2103ou4n5xy"]
+[gd_scene load_steps=4 format=3 uid="uid://dq7oeex84vneg"]
 
 [ext_resource type="Script" path="res://scripts/object_scripts/enemy_endless.gd" id="1_ockj6"]
 [ext_resource type="PackedScene" uid="uid://44hbug2elpac" path="res://assets/blend/kuyang.blend" id="2_d77ws"]

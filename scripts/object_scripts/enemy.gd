@@ -2,6 +2,7 @@ extends Node3D
 
 @export var player: Node3D
 @export var following_player: bool = true
+@export var immune_to_mana: bool = false
 
 @onready var raycast = $RayCast
 @onready var transform_point = $"."
@@ -72,7 +73,9 @@ func _process(delta):
 	position = target_position
 
 # Take damage from player
-func damage(amount):
+func damage(amount,use_mana):
+	if use_mana and immune_to_mana:
+		return
 	Audio.play("assets/sounds/ghast/hurt.mp3")
 	health -= amount
 

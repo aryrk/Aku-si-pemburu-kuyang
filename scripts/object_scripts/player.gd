@@ -70,7 +70,7 @@ func use_weapon(index):
 	
 func switch_weapon_overlay(index):
 	var i = 0
-	for weapon in weapons:
+	for weapon_num in weapons:
 		var overlay :Sprite2D = get_node("HUD/Items/"+str(i)+"/ProgressBar"+str(i)+"/Sprite2D"+str(i))
 		if i == index:
 			overlay.show_behind_parent = false
@@ -339,7 +339,7 @@ func action_shoot():
 			# Hitting an enemy
 			
 			if collider.has_method("damage"):
-				collider.damage(weapon.damage)
+				collider.damage(weapon.damage,weapon.uses_mana)
 			
 				if !weapon.uses_mana:
 					use_mana( - weapon.mana_gain)

@@ -476,9 +476,6 @@ max_distance = 4096.0
 wait_time = 5.0
 autostart = true
 
-[node name="Timer_Hit_Received_CD" type="Timer" parent="."]
-wait_time = 0.1
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../RayCast")
 libraries = {
@@ -568,4 +565,3 @@ autoplay = true
 [connection signal="tree_exited" from="CollisionShape3D" to="." method="_on_collision_shape_3d_tree_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer_Moan" to="." method="moan"]
-[connection signal="timeout" from="Timer_Hit_Received_CD" to="." method="_on_timer_hit_received_cd_timeout"]

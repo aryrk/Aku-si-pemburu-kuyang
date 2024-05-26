@@ -2,10 +2,10 @@ extends Node3D
 
 @export var player: Node3D
 @export var following_player: bool = true
+@export var immune_to_mana: bool = true
 
 @onready var raycast = $RayCast
 @onready var transform_point = $"."
-@onready var hit_received_cd_timer: Timer = $Timer_Hit_Received_CD
 @onready var animation := $AnimationPlayer
 
 var health := 10000
@@ -33,8 +33,6 @@ func _ready():
 	target_position = position
 	audio_stream = $AudioStreamPlayer3D
 	timer_moan = $Timer_Moan
-	hit_received_cd_timer.wait_time = 0.2
-	hit_received_cd_timer.one_shot = true
 	
 	$HUD/Health.max_value = health
 	$HUD/Health.value = health
@@ -64,13 +62,12 @@ func _process(delta):
 	transform_point.rotation_degrees.y += 180
 	position = target_position
 
-func damage(amount):
-	if not hit_received_cd_timer.is_stopped():
+func damage(amount, use_mana):
+	if use_mana and immune_to_mana:
 		return
 	amount = min(amount, max_damage_taken)
 	health -= amount
 	hits_received += 1
-	hit_received_cd_timer.start()
 	$HUD/Health.value = health
 
 	if health <= 0 and not destroyed:
