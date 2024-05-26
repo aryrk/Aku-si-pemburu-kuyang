@@ -17,7 +17,7 @@
 "portraits": {
 "KuyangBoss-Default": {
 "export_overrides": {
-"image": "\"res://timeline/charImages/kuyangboss_prev_ui.png\""
+"image": "\"res://timeline/charImages/kuyangboss-removebg-preview (1).png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
