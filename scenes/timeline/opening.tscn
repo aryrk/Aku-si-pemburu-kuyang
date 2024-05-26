@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4nua8u7laqrp"]
-
-[ext_resource type="Script" path="res://timeline/opening.gd" id="1_0alsj"]
-
-[node name="Opening" type="Node2D"]
-script = ExtResource("1_0alsj")

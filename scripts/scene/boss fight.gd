@@ -20,4 +20,4 @@ func _process(_delta):
 func _on_animation_tree_animation_finished(anim_name):
 	if anim_name == "goal_achieved":
 		GameStat.release_mouse()
-		SceneSwitcher.change_scene("res://scenes/ultidukun.tscn")
+		SceneSwitcher.change_scene("res://timeline/ending.tscn")

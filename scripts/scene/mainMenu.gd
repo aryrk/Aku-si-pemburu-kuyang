@@ -11,7 +11,7 @@ func _process(_delta):
 		
 func story_mode():
 	#get_tree().change_scene_to_file(MAIN)
-	SceneSwitcher.change_scene("res://scenes/loading.tscn",{"next_scene":"res://scenes/main.tscn"})
+	SceneSwitcher.change_scene("res://scenes/loading.tscn",{"next_scene":"res://timeline/opening.tscn"})
 func quit_game():
 	get_tree().quit()
 

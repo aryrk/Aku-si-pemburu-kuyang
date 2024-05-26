@@ -29,18 +29,18 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"charImages/rina": "res://scenes/timeline/charImages/rina.dch",
+"charImages/rina": "res://timeline/charImages/rina.dch",
 "kuyangBoss": "res://timeline/charImages/kuyangBoss.dch",
 "rina": "res://timeline/charImages/rina.dch",
 "shaman": "res://timeline/shaman.dch",
-"timeline/shaman": "res://scenes/timeline/shaman.dch",
-"timeline/ustadz": "res://scenes/timeline/ustadz.dch",
+"timeline/shaman": "res://timeline/shaman.dch",
+"timeline/ustadz": "res://timeline/ustadz.dch",
 "ustadz": "res://timeline/ustadz.dch"
 }
 directories/dtl_directory={
-"ending": "res://timeline/charImages/ending.dtl",
+"ending": "res://timeline/ending.dtl",
 "timeline": "res://timeline/timeline.dtl",
-"timeline/timeline": "res://scenes/timeline/timeline.dtl"
+"timeline/timeline": "res://timeline/timeline.dtl"
 }
 layout/style_list=["res://timeline/style.tres", "res://timeline/charImages/New_File.tres"]
 layout/default_style="res://timeline/style.tres"

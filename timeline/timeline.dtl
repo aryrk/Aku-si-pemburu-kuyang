@@ -41,6 +41,9 @@ shaman (Man-Confused): Hah dimana emang si Rina liat kuyang? katanya deket gubuk
 [wait time="1.0"]
 [sound path="res://assets/sounds/ghast/moan1.mp3" volume="0.0"]
 shaman (Man-Shocked): Heh suara apaan itu?
-shaman: Ga bener ini. Itu beneran suara kuyang! kuyangnya beneran balik lagi! 
+shaman: Ga bener ini. Itu beneran suara kuyang! kuyangnya beneran balik lagi!
 shaman: Harus diburu sebelum jadi malapetaka!
 leave shaman
+[wait time="2.0"]
+[music fade="0.0" volume="0.0"]
+do SceneSwitcher.change_scene("res://scenes/loading.tscn", {"next_scene":"res://scenes/main.tscn"})

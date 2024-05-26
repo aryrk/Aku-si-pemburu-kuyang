@@ -16,3 +16,7 @@ shaman (Man-Confused): Kita sebagai paranormal disini membantu mereka yang membu
 kuyangBoss: Ini semua salahku pak, lakukan apa yang perlu kamu lakukan untuk melindugi desa ini. Ritual kuyang ini tak dapat dibatalkan kecuali aku mati.
 shaman: Maafkan aku Zahra, aku tak bisa membiarkan desa ini menderita lagi seperti kejadian di masa lalu.
 kuyangBoss: Terimakasih untuk selama ini, pak. Maafkan aku memilih jalan ini.
+leave --All--
+[wait time="1.0"]
+[music fade="0.0" volume="0.0"]
+do SceneSwitcher.change_scene("res://scenes/ultidukun.tscn")
