@@ -43,3 +43,5 @@ transform = Transform3D(1, 0, 0, 0, 0.870321, 0.492484, 0, -0.492484, 0.870321, 
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("7_x2cx7")
+
+[editable path="Player"]

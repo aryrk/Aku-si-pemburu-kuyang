@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dl2ed4gkybggf"]
+[gd_scene load_steps=36 format=3 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" path="res://scripts/object_scripts/player.gd" id="1_druum"]
 [ext_resource type="Resource" uid="uid://c56y8pqoyk15f" path="res://assets/weapons/blaster.tres" id="2_f77es"]
@@ -6,9 +6,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dbv3sy5qjatnl" path="res://assets/sprites/burst_animation.tres" id="4_eyl5h"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="4_mb7y7"]
 [ext_resource type="Texture2D" uid="uid://8ggihh27mlrr" path="res://assets/sprites/blob_shadow.png" id="5_17vvb"]
-[ext_resource type="Texture2D" uid="uid://b7agokrdv1vma" path="res://assets/sprites/sapu.png" id="5_fqiiq"]
 [ext_resource type="AudioStream" uid="uid://cydjn1ct3hps2" path="res://assets/sounds/walking.ogg" id="6_er85k"]
-[ext_resource type="Texture2D" uid="uid://c3043r43npmxj" path="res://assets/sprites/revolver.png" id="6_grc87"]
 [ext_resource type="Script" path="res://scripts/effects/Top_AmbienceSoundEffect.gd" id="7_4ik00"]
 [ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="7_77573"]
 [ext_resource type="Script" path="res://scripts/effects/Bottom_AmbienceSoundEffect.gd" id="7_ho0q8"]
@@ -21,12 +19,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
 radius = 0.3
 height = 1.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j88dv"]
-bg_color = Color(0.215686, 0.215686, 0.215686, 0.560784)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsqub"]
-bg_color = Color(3.32102e-06, 0.581735, 0.0692278, 0.329412)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxote"]
 bg_color = Color(1, 1, 1, 0.333333)
@@ -483,71 +475,16 @@ shape = SubResource("CapsuleShape3D_gdq8c")
 process_mode = 3
 script = ExtResource("4_mb7y7")
 
-[node name="Control" type="Control" parent="HUD"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = 260.0
-offset_right = 20.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Control"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+[node name="Items" type="HBoxContainer" parent="HUD"]
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -41.0
-offset_top = -43.0
-offset_right = 39.0
-offset_bottom = 37.0
+offset_top = -89.0
 grow_horizontal = 2
 grow_vertical = 0
-
-[node name="Node2D2" type="Node2D" parent="HUD/Control/HBoxContainer"]
-
-[node name="Sprite2D" type="Sprite2D" parent="HUD/Control/HBoxContainer/Node2D2"]
-position = Vector2(36.9999, 34)
-scale = Vector2(0.085, 0.085)
-texture = ExtResource("5_fqiiq")
-
-[node name="ProgressBar" type="ProgressBar" parent="HUD/Control/HBoxContainer/Node2D2"]
-offset_right = 80.0
-offset_bottom = 80.0
-theme_override_styles/background = SubResource("StyleBoxFlat_j88dv")
-theme_override_styles/fill = SubResource("StyleBoxFlat_jsqub")
-max_value = 10.0
-value = 1.0
-rounded = true
-fill_mode = 3
-show_percentage = false
-
-[node name="Node2D" type="Node2D" parent="HUD/Control/HBoxContainer"]
-position = Vector2(20, 0)
-
-[node name="ProgressBar2" type="ProgressBar" parent="HUD/Control/HBoxContainer/Node2D"]
-offset_left = 81.0
-offset_right = 161.0
-offset_bottom = 80.0
-theme_override_styles/background = SubResource("StyleBoxFlat_j88dv")
-theme_override_styles/fill = SubResource("StyleBoxFlat_jsqub")
-max_value = 10.0
-value = 1.0
-rounded = true
-fill_mode = 3
-show_percentage = false
-
-[node name="Sprite2D2" type="Sprite2D" parent="HUD/Control/HBoxContainer/Node2D"]
-position = Vector2(132, 39)
-scale = Vector2(0.109167, 0.0989815)
-texture = ExtResource("6_grc87")
+theme_override_constants/separation = 90
+alignment = 1
 
 [node name="Crosshair" type="TextureRect" parent="HUD"]
 anchors_preset = 8

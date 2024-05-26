@@ -40,6 +40,8 @@ var tween: Tween
 const DEAD_MENU = "res://scenes/dead.tscn"
 @onready var current_scene = get_tree().current_scene.scene_file_path
 
+@onready var items_bar = $HUD/Items
+
 
 # var max_ammo: int = 10
 # var current_ammo: int = max_ammo
@@ -59,12 +61,73 @@ signal health_updated
 
 # Functions
 
+func use_weapon(index):
+	var progres : ProgressBar = get_node("HUD/Items/"+str(index)+"/ProgressBar"+str(index))
+	var timer : Timer = get_node("HUD/Items/"+str(index)+"/ProgressBar"+str(index)+"/Timer"+str(index))
+	
+	progres.value = 0
+	timer.start()
+	
+func switch_weapon_overlay(index):
+	var i = 0
+	for weapon in weapons:
+		var overlay :Sprite2D = get_node("HUD/Items/"+str(i)+"/ProgressBar"+str(i)+"/Sprite2D"+str(i))
+		if i == index:
+			overlay.show_behind_parent = false
+		else :
+			overlay.show_behind_parent = true
+		i+=1
+
+func weapon_cooldown(progres:ProgressBar, timer:Timer):
+	if progres.value < progres.max_value:
+		progres.value+=0.1
+		timer.start()
+
+func add_weapon_to_view(index, cooldown, sprite_path):
+	var weapon_control = Control.new()
+	weapon_control.name = str(index)
+	
+	get_node("HUD/Items").add_child(weapon_control)
+	
+	var progress = ProgressBar.new()
+	progress.name = "ProgressBar"+str(index)
+	progress.max_value = cooldown
+	progress.show_percentage = false
+	progress.set_size(Vector2(80,80))
+	progress.max_value = cooldown
+	progress.value = cooldown
+	progress.fill_mode = progress.FILL_BOTTOM_TO_TOP
+	
+	get_node("HUD/Items/"+str(index)).add_child(progress)
+	
+	var sprite = Sprite2D.new()
+	sprite.name = "Sprite2D"+str(index)
+	sprite.centered = false
+	sprite.apply_scale(Vector2(0.075,0.075))
+	sprite.texture = load(sprite_path)
+	get_node("HUD/Items/"+str(index)+"/ProgressBar"+str(index)).add_child(sprite)
+	
+	var weapon_timer = Timer.new()
+	weapon_timer.connect("timeout",weapon_cooldown.bind(progress,weapon_timer))
+	weapon_timer.wait_time = cooldown/10
+	weapon_timer.one_shot = true
+	weapon_timer.name = "Timer"+str(index)
+	weapon_timer.autostart = false
+	
+	get_node("HUD/Items/"+str(index)+"/ProgressBar"+str(index)).add_child(weapon_timer)
+	
+
 func _ready():
 	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
+	var i = 0
+	for weapon_idx in weapons:
+		add_weapon_to_view(i,weapon_idx.cooldown,weapon_idx.sprite)
+		i+=1
 	weapon = weapons[weapon_index] # Weapon must never be nil
 	initiate_change_weapon(weapon_index)
+	
+	
 	# current_ammo = max_ammo
 
 func _physics_process(delta):
@@ -237,6 +300,9 @@ func action_shoot():
 		# if current_ammo <= 0:
 		# 	return
 		if !blaster_cooldown.is_stopped() or (weapon.uses_mana and mana < weapon.mana_cost): return # Cooldown for shooting
+		
+		use_weapon(weapon_index)
+		
 		if weapon.uses_mana:
 			use_mana(weapon.mana_cost)
 		
@@ -313,6 +379,7 @@ func action_weapon_toggle():
 
 func initiate_change_weapon(index):
 	
+	switch_weapon_overlay(index)
 	weapon_index = index
 	
 	tween = get_tree().create_tween()

@@ -10,6 +10,8 @@
 
 [node name="Player" parent="." instance=ExtResource("1_6w2fg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.980333, 3.34152, 0.974483)
+player_movement_speed = null
+jump_strength = null
 
 [node name="Crosshair" type="TextureRect" parent="."]
 anchors_preset = 8
@@ -43,3 +45,5 @@ transform = Transform3D(1, 0, 0, 0, 0.870321, 0.492484, 0, -0.492484, 0.870321, 
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("7_x2cx7")
+
+[editable path="Player"]
