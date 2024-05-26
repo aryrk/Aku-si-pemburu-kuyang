@@ -61,7 +61,7 @@ func destroy():
 	Audio.play("assets/sounds/ghast/dead.mp3")
 	destroyed = true
 	queue_free()
-	base_speed += 0.002  # Increase the base speed each time an enemy is destroyed
+	base_speed += 0.002
 
 # Shoot when timer hits 0
 func moan():

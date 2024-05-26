@@ -10,5 +10,6 @@ func _ready():
 	
 func spawn_enemy(pos):
 	var instance = mynode.instantiate()
+	instance.player = player
 	instance.position = pos
 	add_child(instance)
