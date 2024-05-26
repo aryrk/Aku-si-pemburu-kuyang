@@ -1,17 +1,24 @@
-[gd_scene load_steps=17 format=3 uid="uid://7xcdh2a1dmxk"]
+[gd_scene load_steps=24 format=3 uid="uid://7xcdh2a1dmxk"]
 
-[ext_resource type="Script" path="res://scripts/scene/deadMenu.gd" id="1_f6gxw"]
+[ext_resource type="Script" path="res://scripts/scene/end scene.gd" id="1_vmaiv"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/environtment/main-environment.tres" id="2_40ub7"]
 [ext_resource type="PackedScene" uid="uid://bbj1htdp75rwe" path="res://assets/objects/forest.tscn" id="3_n6s25"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dx73nuapgnqbi" path="res://scenes/deadScene.occ" id="4_4q1uu"]
 [ext_resource type="AudioStream" uid="uid://bmwjge66k82rv" path="res://assets/sounds/spell.mp3" id="5_tfb0f"]
+[ext_resource type="AudioStream" uid="uid://cvpmd112v7sgn" path="res://assets/sounds/Laugh/Laugh1.mp3" id="6_5rnld"]
 [ext_resource type="PackedScene" uid="uid://cq6gas7vl8ng2" path="res://assets/Glbs/Dukun/dukun ulti.gltf" id="6_4733v"]
 [ext_resource type="PackedScene" uid="uid://buw2vf8bkuq7m" path="res://assets/blend/ratu kuyang.blend" id="7_knnny"]
 [ext_resource type="PackedScene" uid="uid://dhwx7afp6dsnr" path="res://assets/objects/Magic ring.tscn" id="8_c52x3"]
 [ext_resource type="Environment" uid="uid://bnxn74ffjvfst" path="res://scenes/environtment/main-lighting-environment.tres" id="8_mv4co"]
+[ext_resource type="AudioStream" uid="uid://b18wbfkvi0s0l" path="res://assets/sounds/Splash/Drum1.mp3" id="9_ccxak"]
 [ext_resource type="PackedScene" uid="uid://cdpaystwqv5gl" path="res://assets/objects/magic ball.tscn" id="9_utuq4"]
 [ext_resource type="Shader" path="res://assets/shader/vibration.gdshader" id="10_ft0we"]
 [ext_resource type="PackedScene" uid="uid://8jfvg2yntli7" path="res://assets/blend/magic/magic ball.blend" id="11_nmyj3"]
+[ext_resource type="AudioStream" uid="uid://du1p7q66sgnc3" path="res://assets/sounds/cry.mp3" id="12_u65dj"]
+[ext_resource type="AudioStream" uid="uid://dbq6nrtxy7nnf" path="res://assets/sounds/Splash/Drum3.mp3" id="13_k0pyn"]
+[ext_resource type="FontFile" uid="uid://dhmwl2akp3o63" path="res://assets/fonts/Another Danger - Demo.otf" id="13_wt4uv"]
+[ext_resource type="FontFile" uid="uid://cvto7b7buny3a" path="res://assets/fonts/Futura/FUTURA66MEDIUMITALIC.TTF" id="13_x3ldq"]
+[ext_resource type="AudioStream" uid="uid://bh8ospwk7r0pj" path="res://assets/sounds/effect/Brush Rustling/Rust1.mp3" id="15_d8dx6"]
 
 [sub_resource type="Animation" id="Animation_hmrm5"]
 length = 0.001
@@ -195,11 +202,190 @@ tracks/14/keys = {
 "update": 1,
 "values": [ExtResource("2_40ub7")]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../Post Processing/ColorRect:color")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../Post Processing/Label:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../AudioStreamPlayer2D:stream")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_tfb0f")]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../AudioStreamPlayer2D:playing")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../Post Processing/Label:text")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["ratu kuyang berhasil dikalahkan"]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../Post Processing/Label:theme_override_fonts/font")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_x3ldq")]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../Post Processing/Label:theme_override_colors/font_color")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../Post Processing/ColorRect2:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("../Post Processing/Label:theme_override_font_sizes/font_size")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [70]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("../AudioStreamPlayer:stream")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_5rnld")]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("../AudioStreamPlayer:playing")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("../AudioStreamPlayer2D:volume_db")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("../Post Processing/Judul:visible")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("../AudioStreamPlayer:volume_db")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("../Post Processing/ColorRect3:color")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_7tuep"]
-resource_name = "new_animation"
-length = 4.0
-loop_mode = 1
+resource_name = "cutscene"
+length = 24.0
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -379,7 +565,7 @@ tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/path = NodePath("../WorldEnvironment:environment")
-tracks/15/interp = 1
+tracks/15/interp = 2
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0.6, 0.7, 0.9),
@@ -387,11 +573,191 @@ tracks/15/keys = {
 "update": 1,
 "values": [ExtResource("2_40ub7"), ExtResource("8_mv4co"), ExtResource("2_40ub7")]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../Post Processing/ColorRect:color")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 2.3, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../Post Processing/Label:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 5.6, 19.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../AudioStreamPlayer2D:stream")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 5.6, 8.5, 12.4, 19.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_tfb0f"), ExtResource("9_ccxak"), ExtResource("9_ccxak"), ExtResource("12_u65dj"), ExtResource("13_k0pyn")]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../AudioStreamPlayer2D:playing")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 5.6, 8.5, 12.4, 19.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../Post Processing/Label:text")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 5.6, 8.5, 12.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["ratu kuyang berhasil dikalahkan", "desa terselamatkan", "ratu kuyang terkalahkan", "?"]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../Post Processing/Label:theme_override_fonts/font")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 12.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("13_x3ldq"), ExtResource("13_wt4uv")]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../Post Processing/Label:theme_override_colors/font_color")
+tracks/22/interp = 0
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 12.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.717647, 0, 0, 1)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("../Post Processing/ColorRect2:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 12.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("../Post Processing/Label:theme_override_font_sizes/font_size")
+tracks/24/interp = 0
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 12.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [70, 300]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("../AudioStreamPlayer:stream")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(12.4, 15.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("15_d8dx6"), ExtResource("6_5rnld")]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("../AudioStreamPlayer:playing")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(12.4, 15.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("../AudioStreamPlayer2D:volume_db")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0, 12.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("../Post Processing/Judul:visible")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0, 19.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("../AudioStreamPlayer:volume_db")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(12.1, 14.4, 15.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-10.0, -10.0, 0.0]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("../Post Processing/ColorRect3:color")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0, 22.9, 24),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3v3gp"]
 _data = {
 "RESET": SubResource("Animation_hmrm5"),
-"new_animation": SubResource("Animation_7tuep")
+"cutscene": SubResource("Animation_7tuep")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e6bxi"]
@@ -401,8 +767,8 @@ shader_parameter/FactorA = Vector2(100, 100)
 shader_parameter/FactorB = Vector2(1, 1)
 shader_parameter/magnitude = Vector2(0.01, 0.01)
 
-[node name="Dead" type="Node3D"]
-script = ExtResource("1_f6gxw")
+[node name="End Scene" type="Node3D"]
+script = ExtResource("1_vmaiv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_40ub7")
@@ -424,7 +790,9 @@ occluder = ExtResource("4_4q1uu")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_tfb0f")
-autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5rnld")
 
 [node name="dukun ulti" parent="." instance=ExtResource("6_4733v")]
 transform = Transform3D(-0.95424, 0, -0.299041, 0, 1, 0, 0.299041, 0, -0.95424, 0, 0.423, 13.255)
@@ -541,7 +909,7 @@ far = 51.73
 libraries = {
 "": SubResource("AnimationLibrary_3v3gp")
 }
-autoplay = "new_animation"
+autoplay = "cutscene"
 
 [node name="MagicRing" parent="." instance=ExtResource("8_c52x3")]
 transform = Transform3D(4.6, 0, 0, 0, 4.6, 0, 0, 0, 4.6, -0.13, 0.18, 13.235)
@@ -558,6 +926,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Earthquake" type="ColorRect" parent="Post Processing"]
+visible = false
 material = SubResource("ShaderMaterial_e6bxi")
 layout_mode = 1
 anchors_preset = 15
@@ -566,6 +935,67 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="Post Processing"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect2" type="ColorRect" parent="Post Processing"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Post Processing"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_x3ldq")
+theme_override_font_sizes/font_size = 70
+text = "ratu kuyang berhasil dikalahkan"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Judul" type="Label" parent="Post Processing"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0820305
+theme_override_colors/font_color = Color(0.890196, 0, 0.211765, 1)
+theme_override_fonts/font = ExtResource("13_wt4uv")
+theme_override_font_sizes/font_size = 81
+text = "AKU SI PEMBURU KUYANG"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ColorRect3" type="ColorRect" parent="Post Processing"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
 [node name="magic ball" parent="." instance=ExtResource("11_nmyj3")]
 transform = Transform3D(0.153646, 0, 0, 0, 0.153646, 0, 0, 0, 0.153646, -0.132851, 3.10067, 0.036108)
 
@@ -573,6 +1003,8 @@ transform = Transform3D(0.153646, 0, 0, 0, 0.153646, 0, 0, 0, 0.153646, -0.13285
 light_color = Color(1, 1, 0.352941, 1)
 light_energy = 0.0
 light_volumetric_fog_energy = 16.0
+
+[connection signal="animation_finished" from="Camera3D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="dukun ulti"]
 [editable path="magic ball"]
