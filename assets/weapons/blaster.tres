@@ -7,6 +7,7 @@
 [resource]
 script = ExtResource("2_107w7")
 model = ExtResource("2_fnms5")
+sprite = "res://assets/sprites/revolver.png"
 position = Vector3(0, 0, 0)
 rotation = Vector3(0, 180, 0)
 muzzle_position = Vector3(0.1, -0.4, 1.5)

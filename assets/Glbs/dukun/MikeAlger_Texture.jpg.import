@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c40b6ensdrdir"
-path.s3tc="res://.godot/imported/MikeAlger_Texture.jpg-d27060130ee3e9d60630c885dcee386f.s3tc.ctex"
-path.etc2="res://.godot/imported/MikeAlger_Texture.jpg-d27060130ee3e9d60630c885dcee386f.etc2.ctex"
+path.s3tc="res://.godot/imported/MikeAlger_Texture.jpg-aa1d857778633f101fb69f9b47e2805a.s3tc.ctex"
+path.etc2="res://.godot/imported/MikeAlger_Texture.jpg-aa1d857778633f101fb69f9b47e2805a.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Glbs/dukun/MikeAlger_Texture.jpg"
-dest_files=["res://.godot/imported/MikeAlger_Texture.jpg-d27060130ee3e9d60630c885dcee386f.s3tc.ctex", "res://.godot/imported/MikeAlger_Texture.jpg-d27060130ee3e9d60630c885dcee386f.etc2.ctex"]
+source_file="res://assets/Glbs/Dukun/MikeAlger_Texture.jpg"
+dest_files=["res://.godot/imported/MikeAlger_Texture.jpg-aa1d857778633f101fb69f9b47e2805a.s3tc.ctex", "res://.godot/imported/MikeAlger_Texture.jpg-aa1d857778633f101fb69f9b47e2805a.etc2.ctex"]
 
 [params]
 
