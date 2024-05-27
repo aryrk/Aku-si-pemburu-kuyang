@@ -81,20 +81,14 @@ func damage(amount, use_mana):
 		chasing_player = true # Start chasing the player after being hit
 
 func check_health_phase():
-	if health <= 10000 * 0.1: # Phase 5
-		max_speed = 10
+	if health <= 10000 * 0.3: # Phase 3
+		max_speed = 8
 		hits_received_max = 2
-	elif health <= 10000 * 0.2: # Phase 4
-		max_speed = 6.5
-		hits_received_max = 5
-	elif health <= 10000 * 0.4: # Phase 3
-		max_speed = 6
-		hits_received_max = 6
 	elif health <= 10000 * 0.6: # Phase 2
-		max_speed = 5.5
+		max_speed = 4
 		hits_received_max = 8
 	elif health <= 10000 * 0.8: # Phase 1
-		max_speed = 5
+		max_speed = 3
 		hits_received_max = 10
 
 func random_teleport():

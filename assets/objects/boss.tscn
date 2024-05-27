@@ -651,8 +651,7 @@ transform = Transform3D(0.899863, 0.0279239, 0, -0.0157072, 1.59976, 0, 0, 0, 0.
 shape = SubResource("SphereShape3D_iix87")
 
 [node name="RayCast" type="RayCast3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 3, 0, 0, -1)
-visible = false
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 2, 0, 0.4, -1)
 target_position = Vector3(0, 0, 0.8)
 hit_from_inside = true
 collide_with_areas = true
