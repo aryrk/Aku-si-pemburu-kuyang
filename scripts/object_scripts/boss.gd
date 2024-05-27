@@ -13,7 +13,7 @@ var hits_received := 0
 var hits_received_max := 10  # Global variable to track the hit phase threshold
 var max_damage_taken := 500
 var base_speed := 3.5 # Base speed of the boss
-var speed_increment := 0.2
+var speed_increment := 0.5
 var max_speed := 5.0 # Global variable to track the maximum movement speed
 var time := 0.0
 var target_position: Vector3
@@ -82,27 +82,27 @@ func damage(amount, use_mana):
 
 func check_health_phase():
 	if health <= 10000 * 0.1: # Phase 5
-		max_speed = 8
+		max_speed = 10
 		hits_received_max = 2
 	elif health <= 10000 * 0.2: # Phase 4
-		max_speed = 4.5
+		max_speed = 6.5
 		hits_received_max = 5
 	elif health <= 10000 * 0.4: # Phase 3
-		max_speed = 4
+		max_speed = 6
 		hits_received_max = 6
 	elif health <= 10000 * 0.6: # Phase 2
-		max_speed = 3.5
+		max_speed = 5.5
 		hits_received_max = 8
 	elif health <= 10000 * 0.8: # Phase 1
-		max_speed = 3
+		max_speed = 5
 		hits_received_max = 10
 
 func random_teleport():
 	Audio.play("assets/sounds/effect/Glitch/Glitch" + str(randi_range(1, 12)) + ".mp3")
 	animation.play("teleport")
 	var player_pos = player.position
-	var random_x = player_pos.x + rnd.randf_range(-25, 25)
-	var random_z = player_pos.z + rnd.randf_range(-25, 25)
+	var random_x = player_pos.x + rnd.randf_range(-15, 15)
+	var random_z = player_pos.z + rnd.randf_range(-15, 15)
 	target_position = Vector3(random_x, position.y, random_z)
 	base_speed += speed_increment
 
