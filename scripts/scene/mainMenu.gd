@@ -1,8 +1,14 @@
 extends Node3D
-
+@onready var ready_to_load = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var streamer = GameStat.get_user_data()["streamer"]
+	if streamer:
+		$"2D element/Menu/CheckBox".button_pressed = true
+		$AudioStreamPlayer2D.stream_paused = true
+	else:
+		$"2D element/Menu/CheckBox".button_pressed = false
+	ready_to_load = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -35,3 +41,13 @@ func _on_credit_pressed():
 
 func _on_endless_pressed():
 	SceneSwitcher.change_scene("res://scenes/loading.tscn",{"next_scene":"res://scenes/endless.tscn"})
+
+
+func _on_check_box_toggled(toggled_on):
+	if not ready_to_load:
+		return
+	GameStat.save_user_data(toggled_on)
+	if toggled_on:
+		$AudioStreamPlayer2D.stream_paused = true
+	else:
+		$AudioStreamPlayer2D.stream_paused = false

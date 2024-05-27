@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bjgvo85fhvg0v"]
+[gd_scene load_steps=27 format=3 uid="uid://bjgvo85fhvg0v"]
 
 [ext_resource type="Script" path="res://scripts/scene/mainMenu.gd" id="1_845g1"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/environtment/main-environment.tres" id="1_nxj6y"]
@@ -48,6 +48,12 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2ulf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryqew"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aj7sm"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="Animation" id="Animation_bk4t1"]
@@ -171,11 +177,10 @@ vertical_alignment = 1
 [node name="Menu" type="Control" parent="2D element"]
 visible = false
 layout_mode = 3
-anchors_preset = 11
-anchor_left = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 0
+grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Story Mode" type="Button" parent="2D element/Menu"]
@@ -274,6 +279,20 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_pe5cr")
 theme_override_styles/focus = SubResource("StyleBoxFlat_i2ulf")
 text = "Quit"
 alignment = 0
+
+[node name="CheckBox" type="CheckBox" parent="2D element/Menu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -45.0
+offset_right = 483.0
+offset_bottom = -14.0
+grow_vertical = 0
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ryqew")
+theme_override_styles/focus = SubResource("StyleBoxFlat_aj7sm")
+text = "Saya seorang streamer (menghilangkan musik copyright)"
 
 [node name="Judul" type="Label" parent="2D element"]
 anchors_preset = 1
@@ -4311,6 +4330,7 @@ autoplay = "Action_001"
 [connection signal="pressed" from="2D element/Menu/Endless" to="." method="_on_endless_pressed"]
 [connection signal="pressed" from="2D element/Menu/Credit" to="." method="_on_credit_pressed"]
 [connection signal="pressed" from="2D element/Menu/Quit" to="." method="quit_game"]
+[connection signal="toggled" from="2D element/Menu/CheckBox" to="." method="_on_check_box_toggled"]
 
 [editable path="Pine Tree"]
 [editable path="Pohon Angker"]

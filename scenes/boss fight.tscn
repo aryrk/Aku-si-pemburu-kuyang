@@ -449,7 +449,7 @@ _data = {
 "opening": SubResource("Animation_y2awi")
 }
 
-[node name="Main" type="Node3D"]
+[node name="Main2" type="Node3D"]
 script = ExtResource("1_yscp0")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
