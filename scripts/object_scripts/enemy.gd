@@ -19,7 +19,7 @@ var timer_moan
 var wander_timer = 0.0
 var wander_interval = randf_range(2.0, 6.0)
 var wander_direction = Vector3()
-var chasing_player = true
+var chasing_player = false
 
 # When ready, save the initial position
 func _ready():
