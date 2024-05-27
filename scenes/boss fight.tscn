@@ -530,7 +530,7 @@ stream = ExtResource("6_e03qi")
 volume_db = 5.0
 
 [node name="Player" parent="." instance=ExtResource("3_h3hkb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56256, 54.5956)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 1.563, 54.596)
 
 [node name="CameraItem" parent="Player/Head/Camera/SubViewportContainer/SubViewport" index="0"]
 current = true

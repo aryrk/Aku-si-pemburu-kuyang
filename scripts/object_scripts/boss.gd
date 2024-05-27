@@ -8,7 +8,7 @@ extends Node3D
 @onready var transform_point = $"."
 @onready var animation := $AnimationPlayer
 
-var health := 10000
+var health := 7000
 var hits_received := 0
 var hits_received_max := 10  # Global variable to track the hit phase threshold
 var max_damage_taken := 500
@@ -81,13 +81,13 @@ func damage(amount, use_mana):
 		chasing_player = true # Start chasing the player after being hit
 
 func check_health_phase():
-	if health <= 10000 * 0.3: # Phase 3
+	if health <= health * 0.3: # Phase 3
 		max_speed = 8
 		hits_received_max = 2
-	elif health <= 10000 * 0.6: # Phase 2
+	elif health <= health * 0.6: # Phase 2
 		max_speed = 4
 		hits_received_max = 8
-	elif health <= 10000 * 0.8: # Phase 1
+	elif health <= health * 0.8: # Phase 1
 		max_speed = 3
 		hits_received_max = 10
 

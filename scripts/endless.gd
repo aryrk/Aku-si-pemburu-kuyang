@@ -9,3 +9,6 @@ func _process(delta):
 	if enemies and enemies.get_child_count() == 0:
 		enemies.spawn_enemy_randomly()
 		enemies.spawn_enemy_randomly()
+		enemies.spawn_enemy_randomly()
+		enemies.spawn_enemy_randomly()
+		enemies.spawn_enemy_randomly()
