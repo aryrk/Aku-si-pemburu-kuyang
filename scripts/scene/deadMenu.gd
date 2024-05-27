@@ -5,6 +5,8 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Audio.stop_all_sounds()
+	if GameStat.get_user_data()["streamer"]:
+		$AudioStreamPlayer2D.stream_paused = true
 
 
 func restart_game():
