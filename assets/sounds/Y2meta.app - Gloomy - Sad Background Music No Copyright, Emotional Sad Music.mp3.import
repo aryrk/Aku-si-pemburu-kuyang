@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhitiaj5d5hyi"
+path="res://.godot/imported/Y2meta.app - Gloomy - Sad Background Music No Copyright, Emotional Sad Music.mp3-f1511cc22ffb7e7912d2812b76647f1d.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Y2meta.app - Gloomy - Sad Background Music No Copyright, Emotional Sad Music.mp3"
+dest_files=["res://.godot/imported/Y2meta.app - Gloomy - Sad Background Music No Copyright, Emotional Sad Music.mp3-f1511cc22ffb7e7912d2812b76647f1d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

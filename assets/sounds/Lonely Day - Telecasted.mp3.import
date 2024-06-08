@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cr3jiiqvr1y72"
+path="res://.godot/imported/Lonely Day - Telecasted.mp3-1231bc96ae389ba01124e8d28b0ce93c.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Lonely Day - Telecasted.mp3"
+dest_files=["res://.godot/imported/Lonely Day - Telecasted.mp3-1231bc96ae389ba01124e8d28b0ce93c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
