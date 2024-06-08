@@ -674,59 +674,59 @@ transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107
 player = NodePath("../../Player")
 
 [node name="enemy-flying7" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.3819, 11.7213, -20.888)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.3819, 5.832, -20.888)
 player = NodePath("../../Player")
 
 [node name="enemy-flying8" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -90.3819, 11.7213, -13.388)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -90.3819, 5.832, -13.388)
 player = NodePath("../../Player")
 
 [node name="enemy-flying9" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -75.3819, 12.7213, -5.88801)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -75.3819, 6.832, -5.88801)
 player = NodePath("../../Player")
 
 [node name="enemy-flying10" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.3819, 11.7213, 30.5499)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.3819, 6.31841, 30.5499)
 player = NodePath("../../Player")
 
 [node name="enemy-flying11" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -90.3819, 11.7213, 38.0499)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -90.3819, 6.31841, 38.0499)
 player = NodePath("../../Player")
 
 [node name="enemy-flying12" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -75.3819, 12.7213, 45.5499)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -75.3819, 7.31841, 45.5499)
 player = NodePath("../../Player")
 
 [node name="enemy-flying13" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6641, 11.7213, 30.5499)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6641, 3.1918, 29.6604)
 player = NodePath("../../Player")
 
 [node name="enemy-flying14" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -35.6641, 11.7213, 38.0499)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -35.6641, 3.1918, 37.1604)
 player = NodePath("../../Player")
 
 [node name="enemy-flying15" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -20.6641, 12.7213, 45.5499)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -20.6641, 4.1918, 44.6604)
 player = NodePath("../../Player")
 
 [node name="enemy-flying16" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.053, 11.7213, 30.5499)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.053, 6.2459, 30.5499)
 player = NodePath("../../Player")
 
 [node name="enemy-flying17" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -101.053, 11.7213, 38.0499)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -101.053, 6.2459, 38.0499)
 player = NodePath("../../Player")
 
 [node name="enemy-flying18" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -86.053, 12.7213, 45.5499)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -86.053, 7.2459, 45.5499)
 player = NodePath("../../Player")
 
 [node name="enemy-flying19" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.37983, 45.8383, 12.9213)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.37983, 1.42305, 12.9213)
 player = NodePath("../../Player")
 
 [node name="enemy-flying20" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 23.3798, 46.8383, 20.4213)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 23.3798, 2.42305, 20.4213)
 player = NodePath("../../Player")
 
 [node name="Level" type="Node" parent="."]
