@@ -8,7 +8,7 @@ extends Node3D
 @onready var transform_point = $"."
 @onready var animation := $AnimationPlayer
 
-var health := 3000
+var health := 7000
 var hits_received := 0
 var hits_received_max := 10  # Global variable to track the hit phase threshold
 var max_damage_taken := 500

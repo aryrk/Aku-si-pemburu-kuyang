@@ -149,21 +149,32 @@ script = ExtResource("1_xqqm6")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8840h")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
+[node name="Light" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Light"]
 transform = Transform3D(1, 0, 0, 0, -0.0919882, 0.99576, 0, -0.99576, -0.0919882, 0, 5.84084, 0)
 light_energy = 0.0
-shadow_enabled = true
 spot_range = 36.229
 spot_angle = 29.57
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
+[node name="OmniLight3D" type="OmniLight3D" parent="Light"]
 transform = Transform3D(0.63781, 0, -0.770194, 0, 1, 0, 0.770194, 0, 0.63781, -0.753, 0.724952, 0.13)
+light_specular = 7.346
 shadow_enabled = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Light"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.65718)
 shadow_enabled = true
 sky_mode = 1
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Light"]
+transform = Transform3D(-0.961785, -0.229881, -0.148742, -0.246106, 0.48771, 0.837598, -0.120004, 0.842196, -0.525648, -0.0611416, 2.1871, -0.912545)
+light_color = Color(0.578285, 0, 0.0397671, 1)
+light_energy = 6.949
+light_indirect_energy = 0.192
+light_volumetric_fog_energy = 0.0
+light_specular = 0.485
+shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.345, 0.82, 2.34)

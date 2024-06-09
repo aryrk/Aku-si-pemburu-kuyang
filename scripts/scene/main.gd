@@ -20,7 +20,7 @@ func _process(_delta):
 	if enemies and enemies.get_child_count() == 0:
 		$"2D element/AnimationTree".play("goal_achieved")
 
-	if enemies and enemies.get_child_count() == 10:
+	if enemies and enemies.get_child_count() <= 10:
 		for enemy in enemies.get_children():
 			if enemy and "chasing_player" in enemy:
 				enemy.chasing_player = true

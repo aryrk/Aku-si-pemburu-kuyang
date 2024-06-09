@@ -479,6 +479,7 @@ process_mode = 3
 script = ExtResource("4_mb7y7")
 
 [node name="Items" type="HBoxContainer" parent="HUD"]
+process_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -946,7 +947,7 @@ autostart = true
 
 [node name="Ambience Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_5xeak")
-volume_db = -10.0
+volume_db = -3.0
 autoplay = true
 
 [connection signal="health_updated" from="." to="HUD" method="_on_health_updated"]

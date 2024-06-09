@@ -782,8 +782,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0071, 2.98258, -29.6587)
 transform = Transform3D(0.980894, -0.000305579, -0.194542, 0.194542, 0.00154075, 0.980893, -6.82805e-11, -0.999999, 0.00157076, -7.32884, 20.2652, 1.47885)
 light_color = Color(1, 0.790401, 0.810401, 1)
 light_energy = 4.394
-shadow_enabled = true
 spot_range = 21.884
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Light"]
+transform = Transform3D(-0.449909, 0.634472, -0.628511, -0.804788, -0.593129, -0.02266, -0.387165, 0.495624, 0.77747, -3.127, 4.484, 14.619)
+light_color = Color(0.978635, 0.560101, 1.54018e-06, 1)
+light_energy = 3.48
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+spot_range = 7.53268
+spot_angle = 32.7609
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Light"]
+transform = Transform3D(0.545529, -0.503065, -0.670316, 0.317544, 0.864248, -0.39018, 0.775606, 0, 0.631217, -5.0952, 0.897723, 2.90223)
+light_color = Color(0.569572, 0, 0.0920006, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 0.0
+light_specular = 16.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 7.99554
+spot_angle = 29.8789
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("4_4q1uu")
@@ -863,7 +884,8 @@ autoplay = "Armature|mixamo_com|Layer0"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.0348995, -1.68637e-07, 0.999391, 1.74846e-07, 1, 1.74846e-07, -0.999391, 1.80841e-07, -0.0348995, 7.949, 3.46, 4.995)
-far = 51.73
+near = 1.284
+far = 35.78
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
 libraries = {
@@ -936,6 +958,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = 58.0
+offset_right = -26.0
+offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0820305
@@ -948,6 +974,7 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="ColorRect3" type="ColorRect" parent="Post Processing"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

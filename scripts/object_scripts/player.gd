@@ -118,7 +118,7 @@ func add_weapon_to_view(index, cooldown, sprite_path):
 	
 
 func _ready():
-	
+	exit_pause_menu()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	var i = 0
 	for weapon_idx in weapons:
@@ -211,6 +211,8 @@ func handle_controls(_delta):
 	if Input.is_action_just_pressed("mouse_capture"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		mouse_captured = true
+		
+		exit_pause_menu()
 		
 	if Input.is_action_just_pressed("mouse_capture_exit"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

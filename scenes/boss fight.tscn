@@ -534,6 +534,9 @@ volume_db = 5.0
 [node name="boss" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("11_f5hbf")]
 player = NodePath("../../Player")
 
+[node name="AudioStreamPlayer3D" parent="Enemies/boss" index="4"]
+volume_db = 45.0
+
 [node name="Player" parent="." instance=ExtResource("3_h3hkb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71301, 3.7813, 54.596)
 
@@ -542,7 +545,7 @@ current = true
 
 [node name="Ambience Sound" parent="Player" index="8"]
 stream = ExtResource("10_xgjjp")
-volume_db = -5.0
+volume_db = 0.0
 
 [node name="Level" type="Node" parent="."]
 
@@ -753,4 +756,5 @@ transform = Transform3D(28.3851, 0, 0, 0, 28.3851, 0, 0, 0, 28.3851, -379.734, -
 
 [connection signal="animation_finished" from="2D element/AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 
+[editable path="Enemies/boss"]
 [editable path="Player"]
